@@ -1,0 +1,181 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import Link from '../../../components/Link.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/p90_narrow_aisle_mainpic_1_large.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/p90_narrow_aisle_range_large.png',
+    },
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Фронтальные стеллажи',
+    href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+  },
+  {
+    title: 'Набивные стеллажи Drive-in',
+    href: '/products/pallet_handling/nabivnie_stellazhi_drive_in/',
+  },
+  {
+    title: 'Гравитационные стеллажи пуш-бэк (Push-back)',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/',
+  },
+  {
+    title: 'Гравитационные стеллажи',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi/',
+  },
+  {
+    title: 'Мобильные стеллажи',
+    href: '/products/pallet_handling/mobil_nie_stellazhi/',
+  },
+  {
+    title: 'Узкопроходные стеллажи',
+    href: '/products/pallet_handling/uzkoprohodnie_stellazhi/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Паллетные стеллажи', href: '/products/pallet_handling/' },
+  { title: 'Узкопроходные стеллажи' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Хартуолл АБ, Финляндия',
+            href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/hartuoll_ab_finljandija/',
+          },
+          {
+            title: 'Ново Нордиск АС, Дания',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/novo_nordisk_as_danija/',
+          },
+          {
+            title: 'Нетханделен Норге, Норвегия',
+            href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/nethandelen_norge_norvegija/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Узкопроходные стеллажи P90 | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Узкопроходные стеллажи P90</h1>
+
+          <h2>Купить стеллажи узкопроходные металлические P90 в Беларуси</h2>
+
+          <p>
+            Металлические узкопроходные стеллажи P90 могут использоваться в самых разных отраслях. Такие <Link
+              href="/products/pallet_handling/">стеллажи паллетные</Link
+            > узкопроходные созданы специально для хранения различных товаров в условиях дефицита складских площадей.
+          </p>
+
+          <h3 class="text-lg font-bold mb-4">Данные стеллажи обеспечивают:</h3>
+          <List>
+            <li>
+              <span>
+                <Link href="/products/skladskie_sistemi_dinamicheskogo_hraneni/">складское хранение товаров</Link>
+                с максимально высокой плотностью
+              </span>
+            </li>
+            <li>
+              <span>быстрый и беспрепятственный доступ к любому из поддонов</span>
+            </li>
+            <li>
+              <span>удобную и высокоскоростную комплектацию заказов непосредственно с самого стеллажа</span>
+            </li>
+          </List>
+
+          <p>
+            Узкопроходные <Link href="/products/">металлические стеллажи</Link> позволяют в полной мере задействовать всю
+            полезную площадь склада. Это наилучшее решение для небольших помещений.
+          </p>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Конструктивные особенности</h3>
+
+          <div class="space-y-4">
+            <p>
+              Ярусность узкопроходных стеллажей можно менять по своему усмотрению. Благодаря гибкому конструктивному
+              исполнению глубину и высоту хранения также можно относительно легко изменять.
+            </p>
+
+            <p>
+              После монтажа стеллажей формируются узкие проходы, где может маневрировать специализированная
+              узкопроходная техника с фиксированной либо подъемной операторской кабиной. Она направляются посредством
+              кабелей либо металлических рельс. Максимальная нагрузка на уровень – 4 тыс. кг, на секцию – 30 тыс. кг.
+              Предельная высота рам конструкций ограничена 30 тыс. мм.
+            </p>
+          </div>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span>Доступность: Свободный доступ к любому индивидуальному поддону</span>
+            </li>
+            <li>
+              <span
+                >Экономическая эффективность: Высокие затраты на специальную складскую технику окупаются за счёт
+                плотности хранения</span
+              >
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+
+      <TabPanel index={2}>
+        <div class="prose max-w-none">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Высота рам:</span>
+                <span>до 30000 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на уровень:</span>
+                <span>до 4000 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на секцию:</span>
+                <span>до 30 000 кг</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

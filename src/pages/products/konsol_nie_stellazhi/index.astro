@@ -1,0 +1,171 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import { CONTACTS_BLOCK } from '../../../constants';
+import OrderCTA from '../../../components/OrderCTA.astro';
+
+const sidebarItems = [
+  {
+    title: 'Паллетные стеллажи',
+    href: '/products/pallet_handling/',
+  },
+  {
+    title: 'Полочные стеллажи',
+    href: '/products/small_part_handling/',
+  },
+  {
+    title: 'Автоматизированные складские системы',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
+  },
+  {
+    title: 'Специальные конструкции',
+    href: '/products/special_nie_konstrukcii/',
+  },
+  {
+    title: 'Стеллажный мезонин',
+    href: '/products/stellazhnij_mezonin/',
+  },
+  {
+    title: 'Консольные стеллажи',
+    href: '/products/konsol_nie_stellazhi/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Консольные стеллажи' },
+];
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size0/konsol_nie_stellazhi_1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size0/konsol_nie_stellazhi_2.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size0/stellazhi_konsol_nie_3.png',
+    },
+  },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'К-раута, Финляндия',
+            href: '/references/mezoninnie_sistemi/k_rauta_finljandija/',
+          },
+          {
+            title: 'Фольксваген, Швеция',
+            href: '/references/mezoninnie_sistemi/fol_ksvagen_shvecija/',
+          },
+          {
+            title: 'Кодин Терра, Финляндия',
+            href: '/references/mezoninnie_sistemi/kodin_terra_finljandija/',
+          },
+          {
+            title: 'Агримаркет, Финляндия',
+            href: '/references/mezoninnie_sistemi/agrimarket_finljandija/',
+          },
+          {
+            title: 'ИксЭль Биг, Дания',
+            href: '/references/mezoninnie_sistemi/iksel_big_danija/',
+          },
+          {
+            title: 'СЕАС-НВЕ, Дания',
+            href: '/references/mezoninnie_sistemi/seas_nve_danija/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Фронтальные стеллажи | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Консольные стеллажи</h1>
+
+      <h2 class="text-2xl font-bold mb-4">Купить стеллажи консольные металлические в Минске</h2>
+
+      <p>
+        Консольные стеллажи для склада – идеальное решение для складирования негабаритных и длинных грузов, таких как
+        стальные профили, трубы, пиломатериалы, мебель и прочее.
+      </p>
+      <p>ЗАО «КМ-про» – официальный дилер компании Constructor в Республике Беларусь.</p>
+
+      <h3 class="text-xl font-bold mb-4">
+        Мы предлагаем заказать стеллажи консольные для металлопроката со следующими габаритами:
+      </h3>
+
+      <p class="my-1">
+        <strong>Высота колонны:</strong> до 9 000 мм (доступны другие высоты)
+      </p>
+      <p class="my-1">
+        <strong>Нагрузка на консоль:</strong> от 500 до 1500 кг
+      </p>
+      <p class="my-1">
+        <strong>Длина консоли:</strong> от 600 до 2500 мм
+      </p>
+      <p class="my-1">
+        <strong>Шаг перфорации колонн:</strong>
+        100 мм
+      </p>
+
+      <h3 class="text-xl font-bold mb-4">Односторонние, двухсторонние стеллажи консольного типа в Беларуси</h3>
+
+      <p>
+        Современные консольные стеллажи для труб обеспечивают экономию складских площадей при хранении негабаритных и
+        длинномерных грузов. Их установка позволяет гораздо быстрее загружать и выгружать товары и гарантирует наиболее
+        гибкие условия для складского хранения.
+      </p>
+      <p>
+        Такой консольный стеллаж для металлопроката состоит из системы специальных раскосов, несущих консолей и двух
+        либо более вертикальных стоек. Число стоек и консолей определяется массой хранимого груза и его габаритными
+        размерами. Такие складские стеллажи консольного типа допускают как традиционный горизонтальный монтаж, так и
+        установку под определенным углом к вертикальной стойке. На прочность и устойчивость стеллажей напрямую влияют
+        остающиеся между стойками расстояния. Одним из главных достоинств стеллажей является наличие в них стандартных
+        креплений, благодаря которым их можно составлять в ряды произвольной длины.
+      </p>
+
+      <h3 class="text-xl font-bold mb-4">Консольные стеллажи для склада и хранения металла, труб</h3>
+
+      <p>
+        Консольные стеллажные системы используются для фронтальной загрузки и выгрузки продукции. Возможно их исполнение
+        как для двухстороннего, так и одностороннего применения. Двусторонние стеллажи консольного типа выдерживают
+        грузы более значительных объемов, чем односторонние. Объясняется это тем, что масса хранимых на них товаров
+        распределяется на вертикальные опоры более равномерно.
+      </p>
+      <p>
+        На колоннах стеллажа консольного типа предусмотрена перфорация с шагом 100 мм. Благодаря ей консольные стеллажи
+        для металла можно оптимально подстроить для надежного хранения тех или иных товаров
+      </p>
+
+      <iframe loading="lazy" src="https://www.youtube.com/embed/nbTHUVWx05U" width="100%" class="my-8 aspect-video"
+      ></iframe>
+
+      <h3 class="text-xl font-bold mb-4">Как купить консольный стеллаж для склада в Минске?</h3>
+
+      <p>
+        Наши сотрудники с удовольствием ответят на все имеющиеся у вас вопросы и помогут выбрать стеллажную продукцию.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

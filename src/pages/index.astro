@@ -1,0 +1,205 @@
+---
+import carouselImage1 from '../assets/images/carousel/1.png';
+import carouselImage2 from '../assets/images/carousel/2.png';
+import carouselImage3 from '../assets/images/carousel/3.png';
+import carouselImage4 from '../assets/images/carousel/4.png';
+import carouselImage5 from '../assets/images/carousel/5.png';
+import carouselImage6 from '../assets/images/carousel/6.png';
+import Layout from '../layouts/MainLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ImageCarousel from '../components/ImageCarousel';
+import Video from '../components/Video';
+import Link from '../components/Link.astro';
+import { getImage } from 'astro:assets';
+import video from '../assets/videos/2013-Constructor-Group-EN-short.webm';
+
+const sidebarLinks = [
+  {
+    title: 'Стеллажные системы для промышленного сектора:',
+    links: [
+      { href: '/products/pallet_handling/', text: 'Паллетные стеллажи' },
+      { href: '/products/small_part_handling/', text: 'Полочные стеллажи' },
+      {
+        href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
+        text: 'Складское оборудование динамического хранения и поиска',
+      },
+      {
+        href: '/products/special_nie_konstrukcii/',
+        text: 'Специальные конструкции',
+      },
+      { href: '/products/stellazhnij_mezonin/', text: 'Мезонинные системы' },
+      { href: '/products/', text: 'Металлические стеллажи' },
+      { href: '/products/konsol_nie_stellazhi/', text: 'Консольные стеллажи' },
+    ],
+  },
+  {
+    title: 'Стеллажные системы для коммерческого сектора:',
+    links: [
+      { href: 'https://www.kasten.fi/', text: 'Хранение в офисах и архивах' },
+      { href: 'https://www.kasten.fi/', text: 'Хранение в библиотеках' },
+      { href: 'https://www.kasten.fi/', text: 'Хранение в музеях' },
+    ],
+  },
+];
+
+const services = [
+  'доставят и смонтируют стеллажи или любое другое складское оборудование',
+  'будут выполнять его регулярное профессиональное обслуживание. Оно подразумевает не только ремонт металлоконструкций, но и их инспектирование',
+  'окажут услуги консалтингового характера (проанализируют сложившуюся ситуацию на предприятии, дадут рекомендации по оптимизации)',
+  'изготовят стеллажные конструкции нетиповых размеров, с учетом площади и архитектурных особенностей объекта',
+];
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+    title: 'Стеллажи металлические для складских помещений',
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+    title: 'Стеллажные системы для магазинов',
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+    title: 'Оборудованные стеллажи',
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+    title: 'Металлические стеллажи для склада',
+  },
+  {
+    image: await getImage({ src: carouselImage5, format: 'webp' }),
+    title: 'Пример стеллажных систем',
+  },
+  {
+    image: await getImage({ src: carouselImage6, format: 'webp' }),
+    title: 'Двухуровневые стеллажные системы',
+  },
+];
+---
+
+<Layout title="Стеллаж металлический купить в Минске для склада | Низкие цены на сборные стеллажи">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 py-8">
+    <div class="lg:col-span-3">
+      <div class="mb-8">
+        <ImageCarousel slides={slides} client:load />
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <h1 class="text-3xl font-bold mb-6">Стеллажи металлические от компании КМ-Про</h1>
+
+        <div class="prose max-w-none">
+          <p class="mb-4">
+            ЗАО «КМ-про» является официальным дилером всемирно известного производителя складского оборудования,
+            компании «Constructor», в Беларуси. Под этим брендом сегодня выпускаются самые современные стеллажные
+            системы для самых разных объектов – торговых и промышленных складов, архивов и библиотек, крупных
+            логистических комплексов.
+          </p>
+
+          <p class="mb-4">Также мы реализуем складское оборудование других брендов премиум-класса, в том числе:</p>
+
+          <ul class="list-disc pl-6 mb-4">
+            <li>«Dexion»;</li>
+            <li>«Kasten».</li>
+          </ul>
+
+          <p class="mb-4">
+            Производимые данными компаниями <Link href="/products/">стеллажи</Link> и
+            <Link href="/products/skladskie_sistemi_dinamicheskogo_hraneni/">автоматизированные системы хранения</Link> устанавливаются
+            на производственных предприятиях, в офисах и бизнес-центрах, в помещениях торгового назначения.
+          </p>
+
+          <p class="mb-8">
+            Наибольший акцент мы делаем на поставки оборудования «Constructor», которое предлагается по очень выгодным
+            ценам и в широком ассортименте. При этом наша компания осуществляет не только продажу стеллажей, но и
+            выполняет обширный перечень сопутствующих работ.
+          </p>
+
+          <Video src={video} autoplay={false} muted={true} loop={false} client:load />
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+        <h2 class="text-2xl font-bold mb-6">В сжатые сроки специалисты ЗАО «КМ-Про»:</h2>
+
+        <div class="grid gap-4">
+          {
+            services.map((service, index) => (
+              <div class="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                <div class="flex-shrink-0 w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">
+                  {index + 1}
+                </div>
+                <p class="text-gray-700">{service}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-8">
+        <div class="prose max-w-none">
+          <p class="mb-4">
+            Наша компания работает на отечественном рынке с 2003 года. За это время сотрудники ЗАО «КМ-Про» выполнили
+            монтаж металлических стеллажей на более чем 450 объектах. Всем клиентам мы гарантируем качественный сервис,
+            по-настоящему выгодные цены и строго персонализированный подход.
+          </p>
+
+          <p class="mb-4">
+            Чтобы оставить заявку на стеллажные системы или другое складское оборудование, звоните нашим специалистам по
+            телефонам:
+            <Link href="tel:+375173730122">+375 (17) 373-01-22</Link>,
+            <Link href="tel:+375173660321">+375 (17) 366-03-21</Link>. Они примут Ваш заказ и подробно проконсультируют
+            по любым имеющимся вопросам.
+          </p>
+
+          <p class="font-semibold">Звоните, компания «КМ-Про» – к Вашим услугам!</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <ServiceCard
+          title="Наши услуги"
+          href="/our_services/our_services1/"
+          description="Мы готовы предложить современное решение, соответствующее требованиям безопасности, экономии и эффективного заполнения Вашего пространства, основываясь на анализе Ваших потребностей."
+        />
+
+        <ServiceCard
+          title="Виды продукции"
+          href="/products/"
+          description="Компания Constructor предлагает множество эффективных складских, архивных и логистических продуктов, полностью соответствующих задачам каждой отдельной компании."
+        />
+
+        <ServiceCard
+          title="Новости"
+          href="/"
+          description="Здесь вы можете ознакомиться с новыми событиями в деятельности нашей компании."
+        />
+      </div>
+    </div>
+
+    <div class="lg:col-span-1">
+      <div class="bg-white rounded-lg shadow-md p-6 sticky top-4">
+        {
+          sidebarLinks.map((section) => (
+            <div class="mb-6 last:mb-0">
+              <h3 class="font-bold text-lg mb-3">{section.title}</h3>
+              <ul class="space-y-2">
+                {section.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="text-blue-900 hover:text-blue-700 transition-colors block"
+                      target={link.href.startsWith('http') ? '_blank' : undefined}
+                      rel={link.href.startsWith('http') ? 'nofollow' : undefined}
+                    >
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,27 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const { href, title, description, image } = Astro.props;
+---
+
+<a href={href}>
+  <div
+    class="grid h-full rounded-lg shadow-lg overflow-hidden transition-shadow hover:shadow-xl cursor-pointer"
+    style="grid-template-columns: 1fr 3fr"
+  >
+    <div class="relative">
+      {image && <img src={image} alt={title} class="h-full w-full object-cover object-center" />}
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+    </div>
+
+    <div class="p-2">
+      <h2 class="text-xl font-semibold mb-2">{title}</h2>
+      <p class="text-sm">{description}</p>
+    </div>
+  </div>
+</a>

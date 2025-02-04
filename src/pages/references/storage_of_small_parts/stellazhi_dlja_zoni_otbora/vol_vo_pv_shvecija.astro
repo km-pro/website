@@ -1,0 +1,92 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/cartonflow_volvopv_sweden_1_large1.png';
+import carouselImage2 from '../../../../assets/images/cartonflow_volvopv_sweden_2_large1.png';
+import carouselImage3 from '../../../../assets/images/cartonflow_volvopv_sweden_3_large1.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Вольво ПВ, Швеция',
+    href: '/references/storage_of_small_parts/stellazhi_dlja_zoni_otbora/vol_vo_pv_shvecija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Стеллажи для зоны отбора',
+    href: '/references/storage_of_small_parts/stellazhi_dlja_zoni_otbora/',
+  },
+  { title: 'Вольво ПВ, Швеция' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Коробочные гравитационные стеллажи',
+            href: '/products/small_part_handling/korobochnie_gravitacionnie_stellazhi_s90/',
+          },
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Вольво ПВ, Швеция | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Вольво ПВ, Швеция</h1>
+
+      <p>
+        Для оптимизации технологии отбора заказов выбрана коробочная гравитационная стеллажная система <strong
+          >Constructor</strong
+        >. Стеллажные конструкции установлены вдоль сборочного конвеера, что позволило значительно сократить время
+        операций и улучшить качество работы операторов.
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Количество: 1700 артикулов, 5660 п.м.</li>
+        <li>Количество станций комплектации: 80 ед.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

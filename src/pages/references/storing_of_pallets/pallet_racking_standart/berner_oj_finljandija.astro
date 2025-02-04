@@ -1,0 +1,193 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/machines_ref_berner_5_large2.png';
+import carouselImage2 from '../../../../assets/images/machines_ref_berner_6_large2.png';
+import carouselImage3 from '../../../../assets/images/machines_ref_berner_1_large2.png';
+import carouselImage4 from '../../../../assets/images/machines_ref_berner_2_large2.png';
+import carouselImage5 from '../../../../assets/images/machines_ref_berner_3_large2.png';
+import carouselImage6 from '../../../../assets/images/machines_ref_berner_4_large2.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage5, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage6, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'CePT Юкей ПиЛСи, Великобритания',
+    href: '/references/storing_of_pallets/pallet_racking_standart/cept_jukej_pilsi_velikobritanija/',
+  },
+  {
+    title: 'Сифилд Лоджистикс, Великобритания',
+    href: '/references/storing_of_pallets/pallet_racking_standart/sifild_lodzhistiks_velikobritanija/',
+  },
+  {
+    title: 'Рунсвен, Швеция',
+    href: '/references/storing_of_pallets/pallet_racking_standart/runsven_shvecija/',
+  },
+  {
+    title: 'Мультилайн, Дания',
+    href: '/references/storing_of_pallets/pallet_racking_standart/mul_tilajn_danija/',
+  },
+  {
+    title: 'Данске Фрагтменд, Дания',
+    href: '/references/storing_of_pallets/pallet_racking_standart/danske_fragtmend_danija/',
+  },
+  {
+    title: 'Шенкер Лоджистикс, Швеция',
+    href: '/references/storing_of_pallets/pallet_racking_standart/shenker_lodzhistiks_shvecija/',
+  },
+  {
+    title: 'Билтема, Швеция',
+    href: '/references/storing_of_pallets/pallet_racking_standart/biltema_shvecija/',
+  },
+  {
+    title: 'МТЮ Детройт Дизель, Нидерланды',
+    href: '/references/storing_of_pallets/pallet_racking_standart/mtju_detrojt_dizel_niderlandi/',
+  },
+  {
+    title: 'КГ Кнутсон АБ, Швеция',
+    href: '/references/storing_of_pallets/pallet_racking_standart/kg_knutson_ab_shvecija/',
+  },
+  {
+    title: 'Паркер Ханнифин, Нидерланды',
+    href: '/references/storing_of_pallets/pallet_racking_standart/parker_hannifin_niderlandi/',
+  },
+  {
+    title: 'АСКО ВЕСТ АС, Норвегия',
+    href: '/references/storing_of_pallets/pallet_racking_standart/asko_vest_as_norvegija/',
+  },
+  {
+    title: 'Стэйплс, Германия',
+    href: '/references/storing_of_pallets/pallet_racking_standart/stejpls_germanija/',
+  },
+  {
+    title: 'Бернер Ой, Финляндия',
+    href: '/references/storing_of_pallets/pallet_racking_standart/berner_oj_finljandija/',
+  },
+  {
+    title: 'Иитала Груп, Финляндия',
+    href: '/references/storing_of_pallets/pallet_racking_standart/iitala_grup_finljandija/',
+  },
+  {
+    title: 'Маритим АС, Норвегия',
+    href: '/references/storing_of_pallets/pallet_racking_standart/maritim_as_norvegija/',
+  },
+  {
+    title: 'Дастин, Швеция',
+    href: '/references/storing_of_pallets/pallet_racking_standart/dastin_shvecija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение', href: '/references/storing_of_pallets/' },
+  {
+    title: 'Фронтальные паллетные стеллажи',
+    href: '/references/storing_of_pallets/pallet_racking_standart/',
+  },
+  { title: 'Бернер Ой, Финляндия' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Вертикальные лифты (TORNADO)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+          },
+          {
+            title: 'Вертикальные карусели (PATERNOSTER)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Бернер Ой, Финляндия | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Бернер Ой, Финляндия</h1>
+
+      <p class="font-bold mb-4">
+        В 2008 году все складские площади компании были объединены в одном центре в г. Вантаа. Площадь складского
+        комплекса составила 20 тыс кв.м.
+      </p>
+
+      <p>
+        Большая часть грузов размещена на фронтальных паллетных стеллажах. Для оптимизации хранения мелких грузов и
+        отбора заказов установлены шесть складских автоматов PATERNOSTER и один сдвоенный TORNADO. Каждая из машин более
+        10 м высотой и шириной почти 5 м.
+      </p>
+
+      <p>
+        Благодаря установке этого высокотехнологичного оборудования стало возможным комплектовать до 45 клиентов
+        одновременно тремя-шестью сотрудниками склада и сократить вероятность возникновения ошибок при комплектации на
+        20 %.
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+      <p>TORNADO (Сдвоенный автомат):</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 10,3 м</li>
+        <li>Ширина полки: 4000 мм</li>
+        <li>Глубина полки: 820 мм</li>
+        <li>Количество полок: 59 + 53</li>
+        <li>Нагрузка на полку: до 300 кг/ 500 кг</li>
+      </ul>
+
+      <p>PATERNOSTER (6 ед.):</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 10,3 м</li>
+        <li>Ширина полки: 4100 мм</li>
+        <li>Глубина полки: 520 мм</li>
+        <li>Количество полок: 46 + 30 (подразделений)</li>
+        <li>Нагрузка на полку: до 400 кг</li>
+      </ul>
+
+      <p>Фронтальный паллетный стеллаж:</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 9,1 м</li>
+        <li>Количество: 27 500 п.м.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

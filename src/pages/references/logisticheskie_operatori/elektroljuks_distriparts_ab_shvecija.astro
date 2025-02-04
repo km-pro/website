@@ -1,0 +1,130 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import Link from '../../../components/Link.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../assets/images/hi280_electrolux_ref_2_large4.png';
+import carouselImage2 from '../../../assets/images/hi280_electrolux_ref_1_large4.png';
+import carouselImage3 from '../../../assets/images/hi280_electrolux_ref_32.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'ДКИ Лоджистикс А/С, Дания',
+    href: '/references/logisticheskie_operatori/dki_lodzhistiks_a_s_danija/',
+  },
+  {
+    title: 'Электролюкс Дистрипартс АБ, Швеция',
+    href: '/references/logisticheskie_operatori/elektroljuks_distriparts_ab_shvecija/',
+  },
+  {
+    title: 'Ниссан Шенкер Лоджистикс, Швеция',
+    href: '/references/logisticheskie_operatori/nissan_shenker_lodzhistiks_shvecija/',
+  },
+  {
+    title: 'Сервистик АБ, Швеция',
+    href: '/references/logisticheskie_operatori/servistik_ab_shvecija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  {
+    title: 'Логистические операторы',
+    href: '/references/logisticheskie_operatori/',
+  },
+  { title: 'Электролюкс Дистрипартс АБ, Швеция' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Многоэтажные полочные стеллажи S90',
+            href: '/products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/',
+          },
+          {
+            title: 'Мобильные полочные стеллажи S90',
+            href: '/products/small_part_handling/mobile_shelving_s90/',
+          },
+          {
+            title: 'Стандартные полочные стеллажи S90',
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+          },
+          {
+            title: 'Стеллаж мезонинный ME250',
+            href: '/products/stellazhnij_mezonin/mezoninnie_system/',
+          },
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Электролюкс Дистрипартс АБ, Швеция | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Электролюкс Дистрипартс АБ, Швеция</h1>
+
+      <p>
+        Компания <strong>Constructor</strong> оснастила для одного из ведущих логистических операторов склад площадью 35
+        тыс. кв.м.
+      </p>
+
+      <p>
+        Для оборудования комплекса использовались
+        <Link href="/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/">паллетные стеллажи P90 </Link>
+        ,
+        <Link href="/products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/"
+          >двухэтажный полочный стеллаж
+        </Link>
+        интегрированный с мезонинными конструкциями,
+        <Link href="/products/pallet_handling/mobil_nie_stellazhi/">мобильные полочные стеллажи.</Link>
+        Это позволило значительно увеличить емкость хранения, скорость и эффективность отбора заказов на складе.
+      </p>
+
+      <p><strong>Емкость склада:</strong></p>
+
+      <List>
+        <li>Полочный стеллаж: 15 000 полок</li>
+        <li>Мезонинная конструкция: 600 кв.м.</li>
+        <li>Паллетный стеллаж P90: 35 000 п.м.</li>
+        <li>Мобильный полочный стеллаж: 24 ед.</li>
+      </List>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

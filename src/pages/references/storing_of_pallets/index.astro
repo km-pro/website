@@ -1,0 +1,178 @@
+---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import Layout from '../../../layouts/MainLayout.astro';
+import LinksCard from '../../../components/LinksCard.astro';
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение' },
+];
+
+const projects = [
+  {
+    title: 'Узкопроходные стеллажи',
+    href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet114.png',
+    links: [
+      {
+        title: 'Хартуолл АБ, Финляндия',
+        href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/hartuoll_ab_finljandija/',
+      },
+      {
+        title: 'Нетханделен Норге, Норвегия',
+        href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/nethandelen_norge_norvegija/',
+      },
+    ],
+  },
+  {
+    title: 'Фронтальные паллетные стеллажи',
+    href: '/references/storing_of_pallets/pallet_racking_standart/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet13.png',
+    links: [
+      {
+        title: 'CePT Юкей ПиЛСи, Великобритания',
+        href: '/references/storing_of_pallets/pallet_racking_standart/cept_jukej_pilsi_velikobritanija/',
+      },
+      {
+        title: 'Сифилд Лоджистикс, Великобритания',
+        href: '/references/storing_of_pallets/pallet_racking_standart/sifild_lodzhistiks_velikobritanija/',
+      },
+      {
+        title: 'Рунсвен, Швеция',
+        href: '/references/storing_of_pallets/pallet_racking_standart/runsven_shvecija/',
+      },
+      {
+        title: 'Мультилайн, Дания',
+        href: '/references/storing_of_pallets/pallet_racking_standart/mul_tilajn_danija/',
+      },
+      {
+        title: 'Данске Фрагтменд, Дания',
+        href: '/references/storing_of_pallets/pallet_racking_standart/danske_fragtmend_danija/',
+      },
+      {
+        title: 'Шенкер Лоджистикс, Швеция',
+        href: '/references/storing_of_pallets/pallet_racking_standart/shenker_lodzhistiks_shvecija/',
+      },
+      {
+        title: 'Билтема, Швеция',
+        href: '/references/storing_of_pallets/pallet_racking_standart/biltema_shvecija/',
+      },
+      {
+        title: 'МТЮ Детройт Дизель, Нидерланды',
+        href: '/references/storing_of_pallets/pallet_racking_standart/mtju_detrojt_dizel_niderlandi/',
+      },
+      {
+        title: 'КГ Кнутсон АБ, Швеция',
+        href: '/references/storing_of_pallets/pallet_racking_standart/kg_knutson_ab_shvecija/',
+      },
+      {
+        title: 'Паркер Ханнифин, Нидерланды',
+        href: '/references/storing_of_pallets/pallet_racking_standart/parker_hannifin_niderlandi/',
+      },
+      {
+        title: 'АСКО ВЕСТ АС, Норвегия',
+        href: '/references/storing_of_pallets/pallet_racking_standart/asko_vest_as_norvegija/',
+      },
+      {
+        title: 'Стэйплс, Германия',
+        href: '/references/storing_of_pallets/pallet_racking_standart/stejpls_germanija/',
+      },
+      {
+        title: 'Бернер Ой, Финляндия',
+        href: '/references/storing_of_pallets/pallet_racking_standart/berner_oj_finljandija/',
+      },
+      {
+        title: 'Иитала Груп, Финляндия',
+        href: '/references/storing_of_pallets/pallet_racking_standart/iitala_grup_finljandija/',
+      },
+      {
+        title: 'Маритим АС, Норвегия',
+        href: '/references/storing_of_pallets/pallet_racking_standart/maritim_as_norvegija/',
+      },
+      {
+        title: 'Дастин, Швеция',
+        href: '/references/storing_of_pallets/pallet_racking_standart/dastin_shvecija/',
+      },
+    ],
+  },
+  {
+    title: 'Гравитационные стеллажи',
+    href: '/references/storing_of_pallets/pallet_flow/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet91.png',
+    links: [
+      {
+        title: 'Нансо Груп, Финляндия',
+        href: '/references/storing_of_pallets/pallet_flow/nanso_grup_finljandija/',
+      },
+      {
+        title: 'Хутамаки Ой, Финляндия',
+        href: '/references/storing_of_pallets/pallet_flow/hutamaki_oj_finljandija/',
+      },
+      {
+        title: 'Ханса Принт, Финляндия',
+        href: '/references/storing_of_pallets/pallet_flow/hansa_print_finljandija/',
+      },
+      {
+        title: 'Вальсемоллен, Дания',
+        href: '/references/storing_of_pallets/pallet_flow/val_semollen_danija/',
+      },
+    ],
+  },
+  {
+    title: 'Мобильные стеллажи',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet101.png',
+    links: [
+      {
+        title: 'Стромме Рекламе АС, Норвегия',
+        href: '/references/storing_of_pallets/mobile_pallet_racking/stromme_reklame_as_norvegija/',
+      },
+      {
+        title: 'Ново Нордиск АС, Дания',
+        href: '/references/storing_of_pallets/mobile_pallet_racking/novo_nordisk_as_danija/',
+      },
+      {
+        title: 'Мууй Лоджистикс, Нидерланды',
+        href: '/references/storing_of_pallets/mobile_pallet_racking/muuj_lodzhistiks_niderlandi/',
+      },
+      {
+        title: 'Моенс Верпаккинген, Бельгия',
+        href: '/references/storing_of_pallets/mobile_pallet_racking/moens_verpakkingen_bel_gija/',
+      },
+      {
+        title: 'Хотлет, Бельгия',
+        href: '/references/storing_of_pallets/mobile_pallet_racking/hotlet_bel_gija/',
+      },
+      {
+        title: 'Свегон АБ, Швеция',
+        href: '/references/storing_of_pallets/mobile_pallet_racking/svegon_ab_shvecija/',
+      },
+      {
+        title: 'Хенинг Ольсен АС, Норвегия',
+        href: '/references/storing_of_pallets/mobile_pallet_racking/hening_ol_sen_as_norvegija/',
+      },
+      {
+        title: 'Энерджимидт, Дания',
+        href: '/references/storing_of_pallets/mobile_pallet_racking/enerdzhimidt_danija/',
+      },
+      {
+        title: 'ЭфДжей Индастриз, Дания',
+        href: '/references/storing_of_pallets/mobile_pallet_racking/efdzhej_indastriz_danija/',
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Реализованные проекты с применением мезонинных систем">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">Паллетное хранение</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => <LinksCard {...project} />)}
+    </div>
+  </div>
+</Layout>

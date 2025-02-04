@@ -1,0 +1,96 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import Link from '../../../components/Link.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../assets/images/seas_1_large.png';
+import carouselImage2 from '../../../assets/images/seas_2_large.png';
+import carouselImage3 from '../../../assets/images/seas_3_large.png';
+import carouselImage4 from '../../../assets/images/seas_4_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'К-раута, Финляндия',
+    href: '/references/mezoninnie_sistemi/k_rauta_finljandija/',
+  },
+  {
+    title: 'Фольксваген, Швеция',
+    href: '/references/mezoninnie_sistemi/fol_ksvagen_shvecija/',
+  },
+  {
+    title: 'Кодин Терра, Финляндия',
+    href: '/references/mezoninnie_sistemi/kodin_terra_finljandija/',
+  },
+  {
+    title: 'Агримаркет, Финляндия',
+    href: '/references/mezoninnie_sistemi/agrimarket_finljandija/',
+  },
+  {
+    title: 'ИксЭль Биг, Дания',
+    href: '/references/mezoninnie_sistemi/iksel_big_danija/',
+  },
+  {
+    title: 'СЕАС-НВЕ, Дания',
+    href: '/references/mezoninnie_sistemi/seas_nve_danija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  {
+    title: 'Хранение негабаритных грузов',
+    href: '/references/mezoninnie_sistemi/',
+  },
+  { title: 'СЕАС-НВЕ, Дания' },
+];
+---
+
+<Layout title="СЕАС-НВЕ, Дания | КМ-про">
+  <ProductLayout infoSideBarItems={[]} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">СЕАС-НВЕ, Дания</h1>
+
+      <p>
+        В связи с недостатком площадей на околоскладской территории компании СЕАС-НВЕ установлены
+        <Link href="/products/konsol_nie_stellazhi/">консольные стеллажи <strong>Constructor</strong></Link>
+        .
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Количество колонн: 40 шт.</li>
+        <li>Количество консолей: 120 шт.</li>
+        <li>Нагрузка на консоль: до 200 кг.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

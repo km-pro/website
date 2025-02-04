@@ -1,0 +1,59 @@
+---
+import ProjectCard from '../../../../components/ProjectCard.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import Layout from '../../../../layouts/MainLayout.astro';
+
+interface Project {
+  title: string;
+  description: string;
+  image?: string;
+  href: string;
+}
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение', href: '/references/storing_of_pallets/' },
+  { title: 'Узкопроходные стеллажи' },
+];
+
+const projects: Project[] = [
+  {
+    title: 'Хартуолл АБ, Финляндия',
+    description:
+      'Компания Хартуолл производит все виды напитков от безалкогольных до пива и сидра. Высотные паллетные стеллажи Constructor установлены в центре автоматизированного складского комплекса в Финляндии.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/retail54.png',
+    href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/hartuoll_ab_finljandija/',
+  },
+  {
+    title: 'Нетханделен Норге, Норвегия',
+    description:
+      'Компания Нетханделен Норге оборудовала 11,2 тыс кв.м. своего нового логистического центра площадью 13 тыс. кв.м. узкопроходными стеллажными системами Constructor.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh_131.png',
+    href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/nethandelen_norge_norvegija/',
+  },
+];
+---
+
+<Layout title="Реализованные проекты с применением мезонинных систем">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">
+      Реализованные проекты с применением узкопроходных стеллажей
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={project.href}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

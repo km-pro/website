@@ -1,0 +1,240 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import Link from '../../../components/Link.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/ms1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/p90_movo_overview_2_large.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/p90_movo_overview_3_large.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/p90_movo_overview_4_large.png',
+    },
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Фронтальные стеллажи',
+    href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+  },
+  {
+    title: 'Набивные стеллажи Drive-in',
+    href: '/products/pallet_handling/nabivnie_stellazhi_drive_in/',
+  },
+  {
+    title: 'Гравитационные стеллажи пуш-бэк (Push-back)',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/',
+  },
+  {
+    title: 'Гравитационные стеллажи',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi/',
+  },
+  {
+    title: 'Мобильные стеллажи',
+    href: '/products/pallet_handling/mobil_nie_stellazhi/',
+  },
+  {
+    title: 'Узкопроходные стеллажи',
+    href: '/products/pallet_handling/uzkoprohodnie_stellazhi/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Паллетные стеллажи', href: '/products/pallet_handling/' },
+  { title: 'Мобильные стеллажи' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Энерджимидт, Дания',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/enerdzhimidt_danija/',
+          },
+          {
+            title: 'ЭфДжей Индастриз, Дания',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/efdzhej_indastriz_danija/',
+          },
+          {
+            title: 'Хенинг Ольсен АС, Норвегия',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/hening_ol_sen_as_norvegija/',
+          },
+          {
+            title: 'Стромме Рекламе АС, Норвегия',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/stromme_reklame_as_norvegija/',
+          },
+          {
+            title: 'Моенс Верпаккинген, Бельгия',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/moens_verpakkingen_bel_gija/',
+          },
+          {
+            title: 'Ново Нордиск АС, Дания',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/novo_nordisk_as_danija/',
+          },
+          {
+            title: 'Мууй Лоджистикс, Нидерланды',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/muuj_lodzhistiks_niderlandi/',
+          },
+          {
+            title: 'Хотлет, Бельгия',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/hotlet_bel_gija/',
+          },
+          {
+            title: 'Свегон АБ, Швеция',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/svegon_ab_shvecija/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Мобильные стеллажи | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Мобильные стеллажи</h1>
+
+          <h2>Купить стеллажи мобильные паллетные P90 (MOVO) в Беларуси</h2>
+
+          <p>
+            Конструктивно паллетные мобильные стеллажи P90 являются сочетанием передвижных оснований и традиционных <Link
+              href="/products/pallet_handling/">стеллажей паллетного типа</Link
+            >. Они управляются современной электроникой и передвигаются по специальным металлическим управляющим,
+            посредством мощных электроприводов.
+          </p>
+
+          <h3 class="text-lg font-bold mb-4">Главные преимущества мобильных стеллажей:</h3>
+          <List>
+            <li>
+              <span>возможность перемещения больших объемов товаров, на общую массу до 24 тыс. кг.</span>
+            </li>
+            <li>
+              <span>большая высота – до 12 тыс. мм</span>
+            </li>
+            <li>
+              <span>задействование полезной площади склада на 80%</span>
+            </li>
+            <li>
+              <span>наличие всего одного рабочего прохода</span>
+            </li>
+            <li>
+              <span
+                >легкость и удобство индивидуальной настройки для хранения как холодильников, так и грузов других типов</span
+              >
+            </li>
+            <li>
+              <span>надежность и безопасность всей стеллажной системы</span>
+            </li>
+          </List>
+
+          <p>
+            Мобильные стеллажи могут комплектоваться различными аксессуарами. Они обеспечивают высокую плотность
+            хранения товаров и легкость доступа к любой из паллет.
+          </p>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Сфера применения мобильных стеллажей для паллет</h3>
+
+          <p>
+            Стеллажи данной модификации предназначены для
+            <Link href="/products/skladskie_sistemi_dinamicheskogo_hraneni/">эксплуатации на складах</Link>
+            производственных предприятий, выпускающих бытовую технику и разнообразные промышленные товары. Также ими могут
+            оснащаться торговые и логистические комплексы, склады ответственного хранения и пр.
+          </p>
+
+          <p>
+            Компания «КМ-про» изготавливает мобильные паллетные стеллажи P90 по индивидуальному заказу. Мы осуществим их
+            интеграцию на вашем производстве, будем выполнять профессиональное обслуживание.
+          </p>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span>Оптимизация пространства: Использование складской площади до 80 %</span>
+            </li>
+            <li>
+              <span>Полная доступность: 100 % доступ к каждой паллете</span>
+            </li>
+            <li>
+              <span
+                >Энергоэффективность: Высокая плотность хранения позволяет сократить затраты на электроэнергию в
+                холодильниках</span
+              >
+            </li>
+            <li>
+              <span>Безопасность: Безопасность согласно Европейской директивы 2006/42/EG и DIN EN 15095</span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+
+      <TabPanel index={2}>
+        <div class="prose max-w-none">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Высота:</span>
+                <span>до 12 000 мм.</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на секцию:</span>
+                <span>до 24 000 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на мобильное основание:</span>
+                <span>до 800 тн.</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина мобильного основания:</span>
+                <span>2600 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Высота мобильного основания:</span>
+                <span>260 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Максимальная длина:</span>
+                <span>90 000 мм</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

@@ -1,0 +1,116 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/palletrackingp90_jula_sweden2_large.png';
+import carouselImage2 from '../../../../assets/images/palletrackingp90_jula_sweden_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Косанит, Бельгия',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/kosanit_bel_gija/',
+  },
+  {
+    title: 'Джула Постордер АБ, Швеция',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/dzhula_postorder_ab_shvecija/',
+  },
+  {
+    title: 'Манса Автоделе, Дания',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/mansa_avtodele_danija/',
+  },
+  {
+    title: 'Поло Экспрессверсанд, Германия',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/polo_ekspressversand_germanija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Полочные стеллажи',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/',
+  },
+  { title: 'Джула Постордер АБ, Швеция' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+          {
+            title: 'Стандартные полочные стеллажи S90',
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Джула Постордер АБ, Швеция | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Джула Постордер АБ, Швеция</h1>
+
+      <p class="font-bold mb-4">
+        Джула Постордер АБ – одна из самых динамично развивающихся компаний в сфере DIY бизнеса в Швеции с сетью своих
+        дистрибуционных центров и подразделений, занимающихся почтовой рассылкой.
+      </p>
+
+      <p>
+        Последней инвестицией компании стало приобретение складского комплекса емкостью 56 тыс. п.м. и оборудование его
+        стеллажными системами <strong>Constructor P90</strong>.
+      </p>
+
+      <p>
+        Хранение груза, размещенного на поддонах, осуществляется на паллетных стеллажах
+        <strong>Constructor</strong>
+        <strong>P90</strong>, небольшие грузы размещены на полочных системах.
+      </p>
+
+      <p><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 9,0 м</li>
+        <li>Количество: 37 000+56 000 п.м.</li>
+      </ul>
+
+      <p>Полочные стеллажи:</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 2,5 м</li>
+        <li>Глибина: 400-800 мм</li>
+        <li>Длина: 1000, 1200 мм</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

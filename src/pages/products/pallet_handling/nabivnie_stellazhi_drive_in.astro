@@ -1,0 +1,210 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import Link from '../../../components/Link.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/p90_drive_in_mainpic_1_large.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/drive_in_p90_2_large1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/drive_in_p90_4_large1.png',
+    },
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Фронтальные стеллажи',
+    href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+  },
+  {
+    title: 'Набивные стеллажи Drive-in',
+    href: '/products/pallet_handling/nabivnie_stellazhi_drive_in/',
+  },
+  {
+    title: 'Гравитационные стеллажи пуш-бэк (Push-back)',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/',
+  },
+  {
+    title: 'Гравитационные стеллажи',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi/',
+  },
+  {
+    title: 'Мобильные стеллажи',
+    href: '/products/pallet_handling/mobil_nie_stellazhi/',
+  },
+  {
+    title: 'Узкопроходные стеллажи',
+    href: '/products/pallet_handling/uzkoprohodnie_stellazhi/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Паллетные стеллажи', href: '/products/pallet_handling/' },
+  { title: 'Набивные стеллажи Drive-in' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Хутамаки Ой, Финляндия',
+            href: '/references/storing_of_pallets/pallet_flow/hutamaki_oj_finljandija/',
+          },
+          {
+            title: 'Стэйплс, Германия',
+            href: '/references/storing_of_pallets/pallet_racking_standart/stejpls_germanija/',
+          },
+          {
+            title: 'ДКИ Лоджистикс А/С, Дания',
+            href: '/references/logisticheskie_operatori/dki_lodzhistiks_a_s_danija/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Набивные стеллажи Drive-in | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Набивные стеллажи</h1>
+
+          <h2>Купить стеллажи набивные (въездные) металлические (drive-in) в Минске</h2>
+
+          <p>
+            Набивные стеллажи (drive-in) могут применяться для длительного хранения разнообразных промышленных товаров.
+            При этом они позволяют складской технике въезжать во внутренне пространство уже смонтированной и готовой к
+            эксплуатации <Link href="/products/pallet_handling/">стеллажной системы</Link>. Укладка поддонов
+            производится на направляющие из гнутого профиля (как правило – перфорированного), которые находятся друг над
+            другом.
+          </p>
+
+          <h3 class="text-xl font-bold mb-4">Отличительные особенности въездных металлических стеллажей:</h3>
+
+          <List>
+            <li>
+              <span>загрузка и выгрузка по известному принципу «пришел последним – ушел первым»</span>
+            </li>
+            <li>
+              <span
+                >максимально эффективное задействование полезной площади складских помещений. При <Link
+                  href="/products/skladskie_sistemi_dinamicheskogo_hraneni/">оснащении склада</Link
+                > набивными стеллажи можно задействовать более 85% от его совокупной площади</span
+              >
+            </li>
+            <li>
+              <span>невозможность получить прямой доступ к определенным поддонам</span>
+            </li>
+            <li>
+              <span>обустройство небольшого количества проездов для складской техники</span>
+            </li>
+            <li>
+              <span>надежность, жесткость и устойчивость всей конструкции</span>
+            </li>
+            <li>
+              <span
+                >высокая механическая прочность, повышенная стойкость к коррозии, истиранию и повреждениям поверхности</span
+              >
+            </li>
+          </List>
+
+          <h3 class="text-2xl font-bold mb-4">Основные сферы применения</h3>
+          <p>
+            Металлические набивные <Link href="/products/pallet_handling/">стеллажи паллетные</Link> оптимально подходят
+            для организации блочного хранения товаров одного и того же типа, с некритичным сроком годности. Также их рекомендуется
+            использовать для складирования товаров, которые из-за их хрупкости нельзя укладывать друг на друга. Стеллажами
+            данного типа можно оснащать:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 mb-8">
+            <li>склады производственных предприятий</li>
+            <li>логистические комплексы</li>
+            <li>склады ответственного хранения</li>
+            <li>и т.д.</li>
+          </ul>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span>Высокая плотность хранения: Максимальное использование доступного пространства склада</span>
+            </li>
+            <li>
+              <span
+                >Оптимальное решение для однотипных грузов: Идеально подходит для хранения большого количества
+                однотипного груза</span
+              >
+            </li>
+            <li>
+              <span>Сезонное хранение: Низкая оборачиваемость - подходит для хранения сезонных товаров</span>
+            </li>
+            <li>
+              <span>Температурный режим: Идеален для холодильников и морозильников</span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+
+      <TabPanel index={2}>
+        <div class="prose max-w-none">
+          <p class="mb-6">
+            Набивной паллетный стеллаж P90 разработан для загрузки поддона длинной стороной вглубь стеллажа для
+            обеспечения возможности заезда складской техники внутрь стеллажной конструкции.
+          </p>
+
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Высота:</span>
+                <span>до 12 000 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина:</span>
+                <span>от 1700 до 12500 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Минимальное количество каналов (слева-направо):</span>
+                <span>три</span>
+              </div>
+              <div>
+                <span class="font-bold block">Покрытие элементов:</span>
+                <span>оцинкованное</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

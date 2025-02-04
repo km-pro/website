@@ -1,0 +1,167 @@
+---
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import Layout from '../../../layouts/MainLayout.astro';
+import LinksCard from '../../../components/LinksCard.astro';
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках' },
+];
+
+const projects = [
+  {
+    title: 'Полочные стеллажи',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/polochnie1.png',
+    links: [
+      {
+        title: 'Косанит, Бельгия',
+        href: '/references/storage_of_small_parts/polochnie_stellazhi/kosanit_bel_gija/',
+      },
+      {
+        title: 'Джула Постордер АБ, Швеция',
+        href: '/references/storage_of_small_parts/polochnie_stellazhi/dzhula_postorder_ab_shvecija/',
+      },
+      {
+        title: 'Манса Автоделе, Дания',
+        href: '/references/storage_of_small_parts/polochnie_stellazhi/mansa_avtodele_danija/',
+      },
+      {
+        title: 'Поло Экспрессверсанд, Германия',
+        href: '/references/storage_of_small_parts/polochnie_stellazhi/polo_ekspressversand_germanija/',
+      },
+    ],
+  },
+  {
+    title: 'Многоэтажные полочные стеллажи',
+    href: '/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_21.png',
+    links: [
+      {
+        title: 'Смит и Нефью, Швейцария',
+        href: '/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi/smit_i_nef_ju_shvejcarija/',
+      },
+      {
+        title: 'Тойота Партс Центр, Бельгия',
+        href: '/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi/tojota_parts_centr_bel_gija/',
+      },
+    ],
+  },
+  {
+    title: 'Мобильные полочные стеллажи',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/polochnie2.png',
+    links: [
+      {
+        title: 'Беко Бил, Швеция',
+        href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/beko_bil_shvecija/',
+      },
+      {
+        title: 'Клингер, Дания',
+        href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/klinger_danija/',
+      },
+      {
+        title: 'Металлпресс Донати, Италия',
+        href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/metallpress_donati_italija/',
+      },
+      {
+        title: 'Свенска Бил и Норден АБ, Швеция',
+        href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/svenska_bil_i_norden_ab_shvecija/',
+      },
+    ],
+  },
+  {
+    title: 'Проекты с применением вертикальных лифтов (TORNADO)',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet48.png',
+    links: [
+      {
+        title: 'Стема инжиниринг АС, Дания',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/stema_inzhiniring_as_danija/',
+      },
+      {
+        title: 'Скандинавиан Айвэа, Швеция',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/skandinavian_ajvea_shvecija/',
+      },
+      {
+        title: 'Дани-Тех, Дания',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/dani_teh_danija/',
+      },
+      {
+        title: 'Икеа, Великобритания',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/ikea_velikobritanija/',
+      },
+      {
+        title: 'Холгер Христиансен А/С, Дания',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/holger_hristiansen_a_s_danija/',
+      },
+      {
+        title: 'LG Кемикал, Польша',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/lg_kemikal_pol_sha/',
+      },
+      {
+        title: 'Ковистон Авто Ой, Финляндия',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/koviston_avto_oj_finljandija/',
+      },
+      {
+        title: 'Х.Краац Ой, Финляндия',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/h_kraac_oj_finljandija/',
+      },
+      {
+        title: 'Электроскандия, Финляндия',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/elektroskandija_finljandija/',
+      },
+    ],
+  },
+  {
+    title: 'Проекты с применением вертикальных каруселей (PATERNOSTER)',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_karus/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh102.png',
+    links: [
+      {
+        title: 'Дом местного управления, Польша',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_karus/dom_mestnogo_upravlenija_pol_sha/',
+      },
+    ],
+  },
+  {
+    title: 'Проекты с применением горизонтальных каруселей (HOCA)',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh112.png',
+    links: [
+      {
+        title: 'Больничная аптека в г. Дрезден, Германия',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/bol_nichnaja_apteka_v_g_drezden_germanij/',
+      },
+      {
+        title: 'Грое АГ, Германия',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/groe_ag_germanija/',
+      },
+    ],
+  },
+  {
+    title: 'Стеллажи для зоны отбора',
+    href: '/references/storage_of_small_parts/stellazhi_dlja_zoni_otbora/',
+    image: 'https://stellazhi.by/uploads/content/image/size0/polochnie3.png',
+    links: [
+      {
+        title: 'Вольво ПВ, Швеция',
+        href: '/references/storage_of_small_parts/stellazhi_dlja_zoni_otbora/vol_vo_pv_shvecija/',
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Реализованные проекты с применением мезонинных систем">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">Хранение на полках</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => <LinksCard {...project} />)}
+    </div>
+  </div>
+</Layout>

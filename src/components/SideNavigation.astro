@@ -1,0 +1,62 @@
+---
+interface SideNavItem {
+  title: string;
+  href: string;
+}
+
+interface Props {
+  items: SideNavItem[];
+}
+
+const { items } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const isCurrentPage = (href: string) => {
+  const normalizedCurrent = currentPath.replace(/\/$/, '');
+  const normalizedHref = href.replace(/\/$/, '');
+
+  return normalizedCurrent === normalizedHref || normalizedCurrent.startsWith(normalizedHref + '/');
+};
+---
+
+<aside class="lg:w-full flex-shrink-0 sticky top-4">
+  <nav class="space-y-6">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <ul class="divide-y">
+        {
+          items.map((item) => {
+            const isCurrent = isCurrentPage(item.href);
+            return (
+              <li>
+                {isCurrent ? (
+                  <div class="bg-blue-900 text-white px-6 py-3 flex items-center justify-between gap-1">
+                    <span class="text-sm">{item.title}</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="h-5 w-5 flex-none"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                ) : (
+                  <a
+                    href={item.href}
+                    class="block text-sm px-6 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+                  >
+                    {item.title}
+                  </a>
+                )}
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </nav>
+</aside>

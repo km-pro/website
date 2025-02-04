@@ -1,0 +1,141 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import Link from '../../../components/Link.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/kgs1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/kgs2.png',
+    },
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Стандартные полочные стеллажи S90',
+    href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+  },
+  {
+    title: 'Мобильные полочные стеллажи S90',
+    href: '/products/small_part_handling/mobile_shelving_s90/',
+  },
+  {
+    title: 'Многоэтажные полочные стеллажи S90',
+    href: '/products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/',
+  },
+  {
+    title: 'Узкопроходные полочные стеллажи S90',
+    href: '/products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/',
+  },
+  {
+    title: 'Коробочная гравитация стеллажи S90',
+    href: '/products/small_part_handling/korobochnie_gravitacionnie_stellazhi_s90/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Полочные стеллажи', href: '/products/small_part_handling/' },
+  { title: 'Коробочные гравитационные стеллажи S90' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Нансо Груп, Финляндия',
+            href: '/references/storing_of_pallets/pallet_flow/nanso_grup_finljandija/',
+          },
+          {
+            title: 'Шенкер Лоджистикс, Швеция',
+            href: '/references/storing_of_pallets/pallet_racking_standart/shenker_lodzhistiks_shvecija/',
+          },
+          {
+            title: 'Свегон АБ, Швеция',
+            href: '/references/storing_of_pallets/mobile_pallet_racking/svegon_ab_shvecija/',
+          },
+          {
+            title: 'Вольво ПВ, Швеция',
+            href: '/references/storage_of_small_parts/stellazhi_dlja_zoni_otbora/vol_vo_pv_shvecija/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Коробочные гравитационные стеллажи S90 | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Коробочные гравитационные металлические стеллажи S90</h1>
+
+          <h2>Купить стеллажи полочные коробочные гравитационные металлические S90 в Беларуси</h2>
+
+          <p>
+            Коробочные гравитационные <Link href="/products/small_part_handling/">
+              <span>стеллажи полочные</span>
+            </Link> позволяют хранить и транспортировать коробки или контейнеры по специальным роликовым дорожкам. В гравитационных
+            стеллажах грузы подаются со стороны загрузки и медленно движутся по дорожкам под действием собственного веса
+            к месту выгрузки (комплектации). Таким образом осуществляется автоматический оборот грузов на складе. Каждый
+            груз имеет определенную полосу движения, что позволяет сократить до минимума ошибки при формировании заказа.
+            Ролики изготавливаются из высококачественного полиэфира, не деформирующегося при формировании заказа. Несущие
+            профили роликовых дорожек обладают высокой жесткостью и оцинкованы электролитическим методом.
+          </p>
+
+          <p>
+            <Link href="/products/small_part_handling/korobochnie_gravitacionnie_stellazhi_s90/">
+              <span>Коробочные гравитационные</span>
+            </Link> стеллажи неотъемлемая часть в цепях поставок компонентов для сборочных линий и конвейеров, а также широко
+            используются как часть логистического процесса на складе. Загрузка с одной стороны и выгрузка с противоположной
+            стороны в соответствие с принципом FIFO (первый пришел – первый ушел).
+          </p>
+
+          <p>Данный тип оборудования реализует принцип FIFO (первый пришел, первый ушел).</p>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span>Широкая номенклатура грузов во фронтальной части стеллажей</span>
+            </li>
+            <li>
+              <span>Быстрый подбор заказов</span>
+            </li>
+            <li>
+              <span>Идеальный грузооборот благодаря принципу FIFO</span>
+            </li>
+            <li>
+              <span>Широкая номенклатура грузов, хранящихся на складе</span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

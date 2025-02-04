@@ -1,0 +1,83 @@
+---
+import ProjectCard from '../../../components/ProjectCard.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import Layout from '../../../layouts/MainLayout.astro';
+
+interface Project {
+  title: string;
+  description: string;
+  image?: string;
+  href: string;
+}
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение негабаритных грузов' },
+];
+
+const projects: Project[] = [
+  {
+    title: 'К-раута, Финляндия',
+    description: 'Аксессуары – важнейшее требование для эффективного размещения товаров в торговых центрах.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/retail101.png',
+    href: '/references/mezoninnie_sistemi/k_rauta_finljandija/',
+  },
+  {
+    title: 'Фольксваген, Швеция',
+    description: 'Новый центральный склад запасных частей для Скандинавских стран.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh_72.png',
+    href: '/references/mezoninnie_sistemi/fol_ksvagen_shvecija/',
+  },
+  {
+    title: 'Кодин Терра, Финляндия',
+    description: 'Паллетные стеллажи Constructor выбраны в качестве идеального заполнения торговых центров компании.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/tk51.png',
+    href: '/references/mezoninnie_sistemi/kodin_terra_finljandija/',
+  },
+  {
+    title: 'Агримаркет, Финляндия',
+    description:
+      'Компания Агримаркет выбрала паллетные стеллажи благодаря широкому ассортименту аксессуаров для размещения различных товаров в своих магазинах формата DIY.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/retail92.png',
+    href: '/references/mezoninnie_sistemi/agrimarket_finljandija/',
+  },
+  {
+    title: 'ИксЭль Биг, Дания',
+    description:
+      'Для обеспечения безопасной эксплуатации оборудования сотрудниками торгового центра и самообслуживания клиентов понадобился ряд умных технических решений.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/retail122.png',
+    href: '/references/mezoninnie_sistemi/iksel_big_danija/',
+  },
+  {
+    title: 'СЕАС-НВЕ, Дания',
+    description:
+      'В связи с недостатком площадей на околоскладской территории компании СЕАС-НВЕ установлены консольные стеллажи Constructor.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet12.png',
+    href: '/references/mezoninnie_sistemi/seas_nve_danija/',
+  },
+];
+---
+
+<Layout title="Проекты для хранения негабаритных грузов">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">
+      Проекты для хранения негабаритных грузов
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={project.href}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

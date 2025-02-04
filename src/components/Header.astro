@@ -1,0 +1,333 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/images/logo.jpg';
+import logo2 from '../assets/images/logo_2.png';
+import { Navigation } from './Navigation';
+
+export const menuItems = [
+  {
+    href: '/aboutcompany/about/',
+    title: 'О компании',
+    items: [
+      { href: '/aboutcompany/about/', title: 'О компании' },
+      { href: '/aboutcompany/history/', title: 'История' },
+      { href: '/aboutcompany/quality/', title: 'Система качества' },
+      { href: '/aboutcompany/articles/', title: 'Статьи' },
+    ],
+  },
+  {
+    href: '/products/',
+    title: 'Продукция',
+    items: [
+      {
+        href: '/products/pallet_handling/',
+        title: 'Паллетные стеллажи',
+        items: [
+          {
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+            title: 'Фронтальные стеллажи',
+          },
+          {
+            href: '/products/pallet_handling/nabivnie_stellazhi_drive_in/',
+            title: 'Набивные стеллажи Drive-in',
+          },
+          {
+            href: '/products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/',
+            title: 'Гравитационные стеллажи пуш-бэк (Push-back)',
+          },
+          {
+            href: '/products/pallet_handling/gravitacionnie_stellazhi/',
+            title: 'Гравитационные стеллажи',
+          },
+          {
+            href: '/products/pallet_handling/mobil_nie_stellazhi/',
+            title: 'Мобильные стеллажи',
+          },
+          {
+            href: '/products/pallet_handling/uzkoprohodnie_stellazhi/',
+            title: 'Узкопроходные стеллажи',
+          },
+        ],
+      },
+      {
+        href: '/products/small_part_handling/',
+        title: 'Полочные стеллажи',
+        items: [
+          {
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+            title: 'Стандартные полочные стеллажи S90',
+          },
+          {
+            href: '/products/small_part_handling/mobile_shelving_s90/',
+            title: 'Мобильные полочные стеллажи S90',
+          },
+          {
+            href: '/products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/',
+            title: 'Многоэтажные полочные стеллажи S90',
+          },
+          {
+            href: '/products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/',
+            title: 'Узкопроходные полочные стеллажи S90',
+          },
+          {
+            href: '/products/small_part_handling/korobochnie_gravitacionnie_stellazhi_s90/',
+            title: 'Коробочная гравитация стеллажи S90',
+          },
+        ],
+      },
+      {
+        href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
+        title: 'Автоматизированные складские системы',
+        items: [
+          {
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+            title: 'Складское оборудованиe (вертикальные лифты tornado)',
+          },
+          {
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
+            title: 'Складское оборудование (вертикальные карусели paternoster)',
+          },
+          {
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/gorizontal_nie_karuseli_hoca/',
+            title: 'Складское оборудование (горизонтальные карусели hoca)',
+          },
+        ],
+      },
+      {
+        href: '/products/special_nie_konstrukcii/',
+        title: 'Специальные конструкции',
+        items: [
+          {
+            href: '/products/special_nie_konstrukcii/stellazhi_dlja_hranenija_shin/',
+            title: 'Стеллаж для шин и колес',
+          },
+          {
+            href: '/products/special_nie_konstrukcii/stellazhi_dlja_magazinov/',
+            title: 'Стеллажи для магазинов',
+          },
+        ],
+      },
+      {
+        href: '/products/stellazhnij_mezonin/',
+        title: 'Стеллажный мезонин',
+        items: [
+          {
+            href: '/products/stellazhnij_mezonin/mezoninnie_system/',
+            title: 'Стеллаж мезонинный ME250',
+          },
+        ],
+      },
+      { href: '/products/konsol_nie_stellazhi/', title: 'Консольные стеллажи' },
+    ],
+  },
+  {
+    href: '/references/',
+    title: 'Проекты',
+    items: [
+      {
+        href: '/references/storage_of_small_parts/',
+        title: 'Хранение на полках',
+        items: [
+          {
+            href: '/references/storage_of_small_parts/polochnie_stellazhi/',
+            title: 'Полочные стеллажи',
+          },
+          {
+            href: '/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi/',
+            title: 'Многоэтажные полочные стеллажи',
+          },
+          {
+            href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/',
+            title: 'Мобильные полочные стеллажи',
+          },
+          {
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/',
+            title: 'Проекты с применением вертикальных лифтов (TORNADO)',
+          },
+          {
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_karus/',
+            title: 'Проекты с применением вертикальных каруселей (PATERNOSTER)',
+          },
+          {
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/',
+            title: 'Проекты с применением горизонтальных каруселей (HOCA)',
+          },
+          {
+            href: '/references/storage_of_small_parts/stellazhi_dlja_zoni_otbora/',
+            title: 'Стеллажи для зоны отбора',
+          },
+        ],
+      },
+      {
+        href: '/references/storing_of_pallets/',
+        title: 'Паллетное хранение',
+        items: [
+          {
+            href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/',
+            title: 'Узкопроходные стеллажи',
+          },
+          {
+            href: '/references/storing_of_pallets/pallet_racking_standart/',
+            title: 'Фронтальные паллетные стеллажи',
+          },
+          {
+            href: '/references/storing_of_pallets/pallet_flow/',
+            title: 'Гравитационные стеллажи',
+          },
+          {
+            href: '/references/storing_of_pallets/mobile_pallet_racking/',
+            title: 'Мобильные стеллажи',
+          },
+        ],
+      },
+      {
+        href: '/references/mezoninnie_sistemi/',
+        title: 'Хранение негабаритных грузов',
+        items: [
+          {
+            href: '/references/mezoninnie_sistemi/k_rauta_finljandija/',
+            title: 'К-раута, Финляндия',
+          },
+          {
+            href: '/references/mezoninnie_sistemi/fol_ksvagen_shvecija/',
+            title: 'Фольксваген, Швеция',
+          },
+          {
+            href: '/references/mezoninnie_sistemi/kodin_terra_finljandija/',
+            title: 'Кодин Терра, Финляндия',
+          },
+          {
+            href: '/references/mezoninnie_sistemi/agrimarket_finljandija/',
+            title: 'Агримаркет, Финляндия',
+          },
+          {
+            href: '/references/mezoninnie_sistemi/iksel_big_danija/',
+            title: 'ИксЭль Биг, Дания',
+          },
+          {
+            href: '/references/mezoninnie_sistemi/seas_nve_danija/',
+            title: 'СЕАС-НВЕ, Дания',
+          },
+        ],
+      },
+      {
+        href: '/references/logisticheskie_operatori/',
+        title: 'Логистические операторы',
+        items: [
+          {
+            href: '/references/logisticheskie_operatori/dki_lodzhistiks_a_s_danija/',
+            title: 'ДКИ Лоджистикс А/С, Дания',
+          },
+          {
+            href: '/references/logisticheskie_operatori/elektroljuks_distriparts_ab_shvecija/',
+            title: 'Электролюкс Дистрипартс АБ, Швеция',
+          },
+          {
+            href: '/references/logisticheskie_operatori/nissan_shenker_lodzhistiks_shvecija/',
+            title: 'Ниссан Шенкер Лоджистикс, Швеция',
+          },
+          {
+            href: '/references/logisticheskie_operatori/servistik_ab_shvecija/',
+            title: 'Сервистик АБ, Швеция',
+          },
+        ],
+      },
+      {
+        href: '/references/workplace_storage/',
+        title: 'Проекты с применением мезонинных систем',
+        items: [
+          {
+            href: '/references/workplace_storage/van_der_gaag_bivi_niderlandi/',
+            title: 'Ван Дер Гааг БиВи, Нидерланды',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    href: '/our_services/our_services1/',
+    title: 'Наши услуги',
+    items: [
+      { href: '/our_services/our_services1/', title: 'Наши услуги' },
+      {
+        href: '/our_services/analiz_suschestvujuschej_situacii/',
+        title: 'Анализ существующей ситуации',
+      },
+      { href: '/our_services/predlozhenie/', title: 'Предложение' },
+      { href: '/our_services/produkt_sistema/', title: 'Продукт/Система' },
+      { href: '/our_services/rascheti/', title: 'Расчеты' },
+      {
+        href: '/our_services/dostavka_i_ustanovka/',
+        title: 'Доставка и установка',
+      },
+      {
+        href: '/our_services/soprovozhdenie_proekta/',
+        title: 'Сопровождение проекта',
+      },
+      { href: '/our_services/inspekcija/', title: 'Инспекция' },
+      {
+        href: '/our_services/remont_obsluzhivanie/',
+        title: 'Ремонт/Обслуживание',
+      },
+    ],
+  },
+  { href: '/contact_us/', title: 'Контакты' },
+];
+---
+
+<header class="bg-white shadow-md mt-2">
+  <div class="max-w-6xl mx-auto">
+    <div class="px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-4">
+        <a href="/">
+          <Image src={logo} alt="Логотип ЗАО КМ-про" class="max-h-16 w-auto" />
+        </a>
+        <a href="/">
+          <Image src={logo2} alt="Логотип ЗАО КМ-про" class="max-h-16 w-auto" />
+        </a>
+      </div>
+
+      <div class="text-center sm:text-right">
+        <p class="text-lg sm:text-xl font-bold">
+          <a
+            href="tel:+375173730122"
+            class="inline-flex items-center hover:text-blue-900 transition-colors gap-1 text-nowrap"
+          >
+            +375 (17) 373-01-22
+          </a>
+        </p>
+        <p class="text-lg sm:text-xl font-bold">
+          <a
+            href="tel:+375291787018"
+            class="inline-flex items-center hover:text-blue-900 transition-colors gap-1 text-nowrap"
+          >
+            +375 (29) 178-70-18
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <Navigation menuItems={menuItems} client:load />
+
+    <div class="px-4 py-2 flex justify-end">
+      <form action="/search/" class="flex w-full sm:w-64">
+        <input
+          type="text"
+          name="search"
+          placeholder="Поиск по сайту"
+          class="flex-1 px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+        <button type="submit" class="px-4 py-2 bg-blue-900 text-white rounded-r hover:bg-blue-800 transition-colors">
+          <span class="sr-only">Поиск</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</header>

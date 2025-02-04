@@ -1,0 +1,155 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import Link from '../../../components/Link.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../assets/images/volkswagen_sweden_1_large1.png';
+import carouselImage2 from '../../../assets/images/volkswagen_sweden_2_large1.png';
+import carouselImage3 from '../../../assets/images/volkswagen_sweden_4_large1.png';
+import carouselImage4 from '../../../assets/images/volkswagen_sweden_5_large1.png';
+import carouselImage5 from '../../../assets/images/volkswagen_sweden_6_large1.png';
+import carouselImage6 from '../../../assets/images/volkswagen_sweden_7_large1.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage5, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage6, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'К-раута, Финляндия',
+    href: '/references/mezoninnie_sistemi/k_rauta_finljandija/',
+  },
+  {
+    title: 'Фольксваген, Швеция',
+    href: '/references/mezoninnie_sistemi/fol_ksvagen_shvecija/',
+  },
+  {
+    title: 'Кодин Терра, Финляндия',
+    href: '/references/mezoninnie_sistemi/kodin_terra_finljandija/',
+  },
+  {
+    title: 'Агримаркет, Финляндия',
+    href: '/references/mezoninnie_sistemi/agrimarket_finljandija/',
+  },
+  {
+    title: 'ИксЭль Биг, Дания',
+    href: '/references/mezoninnie_sistemi/iksel_big_danija/',
+  },
+  {
+    title: 'СЕАС-НВЕ, Дания',
+    href: '/references/mezoninnie_sistemi/seas_nve_danija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  {
+    title: 'Хранение негабаритных грузов',
+    href: '/references/mezoninnie_sistemi/',
+  },
+  { title: 'Фольксваген, Швеция' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Узкопроходные полочные стеллажи S90',
+            href: '/products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/',
+          },
+          {
+            title: 'Стандартные полочные стеллажи S90',
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+          },
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+          {
+            title: 'Консольные стеллажи',
+            href: '/products/konsol_nie_stellazhi/',
+          },
+          {
+            title: 'Мезонинные системы',
+            href: '/products/stellazhnij_mezonin/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Фольксваген, Швеция | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Фольксваген, Швеция</h1>
+
+      <p class="font-bold mb-4">
+        Фольксваген Партс Лоджистик в г. Никварн – новый центральный склад компании в Скандинавии, поставляющий запасные
+        части для всех моделей автомобилей.
+      </p>
+
+      <p>
+        Переезд в новое помещение был вызван растущим рынком сбыта для Фольксваген, Ауди, Сеат и Шкода в Скандинавских и
+        Балтийских странах и значительным ростом потребности в складском запасе необходимых запасных элементов.
+      </p>
+
+      <p>Площадь нового склада составляет 37,5 тыс. кв.м. с возможностью дальнейшего расширения.</p>
+
+      <p>
+        Новый складской комплекс оборудован
+        <Link href="/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/">
+          фронтальными паллетными стеллажами P90
+        </Link>
+        , стандартными и
+        <Link href="/products/pallet_handling/uzkoprohodnie_stellazhi/">узкопроходными полочными стеллажами </Link>
+        и консольными конструкциями. Всего более 100 тыс наименований грузов размещены на новой складской площади.
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+
+      <ul class="list-disc pl-6">
+        <li>Мезонинная конструкция: 2500 кв.м.</li>
+        <li>Паллетный стеллаж P90: 12 300 п.м.</li>
+        <li>Полочный стеллаж: 44650 полок</li>
+        <li>Консольный стеллаж для хранения длинных грузов</li>
+        <li>Количество наименований грузов: 100 тыс. ед.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

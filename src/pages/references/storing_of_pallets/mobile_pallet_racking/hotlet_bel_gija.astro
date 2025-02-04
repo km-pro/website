@@ -1,0 +1,127 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/hottlet_frozen_food_1_large.png';
+import carouselImage2 from '../../../../assets/images/hottlet_frozen_food_2_large.png';
+import carouselImage3 from '../../../../assets/images/hottlet_frozen_food_3_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Стромме Рекламе АС, Норвегия',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/stromme_reklame_as_norvegija/',
+  },
+  {
+    title: 'Ново Нордиск АС, Дания',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/novo_nordisk_as_danija/',
+  },
+  {
+    title: 'Мууй Лоджистикс, Нидерланды',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/muuj_lodzhistiks_niderlandi/',
+  },
+  {
+    title: 'Моенс Верпаккинген, Бельгия',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/moens_verpakkingen_bel_gija/',
+  },
+  {
+    title: 'Хотлет, Бельгия',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/hotlet_bel_gija/',
+  },
+  {
+    title: 'Свегон АБ, Швеция',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/svegon_ab_shvecija/',
+  },
+  {
+    title: 'Хенинг Ольсен АС, Норвегия',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/hening_ol_sen_as_norvegija/',
+  },
+  {
+    title: 'Энерджимидт, Дания',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/enerdzhimidt_danija/',
+  },
+  {
+    title: 'ЭфДжей Индастриз, Дания',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/efdzhej_indastriz_danija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение', href: '/references/storing_of_pallets/' },
+  {
+    title: 'Мобильные стеллажи',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/',
+  },
+  { title: 'Хотлет, Бельгия' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Мобильные паллетные стеллажи P90 (MOVO)',
+            href: '/products/pallet_handling/mobil_nie_stellazhi/',
+          },
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Хотлет, Бельгия | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Хотлет, Бельгия</h1>
+
+      <p class="font-bold mb-4">Компания Хотлет импортирует замороженные продукты из различных стран.</p>
+
+      <p>
+        Для оборудования складского терминала возле порта в г. Антверпен выбраны мобильные паллетные стеллажи <strong
+          >Constructor P90</strong
+        > (MOVO).
+      </p>
+
+      <p>Стеллажные конструкции оснащены радиоуправлением для увеличения скорости и эффективности работы.</p>
+
+      <p><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Количество: 1732 п.м.</li>
+        <li>Высота: 4 поддона</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

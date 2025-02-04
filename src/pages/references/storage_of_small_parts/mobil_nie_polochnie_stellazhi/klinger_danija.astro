@@ -1,0 +1,110 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/constructor_denmark_klinger_1_large.png';
+import carouselImage2 from '../../../../assets/images/constructor_denmark_klinger_2_large.png';
+import carouselImage3 from '../../../../assets/images/constructor_denmark_klinger_3_large.png';
+import carouselImage4 from '../../../../assets/images/constructor_denmark_klinger_4_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Беко Бил, Швеция',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/beko_bil_shvecija/',
+  },
+  {
+    title: 'Клингер, Дания',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/klinger_danija/',
+  },
+  {
+    title: 'Металлпресс Донати, Италия',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/metallpress_donati_italija/',
+  },
+  {
+    title: 'Свенска Бил и Норден АБ, Швеция',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/svenska_bil_i_norden_ab_shvecija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Мобильные полочные стеллажи',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/',
+  },
+  { title: 'Клингер, Дания' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+          {
+            title: 'Мобильные полочные стеллажи S90',
+            href: '/products/small_part_handling/mobile_shelving_s90/',
+          },
+          {
+            title: 'Стандартные полочные стеллажи S90',
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Клингер, Дания | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Клингер, Дания</h1>
+
+      <p>
+        Для эффективного хранения запасных частей компания <strong>Constructor</strong> произвела поставку мобильных полочных
+        стеллажей. Для установки паллет смонтированы фронтальные паллетные стеллажи <strong>Constructor P90.</strong>
+      </p>
+
+      <p>
+        Мобильные полочные стеллажи передвигаются по рельсам, установленым на специально спроектированных фальшполах.
+        Эргономическое управление позволяет синхронно перемещать одну или все мобильные базы стеллажа для открытия
+        необходимого прохода.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

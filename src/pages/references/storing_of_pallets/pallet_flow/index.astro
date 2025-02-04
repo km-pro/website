@@ -1,0 +1,70 @@
+---
+import ProjectCard from '../../../../components/ProjectCard.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import Layout from '../../../../layouts/MainLayout.astro';
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+}
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение', href: '/references/storing_of_pallets/' },
+  { title: 'Гравитационные стеллажи' },
+];
+
+const projects: Project[] = [
+  {
+    title: 'Нансо Груп, Финляндия',
+    description:
+      'В 2007 г. Нансо Групп открыла новый логистический центр в Финляндии – наиболее современный объект для легкой промышленности в северных странах.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/retail131.png',
+    href: '/references/storing_of_pallets/pallet_flow/nanso_grup_finljandija/',
+  },
+  {
+    title: 'Хутамаки Ой, Финляндия',
+    description: 'Компания Хутамаки Ой – производитель упаковочных материалов с мировым именем.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_7.png',
+    href: '/references/storing_of_pallets/pallet_flow/hutamaki_oj_finljandija/',
+  },
+  {
+    title: 'Ханса Принт, Финляндия',
+    description: 'Компания Ханса Принт – крупнейшая типография в Финляндии.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_41.png',
+    href: '/references/storing_of_pallets/pallet_flow/hansa_print_finljandija/',
+  },
+  {
+    title: 'Вальсемоллен, Дания',
+    description: 'Для оборудования нового склада компании выбраны гравитационные паллетные стеллажи Constructor P90.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_8.png',
+    href: '/references/storing_of_pallets/pallet_flow/val_semollen_danija/',
+  },
+];
+---
+
+<Layout title="Реализованные проекты с применением гравитационных стеллажей">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">
+      Реализованные проекты с применением гравитационных стеллажей
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={project.href}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,104 @@
+---
+import ProjectCard from '../../../../components/ProjectCard.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import Layout from '../../../../layouts/MainLayout.astro';
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+}
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение', href: '/references/storing_of_pallets/' },
+  { title: 'Мобильные стеллажи' },
+];
+
+const projects: Project[] = [
+  {
+    title: 'Стромме Рекламе АС, Норвегия',
+    description: 'Мобильные паллетные стеллажи Constructor (MOVO) увеличили полезную площадь склада на 70 %.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/tk13.png',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/stromme_reklame_as_norvegija/',
+  },
+  {
+    title: 'Ново Нордиск АС, Дания',
+    description:
+      'Ново Нордиск АС - производитель товаров и услуг для здравоохранения мирового уровня. Этот проект уникален и является первой установкой мобильных паллетных стеллажей в Дании.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_9.png',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/novo_nordisk_as_danija/',
+  },
+  {
+    title: 'Мууй Лоджистикс, Нидерланды',
+    description:
+      'Компания специализируется на оказании логистических услуг по хранению и транспортировке фруктов, овощей, цветов и замороженных продуктов.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh_121.png',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/muuj_lodzhistiks_niderlandi/',
+  },
+  {
+    title: 'Моенс Верпаккинген, Бельгия',
+    description:
+      'Компания Моенс Верпаккинген нуждалась в решении для хранения сырья, поступающего на последующую переработку. Мобильные паллетные стеллажи P90 (MOVO) стали идеальным решением этой задачи.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_10.png',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/moens_verpakkingen_bel_gija/',
+  },
+  {
+    title: 'Хотлет, Бельгия',
+    description:
+      'Компания Хотлет импортирует замороженные продукты из различных стран. Для оборудования складского терминала возле порта в г. Антверпен выбраны мобильные паллетные стеллажи Constructor P90 (MOVO).',
+    image: 'https://stellazhi.by/uploads/content/image/size0/fd11.png',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/hotlet_bel_gija/',
+  },
+  {
+    title: 'Свегон АБ, Швеция',
+    description: 'Компания Свегон один из крупнейших европейских поставщиков климатического оборудования.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet161.png',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/svegon_ab_shvecija/',
+  },
+  {
+    title: 'Хенинг Ольсен АС, Норвегия',
+    description:
+      'В связи с постоянным ростом объема продаж компания приняла решение заменить существующие стеллажные конструкции мобильными паллетными стеллажами P90 (MOVO).',
+    image: 'https://stellazhi.by/uploads/content/image/size0/fd21.png',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/hening_ol_sen_as_norvegija/',
+  },
+  {
+    title: 'Энерджимидт, Дания',
+    description: 'Энерджимидт – современная развивающаяся компания, работающая в сфере энергетики и сетей.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh153.png',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/enerdzhimidt_danija/',
+  },
+  {
+    title: 'ЭфДжей Индастриз, Дания',
+    description: 'Для оснащения нового складского комплекса компании выбраны мобильные паллетные стеллажи P90 (MOVO).',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh142.png',
+    href: '/references/storing_of_pallets/mobile_pallet_racking/efdzhej_indastriz_danija/',
+  },
+];
+---
+
+<Layout title="Реализованные проекты с применением мобильных стеллажей">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">
+      Реализованные проекты с применением мобильных стеллажей
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={project.href}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

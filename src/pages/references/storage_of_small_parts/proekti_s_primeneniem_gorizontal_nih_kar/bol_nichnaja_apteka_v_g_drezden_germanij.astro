@@ -1,0 +1,100 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/ap14.png';
+import carouselImage2 from '../../../../assets/images/ap24.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Больничная аптека в г. Дрезден, Германия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/bol_nichnaja_apteka_v_g_drezden_germanij/',
+  },
+  {
+    title: 'Грое АГ, Германия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/groe_ag_germanija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Проекты с применением горизонтальных каруселей (HOCA)',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/',
+  },
+  { title: 'Больничная аптека в г. Дрезден, Германия' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Горизонтальные карусели (HOCA)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/gorizontal_nie_karuseli_hoca/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Больничная аптека в г. Дрезден, Германия | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Больничная аптека в г. Дрезден, Германия</h1>
+
+      <p class="font-bold mb-4">
+        Новое здание больницы в г. Дрезден позволило модернизировать старую фармацевтическую службу, где специалисту
+        вручную приходилось искать лекарства, медицинское оборудование и лабораторные результаты для более чем ста
+        служб, обслуживающих более чем 1600 койкомест.
+      </p>
+
+      <p>
+        Четыре горизонтальные системы <strong>Constructor</strong> (HOCA), идеально подходящие под низкие высоты помещения,
+        оснащенные <strong>Constructor WMS</strong> и соединенные с центральным сервером учреждения, позволяют производить
+        отбор 15 заказов одним оператором единовременно. Специальная прозрачная защита огораживает территорию вокруг каждой
+        машины для обеспечения максимальной безопасности эксплуатации. Благодаря системе Pick-by-Light открывается требуемая
+        зона машины, что обеспечивает доступ к необходимым позициям.
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Количество позиций: 3,5 тыс.</li>
+        <li>Площадь хранения: 565 кв.м.</li>
+        <li>Оборудование: 3 горизонтальных системы на 42 секции, 1 – 34 секции.</li>
+        <li>Длина: 20 и 16,5 м.</li>
+        <li>Высота: 2,5 м</li>
+        <li>Глубина: 9,5 м</li>
+        <li>Несущая способность: до 25 тыс. кг/машина</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

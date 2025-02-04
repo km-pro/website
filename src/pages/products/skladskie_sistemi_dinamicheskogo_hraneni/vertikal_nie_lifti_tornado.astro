@@ -1,0 +1,318 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import Link from '../../../components/Link.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/storage_machines_tornado_6_large1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/storage_machines_tornado_1_large1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/storage_machines_tornado_2_large1.png',
+    },
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Складское оборудованиe (вертикальные лифты tornado)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+  },
+  {
+    title: 'Складское оборудование (вертикальные карусели paternoster)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
+  },
+  {
+    title: 'Складское оборудование (горизонтальные карусели hoca)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/gorizontal_nie_karuseli_hoca/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  {
+    title: 'Автоматизированные складские системы',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
+  },
+  { title: 'Вертикальные лифты (TORNADO)' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Бернер Ой, Финляндия',
+            href: '/references/storing_of_pallets/pallet_racking_standart/berner_oj_finljandija/',
+          },
+          {
+            title: 'Дани-Тех, Дания',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/dani_teh_danija/',
+          },
+          {
+            title: 'Х.Краац Ой, Финляндия',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/h_kraac_oj_finljandija/',
+          },
+          {
+            title: 'Электроскандия, Финляндия',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/elektroskandija_finljandija/',
+          },
+          {
+            title: 'Холгер Христиансен А/С, Дания',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/holger_hristiansen_a_s_danija/',
+          },
+          {
+            title: 'Икеа, Великобритания',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/ikea_velikobritanija/',
+          },
+          {
+            title: 'Ковистон Авто Ой, Финляндия',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/koviston_avto_oj_finljandija/',
+          },
+          {
+            title: 'LG Кемикал, Польша',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/lg_kemikal_pol_sha/',
+          },
+          {
+            title: 'Скандинавиан Айвэа, Швеция',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/skandinavian_ajvea_shvecija/',
+          },
+          {
+            title: 'Сервистик АБ, Швеция',
+            href: '/references/logisticheskie_operatori/servistik_ab_shvecija/',
+          },
+          {
+            title: 'Стема инжиниринг АС, Дания',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/stema_inzhiniring_as_danija/',
+          },
+          {
+            title: 'Свенска Бил и Норден АБ, Швеция',
+            href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/svenska_bil_i_norden_ab_shvecija/',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Аксессуары',
+    content: [
+      {
+        links: [
+          {
+            title: 'узнать подробнее об аксессуарах',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/accessories/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Вертикальные лифты TORNADO | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Вертикальные лифты (TORNADO)</h1>
+
+          <p>
+            Вы являетесь организацией, обладающей производственными или складскими площадями и сталкиваетесь с
+            проблемами по хранению товаров? Мы предлагаем вам инновационное решение – вертикальные лифты TORNADO. Это
+            современное складское оборудование, которое позволяет оптимизировать использование пространства и
+            значительно повысить эффективность складских операций.
+          </p>
+
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-2xl font-bold mb-4">Преимущества вертикальных лифтов</h3>
+
+              <div class="space-y-6">
+                <div>
+                  <p class="font-bold">1. Экономия пространства</p>
+                  <p>
+                    Вертикальные лифты TORNADO обеспечивают максимальное использование доступного пространства на вашем
+                    складе. Благодаря использованию всей высоты помещения и уникальной конструкции, они позволяют
+                    компактно хранить товары, освобождая ценное полезное пространство. Вы сможете эффективно
+                    использовать каждый квадратный метр склада и увеличить его емкость до 75%.
+                  </p>
+                </div>
+
+                <div>
+                  <p class="font-bold">2. Оптимизация складских операций</p>
+                  <p>
+                    Система вертикальных лифтов TORNADO позволяет значительно сократить время комплектования заказов.
+                    Благодаря интеллектуальной системе управления и быстрому вертикальному перемещению, операторы
+                    получают быстрый доступ к нужным товарам, что позволяет сократить время ожидания и увеличить
+                    производительность работы до 65%.
+                  </p>
+                </div>
+
+                <div>
+                  <p class="font-bold">3. Безопасность и надежность</p>
+                  <p>
+                    Мы понимаем важность безопасности вашего склада и хранящихся товаров. Вертикальные лифты TORNADO
+                    обеспечивают надежное и безопасное хранение. Система доступа, защищенная паролем, обеспечивает
+                    контролируемый доступ к хранимым товарам. Также, благодаря защите от пыли, грязи, света и
+                    несанкционированного доступа, вы сможете снизить издержки, связанные с потерей и повреждением
+                    товаров.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold mb-4">Уникальные особенности лифтов TORNADO</h3>
+
+              <div class="space-y-6">
+                <div>
+                  <p class="font-bold">1. Модульная конструкция и гибкость</p>
+                  <p>
+                    Позволяет адаптировать их к практически любым складским условиям. Вы сможете выбрать нужную ширину,
+                    высоту и грузоподъемность лифта в соответствии с вашими потребностями. Мы предлагаем различные
+                    варианты, чтобы удовлетворить требования разных видов товаров.
+                  </p>
+                </div>
+
+                <div>
+                  <p class="font-bold">2. Простота использования и обслуживания</p>
+                  <p>
+                    Интуитивно понятный интерфейс и функциональные возможности позволяют операторам быстро освоиться с
+                    системой. Простая конструкция лифтов гарантирует их надежность и требует лишь минимального
+                    обслуживания.
+                  </p>
+                </div>
+
+                <div>
+                  <p class="font-bold">3. Интеграция в существующую инфраструктуру</p>
+                  <p>
+                    Вертикальные лифты TORNADO легко интегрируются в уже существующую систему управления складом.
+                    Благодаря совместимости с операционной системой Windows и возможности интеграции с системами
+                    управления запасами (WMS) или системами планирования ресурсов предприятия (ERP), вы сможете легко
+                    интегрировать систему TORNADO в вашу сеть и сделать ее частью эффективной складской инфраструктуры.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4">Почему стоит выбрать ЗАО «КМ-про»</h2>
+              <p>
+                Мы являемся лидером в области производства и поставки складского оборудования. При выборе вертикальных
+                лифтов TORNADO, вы получаете следующие преимущества:
+              </p>
+
+              <ol class="list-decimal list-inside space-y-4 mt-4">
+                <li>
+                  <strong>Качество и надежность</strong>. Наши лифты производятся из высококачественных материалов,
+                  соответствующих международным стандартам. Мы гарантируем долговечность и надежность работы наших
+                  лифтов.
+                </li>
+                <li>
+                  <strong>Индивидуальный подход</strong>. Мы предлагаем консультации и разработку индивидуальных решений
+                  в соответствии с потребностями вашего бизнеса. Мы учитываем особенности вашего склада и предлагаем
+                  наилучшие решения.
+                </li>
+                <li>
+                  <strong>Техническая поддержка</strong>. Мы обеспечиваем полную техническую поддержку наших клиентов,
+                  включая установку, обучение и сервисное обслуживание. Наша команда опытных специалистов всегда готова
+                  помочь вам решить любые вопросы.
+                </li>
+                <li>
+                  <strong>Комплексное оборудование</strong>. Мы предлагаем широкий спектр складского оборудования,
+                  позволяющий вам создать полностью интегрированную систему для эффективного управления вашим складом.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span>Увеличивает полезную площадь хранения до 70 %</span>
+            </li>
+            <li>
+              <span>Снижает вероятность совершения ошибок при комплектации заказа на 70 %</span>
+            </li>
+            <li>
+              <span>Экономит время комплектации на 60 %</span>
+            </li>
+            <li>
+              <span>Эргономичная работа оператора</span>
+            </li>
+            <li>
+              <span>Предотвращает несанкционированный доступ</span>
+            </li>
+            <li>
+              <span>Легкое и удобное управление</span>
+            </li>
+            <li>
+              <span>ОС базирующаяся на Windows легко интегрируется с различными WMS</span>
+            </li>
+            <li>
+              <span>Позволяет перемещать грузы между этажами как лифт</span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+
+      <TabPanel index={2}>
+        <div class="prose max-w-none">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Длина полки:</span>
+                <span>1250-4000 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина полки:</span>
+                <span>520, 620, 720, 820 and 1220 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на полку:</span>
+                <span>до 500 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Высота ячейки:</span>
+                <span>до 850 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Максимальный вес груза:</span>
+                <span>до 40 000 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Максимальная высота:</span>
+                <span>до 15 000 мм</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

@@ -1,0 +1,171 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import Link from '../../../components/Link.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/storage_machines_horizontal_carousell_hoca_11.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/storage_machines_horizontal_carousell_hoca_21.png',
+    },
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Складское оборудованиe (вертикальные лифты tornado)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+  },
+  {
+    title: 'Складское оборудование (вертикальные карусели paternoster)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
+  },
+  {
+    title: 'Складское оборудование (горизонтальные карусели hoca)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/gorizontal_nie_karuseli_hoca/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  {
+    title: 'Автоматизированные складские системы',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
+  },
+  { title: 'Горизонтальные карусели (HOCA)' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Больничная аптека в г. Дрезден, Германия',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/bol_nichnaja_apteka_v_g_drezden_germanij/',
+          },
+          {
+            title: 'Грое АГ, Германия',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/groe_ag_germanija/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Горизонтальные карусели HOCA | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Горизонтальные карусели (HOCA)</h1>
+
+          <h2>Заказать карусели горизонтальные HOCA в Беларуси</h2>
+
+          <p class="font-bold">
+            Горизонтальные карусели (HOCA) представляю собой идеальное решение для хранения и эффективного отбора
+            большого количества единиц товара на больших площадях или в помещениях с небольшими высотами.
+          </p>
+
+          <p>
+            Данное автоматическое оборудование доставляет грузы к оператору быстро и эффективно. Производительность
+            может быть увеличена за счет соединения нескольких машин в единую сеть. Это означает возможность
+            одновременного отбора и подготовки последующих операций на других автоматах.
+          </p>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span>Оптимизирует вертикальное и горизонтальное хранение грузов</span>
+            </li>
+            <li>
+              <span>Возможно хранение разноразмерных грузов в одной машине</span>
+            </li>
+            <li>
+              <span>Один оператор может управлять несколькими машинами</span>
+            </li>
+            <li>
+              <span>Эргономичная эксплуатация</span>
+            </li>
+            <li>
+              <span>Предотвращает несанкционированный доступ</span>
+            </li>
+            <li>
+              <span>Легкое и удобное управление</span>
+            </li>
+            <li>
+              <span>ОС легко интегрируется с различными WMS</span>
+            </li>
+            <li>
+              <span>Особенно эффективен при комплектации партии товара</span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+
+      <TabPanel index={2}>
+        <div class="prose max-w-none">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Длина полки:</span>
+                <span>830, 1010 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина полки:</span>
+                <span>508, 608 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на полку:</span>
+                <span>до 100 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Высота ячейки:</span>
+                <span>1700 - 3900 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Максимальный вес груза:</span>
+                <span>до 40 000 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Общая высота:</span>
+                <span>2150 - 4350 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Общая длина:</span>
+                <span>до 50 000 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Общая глубина:</span>
+                <span>1700 и 1900 мм</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

@@ -1,0 +1,295 @@
+---
+import Layout from '../layouts/MainLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import InfoSidebar from '../components/InfoSidebar.astro';
+import { CONTACTS_BLOCK } from '../constants';
+
+const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'Контакты' }];
+---
+
+<Layout title="Контакты ЗАО «КМ-про»">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 py-8">
+    <div class="lg:col-span-2">
+      <div class="bg-white rounded-lg shadow-md p-8">
+        <h1 class="text-2xl font-bold mb-6">Контакты</h1>
+
+        <div class="space-y-4 mb-8">
+          <p>
+            <strong>ЗАО «КМ-про»</strong>
+          </p>
+          <p>Беларусь, г. Минск, ул. Будславская, 23, оф. 204</p>
+          <div class="space-y-2">
+            <p>
+              <a href="tel:+375173730122" class="text-blue-600 hover:text-blue-800 transition-colors">
+                +375 (17) 373-01-22
+              </a>
+            </p>
+            <p>
+              <a href="tel:+375173660321" class="text-blue-600 hover:text-blue-800 transition-colors">
+                +375 (17) 366-03-21
+              </a>
+            </p>
+            <p>
+              <a href="tel:+375291787018" class="text-blue-600 hover:text-blue-800 transition-colors">
+                +375 (29) 178-70-18
+              </a>
+            </p>
+          </div>
+          <p>
+            Email:
+            <a href="mailto:km-pro@mail.ru" class="text-blue-600 hover:text-blue-800 transition-colors">
+              km-pro@mail.ru
+            </a>
+          </p>
+        </div>
+
+        <div class="relative w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden mb-6">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <iframe
+              allowfullscreen="allowfullscreen"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9389.520544780513!2d27.5471021!3d53.960517!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfc6ce39a047%3A0x828bc9f22844cdca!2z0JfQkNCeINCa0Jwt0L_RgNC-!5e0!3m2!1sru!2sby!4v1697639853420!5m2!1sru!2sby"
+            ></iframe>
+          </div>
+        </div>
+
+        <div>
+          <div class="relative w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <iframe
+                allowfullscreen="allowfullscreen"
+                height="100%"
+                width="100%"
+                loading="lazy"
+                src="https://yandex.by/map-widget/v1/?from=mapframe&ll=27.550708%2C53.959786&mode=poi&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1104059766&source=mapframe&utm_source=mapframe&z=16.4"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-8 mt-8">
+        <h2 class="text-xl font-bold mb-6">Форма обратной связи</h2>
+
+        <form id="feedbackForm" class="space-y-6">
+          <div class="space-y-4">
+            <div>
+              <label for="name" class="block text-gray-700 mb-2">
+                Ваше имя
+                <span class="text-red-500">*</span>
+              </label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                required
+                minlength="2"
+              />
+              <p class="text-red-500 text-sm mt-1 hidden" data-error="name"></p>
+            </div>
+
+            <div>
+              <label for="email" class="block text-gray-700 mb-2">
+                Эл. почта
+                <span class="text-red-500">*</span>
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                required
+              />
+              <p class="text-red-500 text-sm mt-1 hidden" data-error="email"></p>
+            </div>
+
+            <div>
+              <label for="message" class="block text-gray-700 mb-2"> Ваше сообщение </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              ></textarea>
+            </div>
+
+            <p class="text-sm text-gray-500">
+              <span class="text-red-500">*</span> — поля обязательные к заполнению
+            </p>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-blue-400 disabled:cursor-not-allowed"
+            >
+              Отправить
+            </button>
+          </div>
+
+          <div class="hidden" id="formSuccess">
+            <p class="text-green-600 font-medium">Спасибо! Ваше сообщение успешно отправлено.</p>
+          </div>
+          <div class="hidden" id="formError">
+            <p class="text-red-600 font-medium">
+              Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="lg:col-span-1">
+      <div class="sticky top-4">
+        <InfoSidebar
+          blocks={[
+            CONTACTS_BLOCK,
+            {
+              title: 'Наши решения',
+              content: [
+                {
+                  links: [
+                    {
+                      title: 'Стеллажи металлические',
+                      href: '/products/',
+                    },
+                    {
+                      title: 'Паллетное хранение',
+                      href: '/products/pallet_handling/',
+                    },
+                    {
+                      title: 'Хранение на полках',
+                      href: '/products/small_part_handling/',
+                    },
+                    {
+                      title: 'Складские системы динамического хранения и поиска',
+                      href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
+                    },
+                    {
+                      title: 'Мезонинные системы',
+                      href: '/products/stellazhnij_mezonin/',
+                    },
+                    {
+                      title: 'Хранение в офисах и архивах',
+                      href: 'https://www.kasten.fi/',
+                      rel: 'nofollow',
+                    },
+                    {
+                      title: 'Хранение в библиотеках',
+                      href: 'https://www.kasten.fi/',
+                      rel: 'nofollow',
+                    },
+                    {
+                      title: 'Хранение в музеях',
+                      href: 'https://www.kasten.fi/',
+                      rel: 'nofollow',
+                    },
+                  ],
+                },
+              ],
+            },
+          ]}
+        />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const form = document.getElementById('feedbackForm') as HTMLFormElement;
+  const successMessage = document.getElementById('formSuccess');
+  const errorMessage = document.getElementById('formError');
+  const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+  function showFieldError(fieldName: string, message: string) {
+    const errorElement = form.querySelector(`[data-error="${fieldName}"]`);
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.classList.remove('hidden');
+    }
+  }
+
+  function hideFieldError(fieldName: string) {
+    const errorElement = form.querySelector(`[data-error="${fieldName}"]`);
+    if (errorElement) {
+      errorElement.classList.add('hidden');
+    }
+  }
+
+  function resetFormMessages() {
+    successMessage?.classList.add('hidden');
+    errorMessage?.classList.add('hidden');
+    form.querySelectorAll('[data-error]').forEach((el) => el.classList.add('hidden'));
+  }
+
+  function isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  function validateForm(formData: FormData): boolean {
+    let isValid = true;
+    resetFormMessages();
+
+    const name = formData.get('name') as string;
+    if (!name || name.length < 2) {
+      showFieldError('name', 'Имя должно содержать не менее 2 символов');
+      isValid = false;
+    }
+
+    const email = formData.get('email') as string;
+    if (!email || !isValidEmail(email)) {
+      showFieldError('email', 'Пожалуйста, введите корректный email адрес');
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    resetFormMessages();
+
+    const formData = new FormData(form);
+
+    if (!validateForm(formData)) {
+      return;
+    }
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Отправка...';
+
+    try {
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        successMessage?.classList.remove('hidden');
+        form.reset();
+      } else {
+        errorMessage?.classList.remove('hidden');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      errorMessage?.classList.remove('hidden');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Отправить';
+    }
+  });
+
+  form.querySelectorAll('input, textarea').forEach((input) => {
+    input.addEventListener('input', (e) => {
+      const target = e.target as HTMLInputElement | HTMLTextAreaElement;
+      hideFieldError(target.name);
+    });
+  });
+</script>

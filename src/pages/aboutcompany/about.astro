@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/MainLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import clients from '../../assets/images/clients.png';
+import AboutCompanyLayout from '../../layouts/AboutCompanyLayout.astro';
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'О компании', href: '/aboutcompany/' },
+  { title: 'О компании' },
+];
+---
+
+<Layout title="О компании ЗАО «КМ-Про» | Ваш надежный партнер в области складского оборудования!">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <AboutCompanyLayout>
+    <h1 class="text-2xl font-bold mb-6">О компании ЗАО «КМ-про»</h1>
+
+    <h2 class="text-xl mb-4">ЗАО «КМ-про» - дилер компании Constructor в Беларуси</h2>
+
+    <div class="prose max-w-none space-y-4">
+      <div>
+        <strong>ЗАО «КМ-про»</strong> - официальный дилер компании <strong>Constructor</strong> на территории РБ. Начиная
+        с 2003 года, наша компания занимает одну из лидирующих позиций на рынке стеллажного оборудования. Нами спроектировано
+        и установлено более 400 проектов складского оборудования емкостью свыше 200 тыс. п. м.
+      </div>
+
+      <div>
+        Нашими клиентами являются логистические операторы, производственные компании, дистрибьюторы, застройщики:
+      </div>
+
+      <Image src={clients} alt="Изображение клиентов" class="w-full rounded-lg overflow-hidden my-8" />
+
+      <h3 class="text-lg font-bold mt-8 mb-4">Складское оборудование высокого качества</h3>
+
+      <div>
+        Мы предлагаем высококачественное оборудование, прогрессивные современные технологии, индивидуальный подход,
+        гарантийное и постгарантийное обслуживание. Наша цель — предложение гибких, инновационных и экономически
+        обоснованных решений Ваших проблем в хранении и обработке грузов.
+      </div>
+
+      <div>
+        Компания <strong>Constructor</strong> - ведущий производитель и поставщик высококлассных складских, архивных и логистических
+        решений для промышленных предприятий, складских комплексов, логистических центров, архивов, офисов, музеев, библиотек
+        и т. д. Продукты компании реализуются по всей Европе под следующими брендами:
+        <strong>Constructor, Constructor logistics, Bruynzeel, Kasten, Dexion</strong> и <strong>PSS</strong>.
+      </div>
+
+      <div>Производственные площади компании находятся в России, Финляндии, Германии, Нидерландах и Румынии.</div>
+
+      <div>
+        <a href="/products/" class="text-blue-600 hover:text-blue-800">Стеллажи</a> компании <strong>Constructor</strong
+        > - результат многолетнего опыта и современного взгляда на работу со сталью. Компания <strong
+          >Constructor</strong
+        >
+        специализируется на всех видах технологии складирования — от простого хранения товара на полках до современных автоматических
+        комплексов. Основная цель компании <strong>Constructor</strong> — предложение гибких, инновационных и экономически
+        обоснованных решений Ваших проблем в хранении.
+      </div>
+    </div>
+  </AboutCompanyLayout>
+</Layout>

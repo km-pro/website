@@ -1,0 +1,127 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/polo_11.png';
+import carouselImage2 from '../../../../assets/images/polo_germany_01_large.png';
+import carouselImage3 from '../../../../assets/images/polo_germany_09_large.png';
+import carouselImage4 from '../../../../assets/images/polo_germany_15_large.png';
+import Link from '../../../../components/Link.astro';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Косанит, Бельгия',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/kosanit_bel_gija/',
+  },
+  {
+    title: 'Джула Постордер АБ, Швеция',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/dzhula_postorder_ab_shvecija/',
+  },
+  {
+    title: 'Манса Автоделе, Дания',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/mansa_avtodele_danija/',
+  },
+  {
+    title: 'Поло Экспрессверсанд, Германия',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/polo_ekspressversand_germanija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Полочные стеллажи',
+    href: '/references/storage_of_small_parts/polochnie_stellazhi/',
+  },
+  { title: 'Поло Экспрессверсанд, Германия' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Стандартные полочные стеллажи S90',
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+          },
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+          {
+            title: 'Мезонинные системы',
+            href: '/products/stellazhnij_mezonin/',
+          },
+          {
+            title: 'Многоэтажные полочные стеллажи S90',
+            href: '/products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Поло Экспрессверсанд, Германия | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Поло Экспрессверсанд, Германия</h1>
+
+      <p class="font-bold mb-4">
+        Поло Экспрессверсанд - один из лидирующих поставщиков спортивной одежды и аксессуаров для мотоспорта. Новый
+        логистический центр обрабатывает все заказы, поступающие из торговых объектов и интернет-магазинов компании.
+      </p>
+
+      <p>
+        Центральными объектами нового комплекса являются три четырехэтажные системы для комплектации заказов с общей
+        площадью проходов более 10 тыс. кв.м. и высотой около 10 м. Это первая четырехэтажная система такого типа в
+        Германии.
+      </p>
+
+      <p><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Площадь склада: 25 тыс. кв.м.</li>
+        <li>Площадь хранения: 45 тыс кв.м.</li>
+        <li>Количество операций отбора: 200 тыс. за смену</li>
+        <li>
+          Четырехэтажный
+          <Link href="/products/small_part_handling/">полочный стеллаж</Link>
+          : 57 000 полок
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

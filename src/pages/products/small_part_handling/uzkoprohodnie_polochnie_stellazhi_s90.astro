@@ -1,0 +1,155 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import Link from '../../../components/Link.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/kasten_narrow_aisle_s90_1_large.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/kasten_narrow_aisle_s90_2_large.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/kasten_narrow_aisle_s90_3_large1.png',
+    },
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Стандартные полочные стеллажи S90',
+    href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+  },
+  {
+    title: 'Мобильные полочные стеллажи S90',
+    href: '/products/small_part_handling/mobile_shelving_s90/',
+  },
+  {
+    title: 'Многоэтажные полочные стеллажи S90',
+    href: '/products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/',
+  },
+  {
+    title: 'Узкопроходные полочные стеллажи S90',
+    href: '/products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/',
+  },
+  {
+    title: 'Коробочная гравитация стеллажи S90',
+    href: '/products/small_part_handling/korobochnie_gravitacionnie_stellazhi_s90/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Полочные стеллажи', href: '/products/small_part_handling/' },
+  { title: 'Узкопроходные полочные стеллажи S90' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Фольксваген, Швеция',
+            href: '/references/mezoninnie_sistemi/fol_ksvagen_shvecija/',
+          },
+          {
+            title: 'Шенкер Лоджистикс, Швеция',
+            href: '/references/storing_of_pallets/pallet_racking_standart/shenker_lodzhistiks_shvecija/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Узкопроходные полочные стеллажи S90 | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Узкопроходные полочные стеллажи S90</h1>
+
+          <h2>Купить стеллажи полочные узкопроходные металлические S90 в Беларуси</h2>
+
+          <p>
+            Узкопроходный <Link href="/products/small_part_handling/">
+              <span>полочный стеллаж</span>
+            </Link>
+            <strong>Constructor S90</strong> - отличное решение, позволяющее использовать все доступное пространство склада
+            благодаря максимальному использованию высоты помещения.
+          </p>
+
+          <p>
+            Узкопроходный полочный стеллаж S90 благодаря своим аксессуарам может легко конфигурироваться в систему для
+            ручного или полностью автоматизированного хранения и обработки груза.
+          </p>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span>Модульная конструкция стеллажа позволяет легко изменить его конфигурацию</span>
+            </li>
+            <li>
+              <span>Прямой доступ ко всем грузам</span>
+            </li>
+            <li>
+              <span>Удобство комплектации заказов</span>
+            </li>
+            <li>
+              <span>Высокая плотность хранения мелких грузов</span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+
+      <TabPanel index={2}>
+        <div class="prose max-w-none">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Высота:</span>
+                <span>до 15000 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина:</span>
+                <span>300, 400, 500, 600 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Длина полки:</span>
+                <span>900, 1000, 1280 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на полку:</span>
+                <span>до 200 кг</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

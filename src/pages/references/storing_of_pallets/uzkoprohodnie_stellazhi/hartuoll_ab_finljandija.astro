@@ -1,0 +1,139 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/hartwall_1_large1.png';
+import carouselImage2 from '../../../../assets/images/hartwall_2_large1.png';
+import carouselImage3 from '../../../../assets/images/hartwall_3_large1.png';
+import carouselImage4 from '../../../../assets/images/hartwall_5_large1.png';
+import Link from '../../../../components/Link.astro';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Хартуолл АБ, Финляндия',
+    href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/hartuoll_ab_finljandija/',
+  },
+  {
+    title: 'Нетханделен Норге, Норвегия',
+    href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/nethandelen_norge_norvegija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение', href: '/references/storing_of_pallets/' },
+  {
+    title: 'Узкопроходные стеллажи',
+    href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/',
+  },
+  { title: 'Хартуолл АБ, Финляндия' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+          {
+            title: 'Гравитационные стеллажи P90',
+            href: '/products/pallet_handling/gravitacionnie_stellazhi/',
+          },
+          {
+            title: 'Коробочные гравитационные стеллажи',
+            href: '/products/small_part_handling/korobochnie_gravitacionnie_stellazhi_s90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Хартуолл АБ, Финляндия | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Хартуолл АБ, Финляндия</h1>
+
+      <p class="font-bold mb-4">
+        Высотные паллетные стеллажи Constructor установлены в центре автоматизированного складского комплекса в г.
+        Лахти.
+      </p>
+
+      <p>
+        Компания Хартуолл владеет современным заводом по производству напитков. Производство спроектировано для
+        достижения максимальной гибкости и эффективности выпуска продукта высочайшего качества и соблюдения всех норм и
+        правил по охране окружающей среды. Вся внутренняя логистика на предприятии высоко автоматизирована.
+      </p>
+
+      <p>
+        Поддоны с напитками хранятся на высотных паллетных стеллажах высотой 28,4 м и перемещаются с помощью кранов и
+        DSP-конвейеров. Компьютерная программа управляет всеми процессами для максимально эффективного хранения на
+        складе.
+      </p>
+
+      <p>
+        Коробочные гравитационные стеллажи <strong>Constructor</strong> установлены в зонах отбора оптового склада, где происходит
+        комплектация заказов для торговых центров.
+      </p>
+
+      <p>
+        Хранение полуфабрикатов осуществляется в гравитационных паллетных стеллажах для сохранения последовательности
+        технологических процессов.
+      </p>
+
+      <p><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 28,4 м</li>
+        <li>Количество: 35 984 п.м.</li>
+        <li>Количество ярусов: 13</li>
+        <li>Нагрузка: до 1100 кг/п.м.</li>
+      </ul>
+
+      <p>Гравитационные паллетные стеллажи:</p>
+      <ul class="list-disc pl-6">
+        <li>Количество: 288 п.м.</li>
+        <li>Высота: 5,0 м</li>
+        <li>Количество уровней: 4</li>
+      </ul>
+
+      <p>Коробочные гравитационные стеллажи:</p>
+      <ul class="list-disc pl-6">
+        <li>Количество: 80 ячеек</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

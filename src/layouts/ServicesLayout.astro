@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import SideNavigation from '../components/SideNavigation.astro';
+import banner from '../assets/images/handshake.png';
+
+const sideNavItems = [
+  { title: 'Наши услуги', href: '/our_services/our_services1/' },
+  {
+    title: 'Анализ существующей ситуации',
+    href: '/our_services/analiz_suschestvujuschej_situacii/',
+  },
+  { title: 'Предложение', href: '/our_services/predlozhenie/' },
+  { title: 'Продукт/Система', href: '/our_services/produkt_sistema/' },
+  { title: 'Расчеты', href: '/our_services/rascheti/' },
+  {
+    title: 'Доставка и установка',
+    href: '/our_services/dostavka_i_ustanovka/',
+  },
+  {
+    title: 'Сопровождение проекта',
+    href: '/our_services/soprovozhdenie_proekta/',
+  },
+  { title: 'Инспекция', href: '/our_services/inspekcija/' },
+  { title: 'Ремонт/Обслуживание', href: '/our_services/remont_obsluzhivanie/' },
+];
+---
+
+<div class="max-w-6xl mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <div class="lg:col-span-1">
+      <SideNavigation items={sideNavItems} />
+    </div>
+
+    <main class="lg:col-span-3">
+      <article class="space-y-8">
+        <div class="bg-white rounded-lg shadow-md p-8 prose max-w-none">
+          <slot />
+        </div>
+      </article>
+    </main>
+  </div>
+</div>

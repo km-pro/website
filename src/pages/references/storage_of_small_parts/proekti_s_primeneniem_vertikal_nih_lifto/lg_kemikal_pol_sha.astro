@@ -1,0 +1,131 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/lg_chem_poland_2_large.png';
+import carouselImage2 from '../../../../assets/images/lg_chem_poland_03_large.png';
+import carouselImage3 from '../../../../assets/images/lg_chem_poland_06_large.png';
+import carouselImage4 from '../../../../assets/images/lg_chem_poland_08_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Стема инжиниринг АС, Дания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/stema_inzhiniring_as_danija/',
+  },
+  {
+    title: 'Скандинавиан Айвэа, Швеция',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/skandinavian_ajvea_shvecija/',
+  },
+  {
+    title: 'Дани-Тех, Дания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/dani_teh_danija/',
+  },
+  {
+    title: 'Икеа, Великобритания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/ikea_velikobritanija/',
+  },
+  {
+    title: 'Холгер Христиансен А/С, Дания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/holger_hristiansen_a_s_danija/',
+  },
+  {
+    title: 'LG Кемикал, Польша',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/lg_kemikal_pol_sha/',
+  },
+  {
+    title: 'Ковистон Авто Ой, Финляндия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/koviston_avto_oj_finljandija/',
+  },
+  {
+    title: 'Х.Краац Ой, Финляндия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/h_kraac_oj_finljandija/',
+  },
+  {
+    title: 'Электроскандия, Финляндия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/elektroskandija_finljandija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Проекты с применением вертикальных лифтов (TORNADO)',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/',
+  },
+  { title: 'LG Кемикал, Польша' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Вертикальные лифты (TORNADO)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="LG Кемикал, Польша | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">LG Кемикал, Польша</h1>
+
+      <p class="font-bold mb-4">
+        Для увеличения объема хранения груза на существующем складе компания LG Кемикал заказала новые, эффективные
+        складские системы.
+      </p>
+
+      <p>
+        Специфика поставленного оборудования состоит в наличии двух зон выгрузки у одной машины. В связи с
+        необходимостью поддержания идеальной чистоты в помещении одно операционное окно используется для приемки грузов
+        из производства, другое – для отгрузки покупателю. Машины укомплектованы прозрачными стенами для возможности
+        визуального контроля за расположением грузов.
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+      <p>TORNADO (2 ед.):</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 8,5/8,7 м</li>
+        <li>Ширина полки: 4200 мм</li>
+        <li>Количество полок: 540 шт.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

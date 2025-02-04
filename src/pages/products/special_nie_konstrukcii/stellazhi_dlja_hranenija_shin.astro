@@ -1,0 +1,170 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import TabPanel from '../../../components/TabPanel.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+import tiresImage from '../../../assets/images/rengashylly1_large.png';
+
+const sidebarItems = [
+  {
+    title: 'Стеллаж для шин и колес',
+    href: '/products/special_nie_konstrukcii/stellazhi_dlja_hranenija_shin/',
+  },
+  {
+    title: 'Стеллажи для магазинов',
+    href: '/products/special_nie_konstrukcii/stellazhi_dlja_magazinov/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  {
+    title: 'Специальные конструкции',
+    href: '/products/special_nie_konstrukcii/',
+  },
+  { title: 'Стеллаж для шин и колес' },
+];
+
+const infoSidebarItems = [CONTACTS_BLOCK];
+---
+
+<Layout title="Стеллаж для шин и колес | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Характеристики']}>
+      <TabPanel index={0} defaultActive>
+        <Image src={tiresImage} alt="Стеллаж для шин и колес" class="w-full" />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Стеллаж для шин и колес</h1>
+
+          <p>
+            Если ваш бизнес занимается производством, дистрибуцией или продажей автомобильных шин, вы наверняка
+            столкнулись с проблемой эффективного хранения этих товаров, особенно когда место на складе ограничено. В
+            таких случаях металлические стеллажи для хранения шин становятся не только практичным, но и критически
+            важным элементом управления складским пространством.
+          </p>
+
+          <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Необходимость для вашего бизнеса</h2>
+            <p>
+              Основными причинами внедрения металлических стеллажей для хранения шин в вашем производственном или
+              складском пространстве являются:
+            </p>
+            <List>
+              <li>
+                <strong>Максимизация пространства.</strong> С помощью стеллажей можно организовать вертикальное хранение
+                шин, колес и дисков, освободив при этом ценное пространство на полу склада.
+              </li>
+              <li>
+                <strong>Защита товара</strong>. Хранение шин на стеллажах защищает их от внешних воздействий, таких как
+                пыль, грязь, свет и влага, что увеличивает их срок службы и сохраняет товарный вид.
+              </li>
+              <li>
+                <strong>Эффективность доступа</strong>. Организация вертикального хранения шин на стеллажах упрощает
+                доступ к ним, что ускоряет процесс инвентаризации и увеличивает производительность работы сотрудников.
+              </li>
+            </List>
+          </div>
+
+          <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Особенности и преимущества</h2>
+            <p>
+              Стеллажи для шин обладают рядом уникальных характеристик и особенностей, которые делают их важным
+              элементом складской инфраструктуры. Ниже приведены некоторые из них:
+            </p>
+            <List>
+              <li>
+                <strong>Прочность и долговечность.</strong> Металлические стеллажи изготавливаются из прочных и долговечных
+                материалов, что обеспечивает их долгий срок службы даже при использовании в условиях высокой нагрузки. Они
+                устойчивы к коррозии, благодаря специальным покрытиям.
+              </li>
+              <li>
+                <strong>Регулируемые полки.</strong> Большинство стеллажей для шин оснащены регулируемыми полками, которые
+                позволяют настроить их в соответствии с размерами шин. Это обеспечивает гибкость и масштабируемость, позволяя
+                адаптироваться к изменяющимся потребностям хранения.
+              </li>
+              <li>
+                <strong>Легкость монтажа и демонтажа</strong>. Стеллажи для хранения шин, как правило, просты в сборке и
+                не требуют специальных инструментов или оборудования. Это обеспечивает легкость их перемещения и
+                переустановки в случае изменения складской логистики.
+              </li>
+              <li>
+                <strong>Безопасность.</strong> Дизайн и конструкция обеспечивают стабильность и безопасность при хранении
+                тяжелых товаров, как шины, предотвращая риск случайного падения или переворачивания стеллажа.
+              </li>
+            </List>
+          </div>
+
+          <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Купить металлический стеллаж для шин в компании ЗАО «КМ-про»</h2>
+            <p>Мы предлагаем стеллажи для автомобильных и грузовых шин, а также стеллажи для колес и дисков.</p>
+            <p>
+              Установка стеллажей также может быть выполнена нашими специалистами, что обеспечивает максимальную
+              надежность и безопасность использования.
+            </p>
+            <p>
+              Оптимизируйте ваше складское пространство и упростите процесс хранения товара уже сегодня - выбирайте
+              металлические стеллажи для шин от ЗАО «КМ-про»!
+            </p>
+          </div>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Длина секции базовая:</span>
+                <span>2480 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Длина секции дополнительная:</span>
+                <span>2390 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина стеллажа (односторонний):</span>
+                <span>710 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина стеллажа (двухсторонний):</span>
+                <span>1360 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина рамы:</span>
+                <span>600 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Высота секции 3300 мм:</span>
+                <span>3 уровня, 9 комплектов шин</span>
+              </div>
+              <div>
+                <span class="font-bold block">Высота секции 4300 мм:</span>
+                <span>4 уровня, 12 комплектов шин</span>
+              </div>
+              <div>
+                <span class="font-bold block">Высота секции 5300 мм:</span>
+                <span>5 уровней, 15 комплектов шин</span>
+              </div>
+              <div>
+                <span class="font-bold block">Высота секции 6300 мм:</span>
+                <span>6 уровней, 18 комплектов шин</span>
+              </div>
+              <div>
+                <span class="font-bold block">Максимальная нагрузка на уровень:</span>
+                <span>3x100 кг</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

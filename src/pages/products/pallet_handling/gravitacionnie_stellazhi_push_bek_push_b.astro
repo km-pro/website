@@ -1,0 +1,197 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import Link from '../../../components/Link.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/p90_pushback_overview_1_large1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/push_back_3_large.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/push_back_1_large1.png',
+    },
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Фронтальные стеллажи',
+    href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+  },
+  {
+    title: 'Набивные стеллажи Drive-in',
+    href: '/products/pallet_handling/nabivnie_stellazhi_drive_in/',
+  },
+  {
+    title: 'Гравитационные стеллажи пуш-бэк (Push-back)',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/',
+  },
+  {
+    title: 'Гравитационные стеллажи',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi/',
+  },
+  {
+    title: 'Мобильные стеллажи',
+    href: '/products/pallet_handling/mobil_nie_stellazhi/',
+  },
+  {
+    title: 'Узкопроходные стеллажи',
+    href: '/products/pallet_handling/uzkoprohodnie_stellazhi/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Паллетные стеллажи', href: '/products/pallet_handling/' },
+  { title: 'Гравитационные стеллажи пуш-бэк (Push-back)' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Ханса Принт, Финляндия',
+            href: '/references/storing_of_pallets/pallet_flow/hansa_print_finljandija/',
+          },
+          {
+            title: 'Хутамаки Ой, Финляндия',
+            href: '/references/storing_of_pallets/pallet_flow/hutamaki_oj_finljandija/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Гравитационные стеллажи пуш-бэк (Push-back) | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Гравитационные стеллажи (пуш-бэк)</h1>
+
+          <h2>Гравитационные стеллажи для паллет боковой загрузки, паллет и склада</h2>
+
+          <p>
+            Гравитационные <Link href="/products/">металлические стеллажи</Link>
+            – одни из наиболее удобных и универсальных. Они позволяют автоматизировать складские грузопотоки и задействовать
+            до 80% от совокупной полезной площади склада.
+          </p>
+
+          <h3 class="text-lg font-bold mb-4">Преимущества установки гравитационных стеллажей пуш-бэк (Push-back):</h3>
+          <List>
+            <li>
+              <span>приводит к уменьшению выполняемых операций в ходе загрузки и выгрузки товаров</span>
+            </li>
+            <li>
+              <span>снижает пробег погрузчиков и другой спецтехники, используемой сегодня на складах</span>
+            </li>
+            <li>
+              <span>позволяет оптимизировать численность обслуживающего персонала</span>
+            </li>
+          </List>
+
+          <h3 class="text-2xl font-bold mb-4">Конструктивные особенности</h3>
+
+          <p>
+            Такой <Link href="/products/pallet_handling/">паллетный стеллаж</Link> гравитационный состоит из дорожек с роликами,
+            расположенных под определенных углом. Как правило, он составляет 4-5 % по отношению к горизонту. За счет наклона
+            поддоны могут скатываться самостоятельно, под собственным весом. По достижении упора поддон прекращает движение
+            и останавливается. Подобный принцип работы позволяет задействовать минимум техники и рабочего персонала.
+          </p>
+
+          <p>
+            Вглубь гравитационного стеллажа можно загрузить до 10 поддонов. Обработка поддонов осуществляется на
+            условиях «пришел первым – ушел последним». Такие гравитацонные стеллажи push-back данного типа отличаются
+            жесткостью и устойчивостью конструкции, срок их службы – от 25 лет. Ими можно
+            <Link href="/products/skladskie_sistemi_dinamicheskogo_hraneni/">оснащать склады</Link> как с большим, так и
+            средним грузооборотом. Такие гравитацонные стеллажи пуш-бэк особенно востребованы на складах, где хранятся товары
+            химической, пищевой и фармацевтической отрасли.
+          </p>
+
+          <p>
+            Компания «КМ-про» изготавливает металлические гравитационные стеллажи для склада по индивидуальному заказу.
+            Выгодные цены, гарантия. По всем вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам,
+            размещенным на сайте.
+          </p>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span>Высокая плотность хранения: Максимально эффективное использование складского пространства</span>
+            </li>
+            <li>
+              <span>Однотипные грузы: Идеально подходит для хранения большого количества однотипного груза</span>
+            </li>
+            <li>
+              <span>Доступность: Свободный доступ к грузам на каждом уровне канале</span>
+            </li>
+            <li>
+              <span>Температурный режим: Идеален для холодильников и морозильников</span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+
+      <TabPanel index={2}>
+        <div class="prose max-w-none">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Высота:</span>
+                <span>до 6 поддонов</span>
+              </div>
+              <div>
+                <span class="font-bold block">Высота канала:</span>
+                <span>до 3500 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Ширина канала:</span>
+                <span>до 5000 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина канала:</span>
+                <span>до 10 поддонов</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка в канале:</span>
+                <span>до 5000 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на секцию:</span>
+                <span>до 30 000 кг</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

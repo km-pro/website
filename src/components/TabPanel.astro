@@ -1,0 +1,12 @@
+---
+interface Props {
+  index: number;
+  defaultActive?: boolean;
+}
+
+const { index, defaultActive = false } = Astro.props;
+---
+
+<div class="tab-panel" data-active={defaultActive} data-panel={index}>
+  <slot />
+</div>

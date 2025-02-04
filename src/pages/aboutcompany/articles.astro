@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/MainLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AboutCompanyLayout from '../../layouts/AboutCompanyLayout.astro';
+import Link from '../../components/Link.astro';
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'О компании', href: '/aboutcompany/' },
+  { title: 'Статьи' },
+];
+---
+
+<Layout title="О компании ЗАО «КМ-Про» | Ваш надежный партнер в области складского оборудования!">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <AboutCompanyLayout>
+    <div class="prose max-w-none">
+      <h1 class="text-2xl font-bold mb-6">Полезные статьи</h1>
+
+      <ul class="space-y-3 list-none pl-0">
+        <li>
+          <Link href="/aboutcompany/articles/vidi_skladskih_stellazhej_i_ih_osobennos/">
+            Виды складских стеллажей и их особенности применения
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </AboutCompanyLayout>
+</Layout>

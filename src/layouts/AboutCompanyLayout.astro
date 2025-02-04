@@ -1,0 +1,22 @@
+---
+import SideNavigation from '../components/SideNavigation.astro';
+const sideNavItems = [
+  { title: 'О компании', href: '/aboutcompany/about/', current: true },
+  { title: 'История', href: '/aboutcompany/history/' },
+  { title: 'Система качества', href: '/aboutcompany/quality/' },
+  { title: 'Статьи', href: '/aboutcompany/articles/' },
+];
+---
+
+<div class="max-w-6xl mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <div class="lg:col-span-1">
+      <SideNavigation items={sideNavItems} />
+    </div>
+    <main class="lg:col-span-3">
+      <article class="bg-white rounded-lg shadow-md p-8 prose max-w-none">
+        <slot />
+      </article>
+    </main>
+  </div>
+</div>

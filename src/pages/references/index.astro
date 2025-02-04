@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/MainLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import LinksCard from '../../components/LinksCard.astro';
+import project1 from '../../assets/images/stelazh31.png';
+import project2 from '../../assets/images/pallet18.png';
+import project3 from '../../assets/images/stelazh91.png';
+import project4 from '../../assets/images/stelazh61.png';
+import project5 from '../../assets/images/ref1.png';
+
+const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'Проекты' }];
+
+const projectCategories = [
+  {
+    title: 'Хранение на полках',
+    href: '/references/storage_of_small_parts/',
+    image: project1,
+    links: [
+      {
+        title: 'Полочные стеллажи',
+        href: '/references/storage_of_small_parts/polochnie_stellazhi/',
+      },
+      {
+        title: 'Многоэтажные полочные стеллажи',
+        href: '/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi/',
+      },
+      {
+        title: 'Мобильные полочные стеллажи',
+        href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/',
+      },
+      {
+        title: 'Проекты с применением вертикальных лифтов (TORNADO)',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/',
+      },
+      {
+        title: 'Проекты с применением вертикальных каруселей (PATERNOSTER)',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_karus/',
+      },
+      {
+        title: 'Проекты с применением горизонтальных каруселей (HOCA)',
+        href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/',
+      },
+      {
+        title: 'Стеллажи для зоны отбора',
+        href: '/references/storage_of_small_parts/stellazhi_dlja_zoni_otbora/',
+      },
+    ],
+  },
+  {
+    title: 'Паллетное хранение',
+    href: '/references/storing_of_pallets/',
+    image: project2,
+    links: [
+      {
+        title: 'Узкопроходные стеллажи',
+        href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/',
+      },
+      {
+        title: 'Фронтальные паллетные стеллажи',
+        href: '/references/storing_of_pallets/pallet_racking_standart/',
+      },
+      {
+        title: 'Гравитационные стеллажи',
+        href: '/references/storing_of_pallets/pallet_flow/',
+      },
+      {
+        title: 'Мобильные стеллажи',
+        href: '/references/storing_of_pallets/mobile_pallet_racking/',
+      },
+    ],
+  },
+  {
+    title: 'Хранение негабаритных грузов',
+    href: '/references/mezoninnie_sistemi/',
+    image: project3,
+    links: [
+      {
+        title: 'К-раута, Финляндия',
+        href: '/references/mezoninnie_sistemi/k_rauta_finljandija/',
+      },
+      {
+        title: 'Фольксваген, Швеция',
+        href: '/references/mezoninnie_sistemi/fol_ksvagen_shvecija/',
+      },
+      {
+        title: 'Кодин Терра, Финляндия',
+        href: '/references/mezoninnie_sistemi/kodin_terra_finljandija/',
+      },
+      {
+        title: 'Агримаркет, Финляндия',
+        href: '/references/mezoninnie_sistemi/agrimarket_finljandija/',
+      },
+      {
+        title: 'ИксЭль Биг, Дания',
+        href: '/references/mezoninnie_sistemi/iksel_big_danija/',
+      },
+      {
+        title: 'СЕАС-НВЕ, Дания',
+        href: '/references/mezoninnie_sistemi/seas_nve_danija/',
+      },
+    ],
+  },
+  {
+    title: 'Логистические операторы',
+    href: '/references/logisticheskie_operatori/',
+    image: project4,
+    links: [
+      {
+        title: 'ДКИ Лоджистикс А/С, Дания',
+        href: '/references/logisticheskie_operatori/dki_lodzhistiks_a_s_danija/',
+      },
+      {
+        title: 'Электролюкс Дистрипартс АБ, Швеция',
+        href: '/references/logisticheskie_operatori/elektroljuks_distriparts_ab_shvecija/',
+      },
+      {
+        title: 'Ниссан Шенкер Лоджистикс, Швеция',
+        href: '/references/logisticheskie_operatori/nissan_shenker_lodzhistiks_shvecija/',
+      },
+      {
+        title: 'Сервистик АБ, Швеция',
+        href: '/references/logisticheskie_operatori/servistik_ab_shvecija/',
+      },
+    ],
+  },
+  {
+    title: 'Проекты с применением мезонинных систем',
+    href: '/references/workplace_storage/',
+    image: project5,
+    links: [
+      {
+        title: 'Ван Дер Гааг БиВи, Нидерланды',
+        href: '/references/workplace_storage/van_der_gaag_bivi_niderlandi/',
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Реализованные проекты | ЗАО «КМ-про»">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">Реализованные проекты</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {
+        projectCategories.map(({ title, href, image, links }) => (
+          <LinksCard title={title} href={href} image={image} links={links} />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

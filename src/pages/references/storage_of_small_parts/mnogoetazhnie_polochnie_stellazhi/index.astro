@@ -1,0 +1,59 @@
+---
+import ProjectCard from '../../../../components/ProjectCard.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import Layout from '../../../../layouts/MainLayout.astro';
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+}
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  { title: 'Многоэтажные полочные стеллажи' },
+];
+
+const projects: Project[] = [
+  {
+    title: 'Смит и Нефью, Швейцария',
+    description:
+      'Компания Смит и Нефью - лидер в следующих отраслях: ортопедия, эндоскопия, управление рисками в социальной сфере.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/xim11.png',
+    href: '/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi/smit_i_nef_ju_shvejcarija/',
+  },
+  {
+    title: 'Тойота Партс Центр, Бельгия',
+    description:
+      'Многоэтажная полочная система Constructor разработана и установлена для организации хранения запасных частей и аксессуаров компании Тойота.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh_41.png',
+    href: '/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi/tojota_parts_centr_bel_gija/',
+  },
+];
+---
+
+<Layout title="Реализованные проекты с применением многоэтажных полочных стеллажей">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">
+      Реализованные проекты с применением многоэтажных полочных стеллажей
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={project.href}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,53 @@
+---
+import NavigationDropdown from './NavigationDropdown.astro';
+
+interface MenuItem {
+  href: string;
+  title: string;
+  submenu?: MenuItem[];
+}
+
+interface Props {
+  menuItems: MenuItem[];
+}
+
+const { menuItems } = Astro.props;
+---
+
+<nav class="bg-gradient-to-b from-blue-900 to-blue-800">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex md:hidden justify-end py-2">
+      <button id="menuToggle" class="text-white p-2 hover:bg-blue-800 rounded-lg" aria-label="Открыть меню">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="navContainer">
+      <NavigationDropdown menuItems={menuItems} level={0} />
+    </div>
+  </div>
+</nav>
+
+<script>
+  function initializeMobileMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const menuItems = document.getElementById('menuItems');
+
+    menuToggle?.addEventListener('click', () => {
+      menuItems?.classList.toggle('hidden');
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && menuItems?.classList.contains('hidden')) {
+        menuItems.classList.remove('hidden');
+      } else if (window.innerWidth < 768 && !menuItems?.classList.contains('hidden')) {
+        menuItems?.classList.add('hidden');
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeMobileMenu();
+  });
+</script>

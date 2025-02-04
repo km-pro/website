@@ -1,0 +1,242 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../assets/images/messanine_me280_work_floors_1_large.png';
+import carouselImage2 from '../../../assets/images/messanine_me280_work_floors_2_large.png';
+import carouselImage3 from '../../../assets/images/messanine_me280_work_floors_3_large.png';
+import carouselImage4 from '../../../assets/images/messanine_me280_work_floors_4_large2.png';
+import carouselImage5 from '../../../assets/images/messanine_me280_work_floors_5_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage5, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Стеллаж мезонинный ME250',
+    href: '/products/stellazhnij_mezonin/mezoninnie_system/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Стеллажный мезонин', href: '/products/stellazhnij_mezonin/' },
+  { title: 'Стеллаж мезонинный ME250' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Фольксваген, Швеция',
+            href: '/references/mezoninnie_sistemi/fol_ksvagen_shvecija/',
+          },
+          {
+            title: 'Ван Дер Гааг БиВи, Нидерланды',
+            href: '/references/workplace_storage/van_der_gaag_bivi_niderlandi/',
+          },
+          {
+            title: 'Стэйплс, Германия',
+            href: '/references/storing_of_pallets/pallet_racking_standart/stejpls_germanija/',
+          },
+          {
+            title: 'Поло Экспрессверсанд, Германия',
+            href: '/references/storage_of_small_parts/polochnie_stellazhi/polo_ekspressversand_germanija/',
+          },
+          {
+            title: 'Ниссан Шенкер Лоджистикс, Швеция',
+            href: '/references/logisticheskie_operatori/nissan_shenker_lodzhistiks_shvecija/',
+          },
+          {
+            title: 'МТЮ Детройт Дизель, Нидерланды',
+            href: '/references/storing_of_pallets/pallet_racking_standart/mtju_detrojt_dizel_niderlandi/',
+          },
+          {
+            title: 'Маритим АС, Норвегия',
+            href: '/references/storing_of_pallets/pallet_racking_standart/maritim_as_norvegija/',
+          },
+          {
+            title: 'Электролюкс Дистрипартс АБ, Швеция',
+            href: '/references/logisticheskie_operatori/elektroljuks_distriparts_ab_shvecija/',
+          },
+          {
+            title: 'Косанит, Бельгия',
+            href: '/references/storage_of_small_parts/polochnie_stellazhi/kosanit_bel_gija/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Стеллаж мезонинный ME250 | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Комплектация']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Стеллаж мезонинный ME250</h1>
+
+          <h2>Максимизируйте складскую площадь с мезонинными системами ME250</h2>
+
+          <p>
+            С учетом увеличения объемов товарооборота и ограниченного доступного складского пространства, наша задача -
+            найти оптимальные решения для эффективного использования каждого квадратного метра. Мезонинные системы
+            хранения, предлагаемые нашей компанией, станут идеальным вариантом для рациональной организации пространства
+            вашего склада.
+          </p>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Особенности мезонинных систем ME250</h3>
+          <List>
+            <li>
+              Многоуровневая конструкция: Мезонинные системы предлагают возможность использования вертикального
+              пространства склада, создавая дополнительные уровни хранения на основе существующей площади.
+            </li>
+            <li>
+              Высокая грузоподъемность: ME250 мезонинные стеллажи способны выдерживать значительные нагрузки,
+              обеспечивая надежное хранение товаров различных весовых категорий.
+            </li>
+            <li>
+              Гибкая конфигурация: Мезонинные системы ME250 могут быть легко модифицированы и адаптированы под
+              требования вашего склада и тип товаров.
+            </li>
+          </List>
+
+          <h3 class="text-2xl font-bold mt-8 mb-4">Почему стоит выбрать нашу компанию для покупки мезонинных систем</h3>
+          <List>
+            <li>
+              <strong>Качество и надежность</strong>: Мы предлагаем только сертифицированные мезонинные стеллажи,
+              изготовленные из прочных материалов, что гарантирует их долговечность и безопасность.
+            </li>
+            <li>
+              <strong>Конкурентоспособные цены</strong>: У нас вы сможете купить мезонинные стеллажи по выгодным ценам,
+              получив оптимальное соотношение цена-качество.
+            </li>
+            <li>
+              <strong>Индивидуальный подход</strong>: Наши специалисты помогут вам выбрать именно тот мезонинный стеллаж
+              для склада, который будет наиболее подходящим для вашего бизнеса, с учетом ваших потребностей и бюджета.
+            </li>
+            <li>
+              <strong>Быстрая доставка и монтаж</strong>: Мы ценим ваше время и гарантируем оперативную доставку и
+              профессиональный монтаж мезонинных систем на вашем складе.
+            </li>
+            <li>
+              <strong>Гарантийное обслуживание</strong>: Приобретая металлические мезонинные стеллажи у нас, вы можете
+              быть уверены в их качестве и получить гарантийное обслуживание.
+            </li>
+          </List>
+
+          <p class="mt-8">
+            Не упустите возможность оптимизировать рабочее пространство на вашем складе и повысить его
+            производительность. Выбирайте мезонинные системы ME250 – с нами вы получите надежные и долговечные
+            мезонинные стеллажи по конкурентоспособным ценам. Свяжитесь с нами сегодня, чтобы купить мезонинные стеллажи
+            и обсудить детали вашего проекта с нашими специалистами.
+          </p>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <h3 class="text-xl font-bold mb-4">Преимущества мезонинных систем хранения</h3>
+          <List>
+            <li>
+              <span>
+                Экономия пространства: Мезонинные стеллажи и конструкции позволяют увеличить площадь хранения без
+                дополнительных затрат на расширение складских помещений.
+              </span>
+            </li>
+            <li>
+              <span>
+                Увеличение производительности: Благодаря удобному доступу к товарам на разных уровнях, мезонинные
+                системы обеспечивают ускорение процессов складирования и комплектации заказов.
+              </span>
+            </li>
+            <li>
+              <span>
+                Универсальность: Мезонинные стеллажи подходят для хранения различных видов товаров, от легких товаров до
+                тяжелых паллет.
+              </span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+
+      <TabPanel index={2}>
+        <div class="prose max-w-none space-y-6">
+          <div>
+            <p class="font-bold">Ограждения:</p>
+            <ul class="mt-2 space-y-2">
+              <li>обеспечивают безопасность работы персонала</li>
+              <li>крепятся напрямую к полу</li>
+              <li>состоят из защиты на уровне ног и перил для рук</li>
+              <li>охватывают полностью весь периметр мезонина и лестниц</li>
+              <li>эргономически правильной формы</li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="font-bold">Лестницы:</p>
+            <ul class="mt-2 space-y-2">
+              <li>Широкий выбор ширин, длинн.</li>
+              <li>Возможность регулировки угла</li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="font-bold">Ворота для паллет:</p>
+            <ul class="mt-2 space-y-2">
+              <li>Вращающиеся ворота</li>
+              <li>Откатные ворота</li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="font-bold">Лифты:</p>
+            <p class="mt-2">
+              Используются вместо/вместе с воротами, ограждаются сетчатыми панелями, имеют широкий перечень опций.
+              Поставляются лифты различных размеров и грузоподъемностей.
+            </p>
+          </div>
+
+          <div>
+            <p class="font-bold">Полы:</p>
+            <ul class="mt-2 space-y-2">
+              <li>Древесные панели толщиной 38 мм</li>
+              <li>Сварные или прессованные, оцинкованные решетки</li>
+            </ul>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

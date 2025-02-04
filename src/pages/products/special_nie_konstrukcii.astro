@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/MainLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Специальные конструкции' },
+];
+
+const products = [
+  {
+    title: 'Стеллаж для шин и колес',
+    href: '/products/special_nie_konstrukcii/stellazhi_dlja_hranenija_shin/',
+    description:
+      'Стеллажи для хранения шин Constructor состоят из рам фронтального паллетного стеллажа P90, специальных балок и кронштейнов.',
+  },
+  {
+    title: 'Стеллажи для магазинов',
+    href: '/products/special_nie_konstrukcii/stellazhi_dlja_magazinov/',
+    description:
+      'Благодаря широкому ассортименту аксессуаров паллетный стеллаж P90 может использоваться для эффективного заполнения торговых залов.',
+  },
+];
+---
+
+<Layout title="Специальные конструкции | КМ-про">
+  <div class="max-w-6xl mx-auto px-4">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <div class="bg-white rounded-lg shadow-md p-8 my-8">
+      <h1 class="text-3xl font-bold mb-8">Специальные конструкции</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,164 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import Link from '../../../components/Link.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../assets/images/agrimarket_1_large1.png';
+import carouselImage2 from '../../../assets/images/agrimarket_2_large1.png';
+import carouselImage3 from '../../../assets/images/agrimarket_3_large1.png';
+import carouselImage4 from '../../../assets/images/agrimarket_5_large1.png';
+import carouselImage5 from '../../../assets/images/agrimarket_6_large1.png';
+import carouselImage6 from '../../../assets/images/agrimarket_7_large1.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage5, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage6, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'К-раута, Финляндия',
+    href: '/references/mezoninnie_sistemi/k_rauta_finljandija/',
+  },
+  {
+    title: 'Фольксваген, Швеция',
+    href: '/references/mezoninnie_sistemi/fol_ksvagen_shvecija/',
+  },
+  {
+    title: 'Кодин Терра, Финляндия',
+    href: '/references/mezoninnie_sistemi/kodin_terra_finljandija/',
+  },
+  {
+    title: 'Агримаркет, Финляндия',
+    href: '/references/mezoninnie_sistemi/agrimarket_finljandija/',
+  },
+  {
+    title: 'ИксЭль Биг, Дания',
+    href: '/references/mezoninnie_sistemi/iksel_big_danija/',
+  },
+  {
+    title: 'СЕАС-НВЕ, Дания',
+    href: '/references/mezoninnie_sistemi/seas_nve_danija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  {
+    title: 'Хранение негабаритных грузов',
+    href: '/references/mezoninnie_sistemi/',
+  },
+  { title: 'Агримаркет, Финляндия' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Многоэтажные полочные стеллажи S90',
+            href: '/products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/',
+          },
+          {
+            title: 'Стандартные полочные стеллажи S90',
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+          },
+          {
+            title: 'Консольные стеллажи',
+            href: '/products/konsol_nie_stellazhi/',
+          },
+          {
+            title: 'Мобильные паллетные стеллажи P90',
+            href: '/products/pallet_handling/mobil_nie_stellazhi/',
+          },
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Агримаркет, Финляндия | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Агримаркет, Финляндия</h1>
+
+      <p class="font-bold mb-4">Агримаркет – торговая сеть садовых центров и магазинов строительных товаров.</p>
+
+      <p>
+        Для их оборудования разработан ряд уникальных решений на базе
+        <Link href="/products/">паллетных и консольных стеллажей</Link>
+        компании
+        <strong>Constructor</strong>:
+      </p>
+
+      <ul class="list-disc pl-6 mb-4">
+        <li>размещение крупногабаритных товаров</li>
+        <li>размещение материалов для укладки пола</li>
+        <li>экспозиции плитки и дверей</li>
+        <li>экспозиции бытовой и садовой техники и т.д.</li>
+      </ul>
+
+      <p class="mt-6"><strong>Емкость:</strong></p>
+      <p>Фронтальные паллетные стеллажи:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>высота: 4,0 м</li>
+        <li>нагрузка: до 1500 кг на п.м.</li>
+        <li>к-во: 1500 п.м.</li>
+      </ul>
+
+      <p>Многоэтажные полочные стеллажи:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>к-во: 820 кв.м.</li>
+      </ul>
+
+      <p>Консольные стеллажи с кровлей:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>высота: 4,0 м</li>
+        <li>длина консоли: до 1,2 м</li>
+      </ul>
+
+      <p>Мобильные паллетные стеллажи:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li>высота: 2020 мм</li>
+        <li>к-во: 137 п.м.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

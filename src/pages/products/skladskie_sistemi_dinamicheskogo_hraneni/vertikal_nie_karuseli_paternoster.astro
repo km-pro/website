@@ -1,0 +1,194 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import Link from '../../../components/Link.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/vertical_carousell_paternoster_6_large1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/vertical_carousell_paternoster_3_large1.png',
+    },
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Складское оборудованиe (вертикальные лифты tornado)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+  },
+  {
+    title: 'Складское оборудование (вертикальные карусели paternoster)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
+  },
+  {
+    title: 'Складское оборудование (горизонтальные карусели hoca)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/gorizontal_nie_karuseli_hoca/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  {
+    title: 'Автоматизированные складские системы',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
+  },
+  { title: 'Вертикальные карусели (PATERNOSTER)' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Бернер Ой, Финляндия',
+            href: '/references/storing_of_pallets/pallet_racking_standart/berner_oj_finljandija/',
+          },
+          {
+            title: 'Дом местного управления, Польша',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_karus/dom_mestnogo_upravlenija_pol_sha/',
+          },
+          {
+            title: 'Ковистон Авто Ой, Финляндия',
+            href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/koviston_avto_oj_finljandija/',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Аксессуары',
+    content: [
+      {
+        links: [
+          {
+            title: 'узнать подробнее об аксессуарах',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/accessories/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Вертикальные карусели PATERNOSTER | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Вертикальные карусели (PATERNOSTER)</h1>
+
+          <h2>Заказать карусели вертикальные PATERNOSTER в Беларуси</h2>
+
+          <p class="font-bold">
+            Вертикальные карусели (PATERNOSTER) - превосходное решение для снижения затрат времени на комплектацию
+            заказа. Этот тип автоматов особенно эффективен при комплектации нескольких заказов одновременно одним
+            оператором.
+          </p>
+
+          <p>
+            Машина с автоматическим вращением полок экономит площадь склада и максимально задействует всю высоту
+            помещения. Зоны выгрузки могут быть организованы в нескольких уровнях.
+          </p>
+
+          <p>
+            PATERNOSTER – это безопасное хранение и защита грузов от пыли и света. Рабочая обстановка безопасна и
+            эргономична, так как полки подаются на оптимальную для оператора высоту. Машина всегда выбирает кратчайший
+            путь к зоне выгрузки, сокращая продолжительность операций на складе.
+          </p>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span>Увеличивает полезную площадь хранения до 70 %</span>
+            </li>
+            <li>
+              <span>Снижает вероятность совершения ошибок при комплектации заказа на 70 %</span>
+            </li>
+            <li>
+              <span>Экономит время комплектации на 60 %</span>
+            </li>
+            <li>
+              <span>Эргономичная работа оператора</span>
+            </li>
+            <li>
+              <span>Предотвращает несанкционированный доступ</span>
+            </li>
+            <li>
+              <span>Легкое и удобное управление</span>
+            </li>
+            <li>
+              <span>ОС базирующаяся на Windows легко интегрируется с различными WMS</span>
+            </li>
+            <li>
+              <span>Особенно эффективна при комплектации нескольких заказов одновременно одним оператором</span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+
+      <TabPanel index={2}>
+        <div class="prose max-w-none">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Длина полки:</span>
+                <span>2850, 4100 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина полки:</span>
+                <span>420, 520, 620 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на полку:</span>
+                <span>до 600 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Высота ячейки:</span>
+                <span>201 - 493 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Максимальный вес груза:</span>
+                <span>до 15 000 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Общая высота:</span>
+                <span>3040 - 14 890 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Общая длина:</span>
+                <span>3703 и 4953 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Общая глубина:</span>
+                <span>1836, 2036 и 2236 мм</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>

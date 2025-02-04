@@ -1,0 +1,43 @@
+---
+export interface BlockContent {
+  label?: string;
+  links: { title: string; href: string; rel?: string }[];
+}
+
+export interface Block {
+  title: string;
+  content: BlockContent[];
+}
+
+interface Props {
+  blocks: Block[];
+}
+
+const { blocks } = Astro.props;
+---
+
+<aside class="space-y-6">
+  {
+    blocks.map((block) => (
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="bg-blue-900 text-white px-4 py-3">
+          <h3 class="text-lg font-semibold">{block.title}</h3>
+        </div>
+        <div class="p-4 space-y-3">
+          {block.content.map((content) => (
+            <div class="space-y-2">
+              {content.label && <p class="font-medium mb-1">{content.label}:</p>}
+              {content.links.map((link) => (
+                <p>
+                  <a href={link.href} rel={link.rel} class="text-blue-900 hover:text-blue-700 transition-colors">
+                    {link.title}
+                  </a>
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</aside>

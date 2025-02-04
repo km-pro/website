@@ -1,0 +1,59 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru" class="scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Купить складское оборудование в Минске с гарантией и доставкой оптом по выгодным ценам. ✓ Официальный дилер. ✓ Складское оборудование высокого качества."
+    />
+
+    <link rel="canonical" href="https://stellazhi.by/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="mx-auto max-w-6xl">
+      <Header />
+
+      <main class="mt-4 mx-2">
+        <slot />
+      </main>
+    </div>
+
+    <Footer />
+
+    <style>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+    </style>
+    <script>
+      import '../styles/index.scss';
+      import '@radix-ui/themes/styles.css';
+      import '@radix-ui/colors/black-alpha.css';
+      import '@radix-ui/colors/indigo.css';
+      import '@radix-ui/colors/mauve.css';
+      import '@radix-ui/colors/purple.css';
+      import '@radix-ui/colors/violet.css';
+    </script>
+  </body>
+</html>

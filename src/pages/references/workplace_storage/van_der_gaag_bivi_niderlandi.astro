@@ -1,0 +1,105 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../assets/images/messanine_me280_work_floors_1_large.png';
+import carouselImage2 from '../../../assets/images/messanine_me280_work_floors_2_large.png';
+import carouselImage3 from '../../../assets/images/messanine_me280_work_floors_3_large.png';
+import carouselImage4 from '../../../assets/images/messanine_me280_work_floors_4_large2.png';
+import carouselImage5 from '../../../assets/images/messanine_me280_work_floors_5_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage5, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Ван Дер Гааг БиВи, Нидерланды',
+    href: '/references/workplace_storage/van_der_gaag_bivi_niderlandi/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  {
+    title: 'Проекты с применением мезонинных систем',
+    href: '/references/workplace_storage/',
+  },
+  { title: 'Ван Дер Гааг БиВи, Нидерланды' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Стандартные полочные стеллажи S90',
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+          },
+          {
+            title: 'Мезонинные системы',
+            href: '/products/stellazhnij_mezonin/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Стеллаж мезонинный ME250 | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Ван Дер Гааг БиВи, Нидерланды</h1>
+
+      <p class="font-bold mb-4">
+        Мезонинная система решила проблему, связанную с переездом в помещение меньшей площади.
+      </p>
+
+      <p>Покупатель остался очень доволен качеством и надежностью конструкции.</p>
+
+      <p>
+        Благодаря высоте потолка в помещении была установлена мезонинная система ME250 со стандартными полочными
+        стеллажами на ней.
+      </p>
+
+      <h3 class="text-2xl font-bold mt-8 mb-4">Емкость склада:</h3>
+      <List>
+        <li>Мезонинная система ME250: 55 м.кв.</li>
+        <li>Нагрузка на кв.м.: до 350 кг.</li>
+        <li>Стандартный полочный стеллаж: 174 полок.</li>
+      </List>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

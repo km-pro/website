@@ -1,0 +1,76 @@
+---
+interface MenuItem {
+  href: string;
+  title: string;
+  submenu?: MenuItem[];
+}
+
+interface Props {
+  menuItems: MenuItem[];
+  level: number;
+}
+
+const { menuItems, level } = Astro.props;
+---
+
+<ul
+  id="menuItems"
+  class={`transition-all ${level === 0 ? 'hidden md:flex flex-col md:flex-row md:justify-between' : 'max-w-[300px] shadow-lg submenu'}`}
+>
+  {
+    menuItems.map((el) => {
+      const hasSubmenu = el.submenu && el.submenu.length > 0;
+
+      return (
+        <li class={`${level === 0 ? 'group relative' : 'group/sub relative'}`} data-level={level}>
+          <a
+            href={el.href}
+            class={`flex justify-between items-center gap-2 max-w-full ${level === 0 ? 'block w-full md:inline-block py-3 px-6 text-white hover:bg-blue-700' : 'block px-6 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-900 whitespace-nowrap'}`}
+          >
+            <span class="max-w-full whitespace-nowrap break-words text-balance">{el.title}</span>
+            {hasSubmenu && level !== 0 && (
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 flex-none">
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            )}
+          </a>
+          {el.submenu && el.submenu.length > 0 && (
+            <div
+              class={`hidden ${level === 0 ? 'group-hover:block' : 'group-hover/sub:block'} absolute ${level === 0 ? 'left-0 top-full' : 'left-full top-0'} bg-white min-w-48 z-50`}
+            >
+              <Astro.self menuItems={el.submenu} level={level + 1} />
+            </div>
+          )}
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  .group:hover > div,
+  .group\/sub:hover > div {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    .submenu {
+      display: none !important;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

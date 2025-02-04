@@ -1,0 +1,104 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/mobile_shelving_tyres_01_large.png';
+import carouselImage2 from '../../../../assets/images/mobile_shelving_tyres_02_large.png';
+import carouselImage3 from '../../../../assets/images/mobile_shelving_tyres_03_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Беко Бил, Швеция',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/beko_bil_shvecija/',
+  },
+  {
+    title: 'Клингер, Дания',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/klinger_danija/',
+  },
+  {
+    title: 'Металлпресс Донати, Италия',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/metallpress_donati_italija/',
+  },
+  {
+    title: 'Свенска Бил и Норден АБ, Швеция',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/svenska_bil_i_norden_ab_shvecija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Мобильные полочные стеллажи',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/',
+  },
+  { title: 'Беко Бил, Швеция' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Мобильные полочные стеллажи S90',
+            href: '/products/small_part_handling/mobile_shelving_s90/',
+          },
+          {
+            title: 'Стандартные полочные стеллажи S90',
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Беко Бил, Швеция | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Беко Бил, Швеция</h1>
+
+      <p>
+        Решение о приобретении нового оборудования принято компанией в связи с изменением в законодательстве Швеции.
+      </p>
+
+      <p>
+        Полочные стеллажи со специальными балками для установки шин смонтированы на мобильных основаниях длиной 10 м.
+      </p>
+
+      <p><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Количество: 4800 шин (40 шин/кв.м.)</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

@@ -1,0 +1,106 @@
+---
+import ProjectCard from '../../../../components/ProjectCard.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import Layout from '../../../../layouts/MainLayout.astro';
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+}
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  { title: 'Проекты с применением вертикальных лифтов (TORNADO)' },
+];
+
+const projects: Project[] = [
+  {
+    title: 'Стема инжиниринг АС, Дания',
+    description: 'Вертикальный лифт TORNADO разместился в производственном помещении.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/ref122.png',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/stema_inzhiniring_as_danija/',
+  },
+  {
+    title: 'Скандинавиан Айвэа, Швеция',
+    description: 'Скандинавиан Айвэа – ведущий разработчик и поставщик оптики в Скандинавии.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/ref102.png',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/skandinavian_ajvea_shvecija/',
+  },
+  {
+    title: 'Дани-Тех, Дания',
+    description:
+      'Благодаря установке четырех автоматов TORNADO выросло качество отбора заказов, уровень организации труда и безопасность хранения грузов.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/ref22.png',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/dani_teh_danija/',
+  },
+  {
+    title: 'Икеа, Великобритания',
+    description:
+      'Известная во всем мире компания Икеа выбрала автоматические системы TORNADO для улучшения качества отбора и хранения грузов.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/tk32.png',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/ikea_velikobritanija/',
+  },
+  {
+    title: 'Холгер Христиансен А/С, Дания',
+    description:
+      'Компания приняла стратегическое решение по строительству нового центрального склада, который был специально спроектирован с учетом установки вертикальных лифтов TORNADO.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/av81.png',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/holger_hristiansen_a_s_danija/',
+  },
+  {
+    title: 'LG Кемикал, Польша',
+    description:
+      'Для увеличения объема хранения груза на существующем складе были заказаны новые, эффективные складские системы.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/ref92.png',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/lg_kemikal_pol_sha/',
+  },
+  {
+    title: 'Ковистон Авто Ой, Финляндия',
+    description:
+      'Для своего нового складского центра компания Ковистон Авто Ой установила четыре новые системы PATERNOSTER и пять TORNADO.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/ref75.png',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/koviston_avto_oj_finljandija/',
+  },
+  {
+    title: 'Х.Краац Ой, Финляндия',
+    description:
+      'Установка сдвоенных лифтов TORNADO DTs привела к достижению производительности четырех машин с одним местом выгрузки.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/ref42.png',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/h_kraac_oj_finljandija/',
+  },
+  {
+    title: 'Электроскандия, Финляндия',
+    description:
+      'Автоматизированное хранение и отбор заказов привели к значительному увеличению эффективности работы склада.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/ref34.png',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/elektroskandija_finljandija/',
+  },
+];
+---
+
+<Layout title="Реализованные проекты с применением вертикальных лифтов (TORNADO)">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">
+      Реализованные проекты с применением вертикальных лифтов (TORNADO)
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={project.href}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

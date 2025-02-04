@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/MainLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'Поиск по сайту' }];
+---
+
+<Layout title="Поиск по сайту">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-4xl mx-auto py-8">
+    <div class="bg-white rounded-lg shadow-md p-8">
+      <h1 class="text-2xl font-bold mb-6">Поиск по сайту</h1>
+
+      <!-- Search Form -->
+      <div class="mb-8">
+        <form id="searchForm" class="flex gap-2">
+          <input
+            type="text"
+            name="search"
+            id="searchInput"
+            placeholder="Поиск по сайту"
+            class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+          <button type="submit" class="px-6 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors">
+            Найти
+          </button>
+        </form>
+      </div>
+
+      <div id="resultsCount" class="mb-6 hidden">
+        <p class="text-gray-600">
+          По вашему запросу найдено <span id="totalResults">0</span> страниц:
+        </p>
+      </div>
+
+      <div id="searchResults" class="space-y-8"></div>
+
+      <div id="pagination" class="mt-8 flex items-center justify-center gap-2 hidden"></div>
+
+      <div id="noResults" class="text-center py-8 hidden">
+        <p class="text-gray-600">По вашему запросу ничего не найдено. Попробуйте изменить параметры поиска.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    import type { SearchResult } from '../utils/search';
+
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+    const resultsCount = document.getElementById('resultsCount');
+    const totalResultsSpan = document.getElementById('totalResults');
+    const searchResults = document.getElementById('searchResults');
+    const pagination = document.getElementById('pagination');
+    const noResults = document.getElementById('noResults');
+
+    if (!searchForm || !searchInput || !resultsCount || !searchResults || !pagination || !noResults) {
+      throw new Error('Missing required elements');
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialQuery = urlParams.get('search') || '';
+    const initialPage = parseInt(urlParams.get('page') || '1');
+
+    if (initialQuery) {
+      searchInput.value = initialQuery;
+      performSearch(initialQuery, initialPage);
+    }
+
+    async function performSearch(query: string, page = 1) {
+      if (!searchResults || !resultsCount || !pagination || !noResults || !totalResultsSpan) {
+        throw new Error('Missing required elements');
+      }
+
+      try {
+        searchResults.innerHTML = '<div class="text-center py-4">Загрузка...</div>';
+        resultsCount.classList.add('hidden');
+        pagination.classList.add('hidden');
+        noResults.classList.add('hidden');
+
+        const response = await fetch(`/api/search?search=${encodeURIComponent(query)}&page=${page}`);
+
+        const data: {
+          success: boolean;
+          message?: string;
+          results: SearchResult[];
+          pagination: {
+            total: number;
+            total_pages: number;
+            current_page: number;
+          };
+        } = await response.json();
+
+        if (!data.success) {
+          throw new Error(data.message);
+        }
+
+        const url = new URL(window.location.toString());
+        url.searchParams.set('search', query);
+        url.searchParams.set('page', page.toString());
+        window.history.pushState({}, '', url);
+
+        if (data.results.length === 0) {
+          noResults.classList.remove('hidden');
+          resultsCount.classList.add('hidden');
+          searchResults.innerHTML = '';
+          return;
+        }
+
+        totalResultsSpan.textContent = data.pagination.total.toString();
+        resultsCount.classList.remove('hidden');
+
+        searchResults.innerHTML = data.results
+          .map(
+            (result) => `
+            <div class="border-b border-gray-200 pb-6 last:border-b-0">
+              <h3 class="text-lg font-semibold mb-2">
+                <a href="${result.url}" class="text-blue-900 hover:text-blue-700 transition-colors">
+                  ${result.title}
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-2">${result.description}</p>
+            </div>
+          `,
+          )
+          .join('');
+
+        if (data.pagination.total_pages > 1) {
+          pagination.innerHTML = `
+            <span class="text-gray-600">Страницы:</span>
+            <div class="flex gap-1">
+              ${Array.from({ length: data.pagination.total_pages }, (_, i) => i + 1)
+                .map(
+                  (p) => `
+                <button
+                  data-page="${p}"
+                  class="px-3 py-1 rounded-md ${
+                    data.pagination.current_page === p
+                      ? 'bg-blue-900 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  } transition-colors"
+                >
+                  ${p}
+                </button>
+              `,
+                )
+                .join('')}
+            </div>
+          `;
+          pagination.classList.remove('hidden');
+        } else {
+          pagination.classList.add('hidden');
+        }
+      } catch (error) {
+        console.error('Search error:', error);
+        searchResults.innerHTML = `
+          <div class="text-center py-4 text-red-500">
+            Произошла ошибка при выполнении поиска. Пожалуйста, попробуйте позже.
+          </div>
+        `;
+      }
+    }
+
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (query) {
+        performSearch(query, 1);
+      }
+    });
+
+    pagination.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const pageButton = target.closest('button[data-page]');
+
+      if (pageButton) {
+        const page = parseInt(pageButton.getAttribute('data-page') || '1');
+        performSearch(searchInput.value.trim(), page);
+
+        searchResults.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    window.addEventListener('popstate', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('search') || '';
+      const page = parseInt(urlParams.get('page') || '1');
+
+      searchInput.value = query;
+      if (query) {
+        performSearch(query, page);
+      }
+    });
+  </script>
+</Layout>

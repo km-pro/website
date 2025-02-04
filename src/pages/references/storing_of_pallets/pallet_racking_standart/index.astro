@@ -1,0 +1,150 @@
+---
+import ProjectCard from '../../../../components/ProjectCard.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import Layout from '../../../../layouts/MainLayout.astro';
+
+interface Project {
+  title: string;
+  description: string;
+  image?: string;
+  href: string;
+}
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение', href: '/references/storing_of_pallets/' },
+  { title: 'Фронтальные паллетные стеллажи' },
+];
+
+const projects: Project[] = [
+  {
+    title: 'CePT Юкей ПиЛСи, Великобритания',
+    description:
+      'Компании CePT Юкей ПиЛСи и Constructor заключили соглашение по оборудованию своего нового логистического центра паллетными стеллажами P90.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/retail43.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/cept_jukej_pilsi_velikobritanija/',
+  },
+  {
+    title: 'Сифилд Лоджистикс, Великобритания',
+    description:
+      'Компания Сифилд Лоджистикс обратилась за помощью в оборудовании своего нового склада площадью 25 тыс. кв.м. к компании Constructor.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_11.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/sifild_lodzhistiks_velikobritanija/',
+  },
+  {
+    title: 'Рунсвен, Швеция',
+    description: 'Логистический центр площадью 65 тыс. кв.м. оборудован паллетными стеллажами Constructor P90.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet131.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/runsven_shvecija/',
+  },
+  {
+    title: 'Мультилайн, Дания',
+    description:
+      'Компания Мультилайн построила и оборудовала новый центральный складской комплекс площадью 13,5 тыс. кв.м.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh_21.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/mul_tilajn_danija/',
+  },
+  {
+    title: 'Данске Фрагтменд, Дания',
+    description: 'Площадь логистического центра составляет 106 тыс. кв.м.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh20.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/danske_fragtmend_danija/',
+  },
+  {
+    title: 'Шенкер Лоджистикс, Швеция',
+    description:
+      'Общая площадь складских помещений компании Шенкер в Швеции на данный момент превышает 170 тыс кв.м. Компания Шенкер - один из крупнейших логистических операторов в мире.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet15.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/shenker_lodzhistiks_shvecija/',
+  },
+  {
+    title: 'Билтема, Швеция',
+    description:
+      'Компания Билтема - крупнейший скандинавский импортер товаров для автомобильной и морской промышленности.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh_62.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/biltema_shvecija/',
+  },
+  {
+    title: 'МТЮ Детройт Дизель, Нидерланды',
+    description:
+      'МТЮ Детройт Дизель отвечает за поставку промышленных двигателей компании Мерседес Бенц и продукции ВМ Мотор для стран Бенелюкс.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh_81.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/mtju_detrojt_dizel_niderlandi/',
+  },
+  {
+    title: 'КГ Кнутсон АБ, Швеция',
+    description:
+      'Результатом расширения и оптимизации складских площадей компании стало строительство нового объекта площадью более 33 тыс. кв.м.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh_51.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/kg_knutson_ab_shvecija/',
+  },
+  {
+    title: 'Паркер Ханнифин, Нидерланды',
+    description:
+      'В целях улучшения хранения гидравлических рукавов компании Паркер Ханнифин установлены паллетные и полочные системы Constructor.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet17.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/parker_hannifin_niderlandi/',
+  },
+  {
+    title: 'АСКО ВЕСТ АС, Норвегия',
+    description:
+      'С целью оптимизации хранения и обработки грузов в своем новом складском комплексе установлены гравитационные стеллажи компании Constructor.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_3.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/asko_vest_as_norvegija/',
+  },
+  {
+    title: 'Стэйплс, Германия',
+    description: 'Ультрасовременный дистрибуционный центр в Германии был оборудован компанией Constructor.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet47.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/stejpls_germanija/',
+  },
+  {
+    title: 'Бернер Ой, Финляндия',
+    description: 'В 2008 году все складские площади компании были объеденины в одном центре в г. Вантаа.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_5.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/berner_oj_finljandija/',
+  },
+  {
+    title: 'Иитала Груп, Финляндия',
+    description: 'Логистический центр обслуживает всю сеть компании в Европе, Арабских странах, Японии и США.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_6.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/iitala_grup_finljandija/',
+  },
+  {
+    title: 'Маритим АС, Норвегия',
+    description: 'Центральный склад поставщика товаров для морских перевозчиков.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/maritim2.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/maritim_as_norvegija/',
+  },
+  {
+    title: 'Дастин, Швеция',
+    description: 'Компания Дастин - крупнейший поставщик компьютеров и технологий в Швеции и Дании.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/dustin2.png',
+    href: '/references/storing_of_pallets/pallet_racking_standart/dastin_shvecija/',
+  },
+];
+---
+
+<Layout title="Реализованные проекты с применением фронтальных паллетных стеллажей">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">
+      Реализованные проекты с применением фронтальных паллетных стеллажей
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={project.href}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

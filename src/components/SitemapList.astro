@@ -1,0 +1,26 @@
+---
+import type { TreeNode } from '../utils/sitemap';
+
+interface Props {
+  items: TreeNode;
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="space-y-2">
+  {
+    Object.values(items.children).map((item) => (
+      <li>
+        <a href={item.path} class="text-blue-900 hover:text-blue-700 transition-colors">
+          {item.title}
+        </a>
+        {Object.keys(item.children).length > 0 && (
+          <div class="ml-6 mt-2">
+            <Astro.self items={item} />
+          </div>
+        )}
+      </li>
+    ))
+  }
+</ul>

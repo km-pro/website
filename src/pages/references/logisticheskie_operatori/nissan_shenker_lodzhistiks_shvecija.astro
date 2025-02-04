@@ -1,0 +1,138 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import Link from '../../../components/Link.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../assets/images/mesh_shelf_04_large5.png';
+import carouselImage2 from '../../../assets/images/multitier_shelves_01_large5.png';
+import carouselImage3 from '../../../assets/images/multitier_shelves_03_large5.png';
+import carouselImage4 from '../../../assets/images/pallet_shelves_02_large5.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'ДКИ Лоджистикс А/С, Дания',
+    href: '/references/logisticheskie_operatori/dki_lodzhistiks_a_s_danija/',
+  },
+  {
+    title: 'Электролюкс Дистрипартс АБ, Швеция',
+    href: '/references/logisticheskie_operatori/elektroljuks_distriparts_ab_shvecija/',
+  },
+  {
+    title: 'Ниссан Шенкер Лоджистикс, Швеция',
+    href: '/references/logisticheskie_operatori/nissan_shenker_lodzhistiks_shvecija/',
+  },
+  {
+    title: 'Сервистик АБ, Швеция',
+    href: '/references/logisticheskie_operatori/servistik_ab_shvecija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  {
+    title: 'Логистические операторы',
+    href: '/references/logisticheskie_operatori/',
+  },
+  { title: 'Ниссан Шенкер Лоджистикс, Швеция' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Стандартные полочные стеллажи S90',
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+          },
+          {
+            title: 'Многоэтажные полочные стеллажи S90',
+            href: '/products/stellazhnij_mezonin/mezoninnie_system/',
+          },
+          {
+            title: 'Мезонинные системы',
+            href: '/products/stellazhnij_mezonin/mezoninnie_system/',
+          },
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Ниссан Шенкер Лоджистикс, Швеция | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Ниссан Шенкер Лоджистикс, Швеция</h1>
+
+      <p class="font-bold mb-4">
+        Когда компании Шенкер Лоджистикс понадобилась помощь в хранении запасных частей к автомобилям Ниссан, она в
+        первую очередь обратилась
+        <Link href="/products/">за стеллажами</Link>
+        в компанию Constructor.
+      </p>
+
+      <p>Складской комплекс разделен на четыре зоны. Каждая зона хранит запасные части своего типа:</p>
+
+      <List>
+        <li>
+          Зона 1 – высотная. Оборудована паллетными стеллажами P90, где хранятся габаритные грузы, такие как двери,
+          бампера и стекла.
+        </li>
+        <li>
+          Зона 2 и 3- мезонинные системы. На уровне пола хранятся грузы с наибольшим оборотом. На верхнем уровне
+          хранятся грузы с меньшей оборачиваемостью.
+        </li>
+        <li>Зона 4 – полочные стеллажи.</li>
+      </List>
+
+      <p class="mt-6">
+        <strong>Емкость склада:</strong>
+      </p>
+
+      <List>
+        <li>
+          Зона 1 – паллетные стеллажи высотой 8,5 м, оснащенные многими уникальными решениями, такими как специальные
+          сетчатые полки и различные вертикальные разделители.
+        </li>
+        <li>Зона 2 и 3-мезонинные конструкции площадью 400 кв.м. и нагрузкой 500 кг. на кв.м.</li>
+        <li>Зона 4 – полочные стеллажи емкостью 6 955 полок.</li>
+      </List>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

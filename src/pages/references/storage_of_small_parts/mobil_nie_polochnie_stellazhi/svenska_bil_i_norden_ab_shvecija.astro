@@ -1,0 +1,125 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/svenskabil_sweden_1_large.png';
+import carouselImage2 from '../../../../assets/images/svenskabil_sweden_3_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Беко Бил, Швеция',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/beko_bil_shvecija/',
+  },
+  {
+    title: 'Клингер, Дания',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/klinger_danija/',
+  },
+  {
+    title: 'Металлпресс Донати, Италия',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/metallpress_donati_italija/',
+  },
+  {
+    title: 'Свенска Бил и Норден АБ, Швеция',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/svenska_bil_i_norden_ab_shvecija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Мобильные полочные стеллажи',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/',
+  },
+  { title: 'Свенска Бил и Норден АБ, Швеция' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Вертикальные лифты (TORNADO)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+          },
+          {
+            title: 'Вертикальные карусели (PATERNOSTER)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
+          },
+          {
+            title: 'Мобильные полочные стеллажи S90',
+            href: '/products/small_part_handling/mobile_shelving_s90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Свенска Бил и Норден АБ, Швеция | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Свенска Бил и Норден АБ, Швеция</h1>
+
+      <p>
+        В связи с переездом в новый центр продаж и услуг в г. Стокгольм компания инвестировала в новые высокоэффективные
+        складские машины для реализации возможности быстрого доступа к грузам и сокращению площади занятой под склад.
+      </p>
+
+      <p>
+        Было приобретено два автомата PATERNOSTER и один TORNADO. Результатом стало сокращение складской площади на 75
+        %. Высвобождение площади дало дополнительную возможность организации хранения 4 тыс. шин. Для чего были
+        установлены мобильные полочные стеллажи S90.
+      </p>
+
+      <p><strong>Емкость склада:</strong></p>
+      <p>TORNADO:</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 4,5 м</li>
+        <li>Ширина полки: 4000 мм</li>
+        <li>Глубина полки: 820 мм</li>
+        <li>Количество полок: 21 шт.</li>
+      </ul>
+
+      <p>PATERNOSTER:</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 4,5 м</li>
+        <li>Количество полок: 90</li>
+      </ul>
+
+      <p>Мобильный полочный стеллаж S90:</p>
+      <ul class="list-disc pl-6">
+        <li>К-во мобильных оснований: 18 шт</li>
+        <li>Длина мобильных оснований: 6220 мм</li>
+        <li>Высота: 2500 мм</li>
+        <li>Количество секций: 188 ед.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

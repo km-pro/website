@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/MainLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import Link from '../../components/Link.astro';
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Автоматизированные складские системы' },
+];
+
+const products = [
+  {
+    title: 'Складское оборудованиe (вертикальные лифты tornado)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+    description:
+      'Вертикальные лифты TORNADO – это современная, быстрая и бесшумная автоматическая система хранения, основанная на серво-технологии. Складирование грузов осуществляется с минимальными потерями. Уникальный дизайн улучшает хранение и комплектацию заказов внутри оптимального объема.',
+  },
+  {
+    title: 'Складское оборудование (вертикальные карусели paternoster)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
+    description:
+      'Вертикальные карусели (PATERNOSTER) - превосходное решение для снижения затрат времени на комплектацию заказа.',
+  },
+  {
+    title: 'Складское оборудование (горизонтальные карусели hoca)',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/gorizontal_nie_karuseli_hoca/',
+    description:
+      'Горизонтальные карусели (HOCA) представляют собой идеальное решение для хранения и эффективного отбора большого количества единиц товара на больших площадях или в помещениях с небольшими высотами.',
+  },
+];
+---
+
+<Layout title="Автоматизированные складские системы | КМ-про">
+  <div class="max-w-6xl mx-auto px-4">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <div class="bg-white rounded-lg shadow-md p-8 my-8">
+      <h1 class="text-3xl font-bold mb-6">Автоматизированные складские системы</h1>
+
+      <div class="prose max-w-none mb-12">
+        <h2 class="text-2xl font-bold mb-4">
+          Купить оборудование складское динамического хранения и поиска в Беларуси
+        </h2>
+
+        <p class="text-gray-700 mb-4">
+          ЗАО «КМ-Про» осуществляет поставки складского оборудования крупнейших производителей, в первую очередь –
+          компании «Constructor». Мы предлагаем надежное и технически совершенное оборудование динамического хранения и
+          поиска, в том числе:
+        </p>
+
+        <ul class="list-disc pl-6 mb-6 text-gray-700">
+          <li>вертикальные и горизонтальные карусели брендов «Paternoster» и «Hoca»;</li>
+          <li>вертикальные лифты «Tornado».</li>
+        </ul>
+
+        <div class="space-y-6">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <p class="mb-4">
+              <span class="font-bold">Вертикальные карусели «Paternoster»</span>
+              могут устанавливаться как на крупных, так и на небольших по площади складах. Такие
+              <Link href="/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/"
+                >вертикальные карусели «Paternoster»
+              </Link>
+              применяются для рационального хранения разнообразных грузов. Карусели оснащаются полками с возможностью автоматического
+              вращения, которые позволяют по максимуму использовать полезную площадь склада. Кроме того, данное складское
+              оборудование сокращает время, необходимое для выполнения различных операций с товарами.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <p class="mb-4">
+              <span class="font-bold">Горизонтальные карусели «Hoca»</span> разрабатывались для крупных складских комплексов.
+              Это технологичное и функциональное оборудование, предназначенное для быстрой доставки хранимых на складе грузов
+              к операторам. Такие
+              <Link href="/products/skladskie_sistemi_dinamicheskogo_hraneni/gorizontal_nie_karuseli_hoca/"
+                >горизонтальные карусели «Hoca»
+              </Link>
+              предусматривают возможность соединения в единую сеть (при необходимости).
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <p class="mb-4">
+              <span class="font-bold">Вертикальные лифты «Tornado»</span> – востребованное во всем мире автоматизированное
+              складское оборудование, которое используют для складирования и последующего хранения разнообразных товаров.
+              Благодаря лифтам качество хранения, равно как и качество комплектации, можно существенно увеличить. Такие
+              <Link href="/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/"
+                >вертикальные лифты «Tornado»
+              </Link>
+              оборудованы специальным сервоприводом, за счет которого грузы на складе можно перемещать и в горизонтальном,
+              и в вертикальном направлении.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Складское оборудование в Минске по выгодным ценам</h2>
+
+        <div class="bg-blue-50 p-6 rounded-lg">
+          <p class="text-gray-700 mb-4">
+            Нужна дополнительная консультация по выбору оборудования? Тогда свяжитесь с техническими специалистами
+            компании ЗАО «КМ-Про» по телефонам:
+            <Link href="tel:+375173730122">+375 (17) 373-01-22 </Link>
+            ,
+            <Link href="tel:+375296112194">+375 (29) 611-21-94</Link>
+            . Они в подробностях расскажут Вам о лифтах и каруселях, ознакомят с актуальными ценами, порекомендуют конкретное
+            решение именно для Вашего бизнеса. Также они согласуют с Вами сроки поставки и монтажа складского оборудования.
+          </p>
+
+          <p class="text-gray-700 font-medium">
+            Звоните и делайте заказы на лучшие в мире складские системы прямо сейчас!
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+    </div>
+  </div>
+</Layout>

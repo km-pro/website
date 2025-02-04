@@ -1,0 +1,139 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/koiviston_auto_1_large.png';
+import carouselImage2 from '../../../../assets/images/koiviston_auto_3_large.png';
+import carouselImage3 from '../../../../assets/images/koiviston_auto_4_large.png';
+import carouselImage4 from '../../../../assets/images/koiviston_auto_5_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Стема инжиниринг АС, Дания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/stema_inzhiniring_as_danija/',
+  },
+  {
+    title: 'Скандинавиан Айвэа, Швеция',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/skandinavian_ajvea_shvecija/',
+  },
+  {
+    title: 'Дани-Тех, Дания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/dani_teh_danija/',
+  },
+  {
+    title: 'Икеа, Великобритания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/ikea_velikobritanija/',
+  },
+  {
+    title: 'Холгер Христиансен А/С, Дания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/holger_hristiansen_a_s_danija/',
+  },
+  {
+    title: 'LG Кемикал, Польша',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/lg_kemikal_pol_sha/',
+  },
+  {
+    title: 'Ковистон Авто Ой, Финляндия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/koviston_avto_oj_finljandija/',
+  },
+  {
+    title: 'Х.Краац Ой, Финляндия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/h_kraac_oj_finljandija/',
+  },
+  {
+    title: 'Электроскандия, Финляндия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/elektroskandija_finljandija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Проекты с применением вертикальных лифтов (TORNADO)',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/',
+  },
+  { title: 'Ковистон Авто Ой, Финляндия' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Вертикальные карусели (PATERNOSTER)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
+          },
+          {
+            title: 'Вертикальные лифты (TORNADO)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Ковистон Авто Ой, Финляндия | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Ковистон Авто Ой, Финляндия</h1>
+
+      <p class="font-bold mb-4">
+        Для своего нового складского центра в г. Лахти компания Ковистон Авто Ой установила четыре новых машины
+        PATERNOSTER и пять TORNADO.
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+      <p>TORNADO:</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 5,0 м</li>
+        <li>Ширина полки: 3000 мм</li>
+        <li>Глубина полки: 820 мм</li>
+        <li>Количество полок: 15 шт</li>
+        <li>Нагрузка на полку: до 500 кг</li>
+      </ul>
+
+      <p>PATERNOSTER:</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 8,240 м</li>
+        <li>Ширина полки: 4100 мм</li>
+        <li>Глубина полки: 420 мм</li>
+        <li>Количество полок: 32</li>
+        <li>Нагрузка на полку: до 400 кг</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

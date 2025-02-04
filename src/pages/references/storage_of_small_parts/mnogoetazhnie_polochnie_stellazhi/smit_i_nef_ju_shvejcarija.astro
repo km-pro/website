@@ -1,0 +1,105 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/smith_nephew_1_large.png';
+import carouselImage2 from '../../../../assets/images/smith_nephew_3_large.png';
+import carouselImage3 from '../../../../assets/images/smith_nephew_4_large.png';
+import carouselImage4 from '../../../../assets/images/smith_nephew_5_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Смит и Нефью, Швейцария',
+    href: '/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi/smit_i_nef_ju_shvejcarija/',
+  },
+  {
+    title: 'Тойота Партс Центр, Бельгия',
+    href: '/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi/tojota_parts_centr_bel_gija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Многоэтажные полочные стеллажи',
+    href: '/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi/',
+  },
+  { title: 'Смит и Нефью, Швейцария' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Многоэтажные полочные стеллажи S90',
+            href: '/products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/',
+          },
+          {
+            title: 'Стандартные полочные стеллажи S90',
+            href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+          },
+          {
+            title: 'Мезонинные системы',
+            href: '/products/stellazhnij_mezonin/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Смит и Нефью, Швейцария | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Смит и Нефью, Швейцария</h1>
+
+      <p class="font-bold mb-4">
+        Компания Смит и Нефью - лидер в следующих отраслях: ортопедия, эндоскопия, управление рисками в социальной
+        сфере.
+      </p>
+
+      <p>
+        Для решения задач европейской логистики своей продукции, производимой в Швейцарии, Германии и Франции,
+        установлены многоэтажные полочные стеллажи <strong>Constructor</strong> на площадью более 1 тыс. кв.м.
+      </p>
+
+      <p>
+        Для хранения полуфабрикатов и упаковочных материалов используется мезонинная система длиной 50 м и шириной 10 м.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

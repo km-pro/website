@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/MainLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import LinksCard from '../../components/LinksCard.astro';
+import pallet1 from '../../assets/images/pallet1.png';
+import pallet2 from '../../assets/images/pallet2.png';
+import pallet3 from '../../assets/images/pallet3.png';
+import pallet4 from '../../assets/images/pallet4.png';
+import pallet5 from '../../assets/images/pallet5.png';
+import pallet6 from '../../assets/images/pallet6.png';
+
+const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'Продукция' }];
+
+const products = [
+  {
+    title: 'Паллетные стеллажи',
+    href: '/products/pallet_handling/',
+    image: pallet1,
+    links: [
+      {
+        title: 'Фронтальные стеллажи',
+        href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+      },
+      {
+        title: 'Набивные стеллажи Drive-in',
+        href: '/products/pallet_handling/nabivnie_stellazhi_drive_in/',
+      },
+      {
+        title: 'Гравитационные стеллажи пуш-бэк (Push-back)',
+        href: '/products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/',
+      },
+      {
+        title: 'Гравитационные стеллажи',
+        href: '/products/pallet_handling/gravitacionnie_stellazhi/',
+      },
+      {
+        title: 'Мобильные стеллажи',
+        href: '/products/pallet_handling/mobil_nie_stellazhi/',
+      },
+      {
+        title: 'Узкопроходные стеллажи',
+        href: '/products/pallet_handling/uzkoprohodnie_stellazhi/',
+      },
+    ],
+  },
+  {
+    title: 'Полочные стеллажи',
+    href: '/products/small_part_handling/',
+    image: pallet2,
+    links: [
+      {
+        title: 'Стандартные полочные стеллажи S90',
+        href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
+      },
+      {
+        title: 'Мобильные полочные стеллажи S90',
+        href: '/products/small_part_handling/mobile_shelving_s90/',
+      },
+      {
+        title: 'Многоэтажные полочные стеллажи S90',
+        href: '/products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/',
+      },
+      {
+        title: 'Узкопроходные полочные стеллажи S90',
+        href: '/products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/',
+      },
+      {
+        title: 'Коробочная гравитация стеллажи S90',
+        href: '/products/small_part_handling/korobochnie_gravitacionnie_stellazhi_s90/',
+      },
+    ],
+  },
+  {
+    title: 'Автоматизированные складские системы',
+    href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
+    image: pallet3,
+    links: [
+      {
+        title: 'Складское оборудованиe (вертикальные лифты tornado)',
+        href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+      },
+      {
+        title: 'Складское оборудование (вертикальные карусели paternoster)',
+        href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
+      },
+      {
+        title: 'Складское оборудование (горизонтальные карусели hoca)',
+        href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/gorizontal_nie_karuseli_hoca/',
+      },
+    ],
+  },
+  {
+    title: 'Специальные конструкции',
+    href: '/products/special_nie_konstrukcii/',
+    image: pallet4,
+    links: [
+      {
+        title: 'Стеллаж для шин и колес',
+        href: '/products/special_nie_konstrukcii/stellazhi_dlja_hranenija_shin/',
+      },
+      {
+        title: 'Стеллажи для магазинов',
+        href: '/products/special_nie_konstrukcii/stellazhi_dlja_magazinov/',
+      },
+    ],
+  },
+  {
+    title: 'Стеллажный мезонин',
+    href: '/products/stellazhnij_mezonin/',
+    image: pallet5,
+    links: [
+      {
+        title: 'Стеллаж мезонинный ME250',
+        href: '/products/stellazhnij_mezonin/mezoninnie_system/',
+      },
+    ],
+  },
+  {
+    title: 'Консольные стеллажи',
+    href: '/products/konsol_nie_stellazhi/',
+    image: pallet6,
+  },
+];
+---
+
+<Layout title="Складские стеллажи купить в Минске, цена | Оборудование для склада «КМ-про»">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">Складские стеллажи</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        products.map(({ href, title, image, links }) => (
+          <LinksCard href={href} title={title} image={image} links={links} />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

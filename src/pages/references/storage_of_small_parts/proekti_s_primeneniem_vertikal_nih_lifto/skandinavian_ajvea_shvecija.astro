@@ -1,0 +1,127 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/se33.png';
+import carouselImage2 from '../../../../assets/images/scandinavian_eyewear_1_large.png';
+import carouselImage3 from '../../../../assets/images/scandinavian_eyewear_4_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Стема инжиниринг АС, Дания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/stema_inzhiniring_as_danija/',
+  },
+  {
+    title: 'Скандинавиан Айвэа, Швеция',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/skandinavian_ajvea_shvecija/',
+  },
+  {
+    title: 'Дани-Тех, Дания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/dani_teh_danija/',
+  },
+  {
+    title: 'Икеа, Великобритания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/ikea_velikobritanija/',
+  },
+  {
+    title: 'Холгер Христиансен А/С, Дания',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/holger_hristiansen_a_s_danija/',
+  },
+  {
+    title: 'LG Кемикал, Польша',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/lg_kemikal_pol_sha/',
+  },
+  {
+    title: 'Ковистон Авто Ой, Финляндия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/koviston_avto_oj_finljandija/',
+  },
+  {
+    title: 'Х.Краац Ой, Финляндия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/h_kraac_oj_finljandija/',
+  },
+  {
+    title: 'Электроскандия, Финляндия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/elektroskandija_finljandija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Проекты с применением вертикальных лифтов (TORNADO)',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/',
+  },
+  { title: 'Скандинавиан Айвэа, Швеция' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Вертикальные лифты (TORNADO)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Скандинавиан Айвэа, Швеция | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Скандинавиан Айвэа, Швеция</h1>
+
+      <p>
+        Решением проблемы ограниченного складского пространства стало совмещение стандартной полочной системы хранения и
+        вертикальных лифтов TORNADO.
+      </p>
+
+      <p>
+        В связи с огромным ассортиментом высота машин составила 14,0 м. Это привело к вынужденному увеличению высоты и
+        глубины здания склада. Результатом нововведения стала возможность единовременного хранения 40 тыс позиций грузов
+        в двух системах TORNADO.
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+      <p>TORNADO (2 ед.):</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 14,0 м</li>
+        <li>Ширина полки: 4200 мм</li>
+        <li>Глубина полки: 820 мм</li>
+        <li>Количество полок: 264 шт.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

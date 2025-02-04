@@ -1,0 +1,82 @@
+---
+const footerLinks = {
+  company: [
+    { href: '/aboutcompany/about/', title: 'История' },
+    { href: '/references/', title: 'Проекты' },
+    { href: '/our_services/our_services1/', title: 'Наши услуги' },
+    { href: '/sitemap/', title: 'Карта сайта' },
+    { href: '/contact_us/', title: 'Контакты' },
+  ],
+  categories: [
+    { href: '/products/pallet_handling/', title: 'Паллетные стеллажи' },
+    { href: '/products/small_part_handling/', title: 'Полочные стеллажи' },
+    {
+      href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
+      title: 'Автоматизированные складские системы',
+    },
+    {
+      href: '/products/special_nie_konstrukcii/',
+      title: 'Специальные конструкции',
+    },
+    { href: '/products/stellazhnij_mezonin/', title: 'Мезонинные стеллажи' },
+    { href: '/products/konsol_nie_stellazhi/', title: 'Консольные стеллажи' },
+  ],
+};
+---
+
+<footer class="bg-gray-100 mt-auto border-t border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-bold text-lg mb-4">ЗАО «КМ-про»</h3>
+        <address class="not-italic">
+          <p>Беларусь, г. Минск</p>
+          <p>ул. Будславская, 23, оф. 204</p>
+          <div class="mt-2 flex flex-col space-y-2">
+            <a href="tel:+375173730122" class="w-fit hover:text-blue-800">+375 (17) 373-01-22</a>
+            <a href="tel:+375173660321" class="w-fit hover:text-blue-800">+375 (17) 366-03-21</a>
+            <a href="tel:+375291787018" class="w-fit hover:text-blue-800">+375 (29) 178-70-18</a>
+          </div>
+          <p class="mt-2">
+            email: <a href="mailto:km-pro@mail.ru" class="hover:text-blue-800">km-pro@mail.ru</a>
+          </p>
+        </address>
+        <p class="mt-4 text-sm text-gray-600">© 2025 Constructor Group</p>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-lg mb-4">О компании</h3>
+        <ul class="space-y-2">
+          {
+            footerLinks.company.map((link) => (
+              <li>
+                <a href={link.href} class="hover:text-blue-800 transition-colors">
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-lg mb-4">Категории</h3>
+        <ul class="space-y-2">
+          {
+            footerLinks.categories.map((link) => (
+              <li>
+                <a href={link.href} class="hover:text-blue-800 transition-colors">
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-4 border-t border-gray-200 text-center text-sm text-gray-600">
+      <a href="https://www.qmedia.by/prodvizhenie_sajtov.html" class="hover:text-blue-800"> Продвижение сайта </a>
+    </div>
+  </div>
+</footer>

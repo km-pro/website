@@ -1,0 +1,153 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/constructor_denmark_danske_fragtmaend_1_large.png';
+import carouselImage2 from '../../../../assets/images/constructor_denmark_danske_fragtmaend_2_large.png';
+import carouselImage3 from '../../../../assets/images/constructor_denmark_danske_fragtmaend_3_large.png';
+import carouselImage4 from '../../../../assets/images/constructor_denmark_danske_fragtmaend_4_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'CePT Юкей ПиЛСи, Великобритания',
+    href: '/references/storing_of_pallets/pallet_racking_standart/cept_jukej_pilsi_velikobritanija/',
+  },
+  {
+    title: 'Сифилд Лоджистикс, Великобритания',
+    href: '/references/storing_of_pallets/pallet_racking_standart/sifild_lodzhistiks_velikobritanija/',
+  },
+  {
+    title: 'Рунсвен, Швеция',
+    href: '/references/storing_of_pallets/pallet_racking_standart/runsven_shvecija/',
+  },
+  {
+    title: 'Мультилайн, Дания',
+    href: '/references/storing_of_pallets/pallet_racking_standart/mul_tilajn_danija/',
+  },
+  {
+    title: 'Данске Фрагтменд, Дания',
+    href: '/references/storing_of_pallets/pallet_racking_standart/danske_fragtmend_danija/',
+  },
+  {
+    title: 'Шенкер Лоджистикс, Швеция',
+    href: '/references/storing_of_pallets/pallet_racking_standart/shenker_lodzhistiks_shvecija/',
+  },
+  {
+    title: 'Билтема, Швеция',
+    href: '/references/storing_of_pallets/pallet_racking_standart/biltema_shvecija/',
+  },
+  {
+    title: 'МТЮ Детройт Дизель, Нидерланды',
+    href: '/references/storing_of_pallets/pallet_racking_standart/mtju_detrojt_dizel_niderlandi/',
+  },
+  {
+    title: 'КГ Кнутсон АБ, Швеция',
+    href: '/references/storing_of_pallets/pallet_racking_standart/kg_knutson_ab_shvecija/',
+  },
+  {
+    title: 'Паркер Ханнифин, Нидерланды',
+    href: '/references/storing_of_pallets/pallet_racking_standart/parker_hannifin_niderlandi/',
+  },
+  {
+    title: 'АСКО ВЕСТ АС, Норвегия',
+    href: '/references/storing_of_pallets/pallet_racking_standart/asko_vest_as_norvegija/',
+  },
+  {
+    title: 'Стэйплс, Германия',
+    href: '/references/storing_of_pallets/pallet_racking_standart/stejpls_germanija/',
+  },
+  {
+    title: 'Бернер Ой, Финляндия',
+    href: '/references/storing_of_pallets/pallet_racking_standart/berner_oj_finljandija/',
+  },
+  {
+    title: 'Иитала Груп, Финляндия',
+    href: '/references/storing_of_pallets/pallet_racking_standart/iitala_grup_finljandija/',
+  },
+  {
+    title: 'Маритим АС, Норвегия',
+    href: '/references/storing_of_pallets/pallet_racking_standart/maritim_as_norvegija/',
+  },
+  {
+    title: 'Дастин, Швеция',
+    href: '/references/storing_of_pallets/pallet_racking_standart/dastin_shvecija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение', href: '/references/storing_of_pallets/' },
+  {
+    title: 'Фронтальные паллетные стеллажи',
+    href: '/references/storing_of_pallets/pallet_racking_standart/',
+  },
+  { title: 'Данске Фрагтменд, Дания' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Данске Фрагтменд, Дания | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Данске Фрагтменд, Дания</h1>
+
+      <p class="font-bold mb-4">Площадь логистического центра составляет 106 тыс. кв.м.</p>
+
+      <p>
+        Компания <strong>Construсtor</strong> установила фронтальные паллетные стеллажи P90 высотой 7,5 м с последующей возможностью
+        увеличения ярусности хранения за счёт наращивания длины рамы, а также 14 мобильных офисных блоков.
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 7,5 м</li>
+        <li>Количество: 10,982 тыс. п.м. (возможность увеличения до 13,400 тыс. п.м.)</li>
+        <li>Количество мобильных офисных блоков: 14 шт.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

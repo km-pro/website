@@ -1,0 +1,128 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/p90_ref_hansa_print_1_large1.png';
+import carouselImage2 from '../../../../assets/images/p90_ref_hansa_print_2_large1.png';
+import carouselImage3 from '../../../../assets/images/p90_ref_hansa_print_3_large1.png';
+import carouselImage4 from '../../../../assets/images/p90_ref_hansa_print_4_large1.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Нансо Груп, Финляндия',
+    href: '/references/storing_of_pallets/pallet_flow/nanso_grup_finljandija/',
+  },
+  {
+    title: 'Хутамаки Ой, Финляндия',
+    href: '/references/storing_of_pallets/pallet_flow/hutamaki_oj_finljandija/',
+  },
+  {
+    title: 'Ханса Принт, Финляндия',
+    href: '/references/storing_of_pallets/pallet_flow/hansa_print_finljandija/',
+  },
+  {
+    title: 'Вальсемоллен, Дания',
+    href: '/references/storing_of_pallets/pallet_flow/val_semollen_danija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение', href: '/references/storing_of_pallets/' },
+  {
+    title: 'Гравитационные стеллажи',
+    href: '/references/storing_of_pallets/pallet_flow/',
+  },
+  { title: 'Ханса Принт, Финляндия' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Гравитационные паллетные стеллажи P90',
+            href: '/products/pallet_handling/gravitacionnie_stellazhi/',
+          },
+          {
+            title: 'Гравитационные стеллажи пуш-бэк (Push-back)',
+            href: '/products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/',
+          },
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Ханса Принт, Финляндия | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Ханса Принт, Финляндия</h1>
+
+      <p class="font-bold mb-4">Компания Ханса Принт – крупнейшая типография в Финляндии.</p>
+
+      <p>
+        Бумага, используемая на производстве, доставляется в бобинах на раскроечное оборудование и превращается в листы.
+        Листы в качестве полуфабрикатов складируются на гравитационных стеллажах пуш-бэк (LIFO).
+      </p>
+
+      <p>Готовая продукция размещается на гравитационных паллетных стеллажах (FIFO).</p>
+
+      <p>
+        <strong>Емкость склада:</strong><br />
+        Гравитационные стеллажи пуш-бэк (LIFO):
+      </p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 5,0 м</li>
+        <li>Количество уровней: 4 шт.</li>
+        <li>Глубина канала: 5 поддонов</li>
+        <li>Количество: 1420 п.м.</li>
+        <li>Нагрузка: 250-1000 кг/п.м.</li>
+      </ul>
+
+      <p>Гравитационные паллетные стеллажи (FIFO)</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 4,5 м</li>
+        <li>Количество уровней: 3 шт.</li>
+        <li>Глубина канала: 7 поддонов</li>
+        <li>Количество: 903 п.м.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

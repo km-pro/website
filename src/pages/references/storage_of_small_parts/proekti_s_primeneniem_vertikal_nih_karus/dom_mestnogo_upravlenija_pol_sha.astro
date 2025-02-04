@@ -1,0 +1,94 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/bielany_4_large.png';
+import carouselImage2 from '../../../../assets/images/bielany_5_large.png';
+import carouselImage3 from '../../../../assets/images/bielany_7_large.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Дом местного управления, Польша',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_karus/dom_mestnogo_upravlenija_pol_sha/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Проекты с применением вертикальных каруселей (PATERNOSTER)',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_karus/',
+  },
+  { title: 'Дом местного управления, Польша' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Вертикальные карусели (PATERNOSTER)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Дом местного управления, Польша | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Дом местного управления, Польша</h1>
+
+      <p class="font-bold mb-4">
+        В связи с переездом в новое здание организация местного управления приняла решение применить автоматизированные
+        системы для организации документооборота.
+      </p>
+
+      <p>
+        Две системы PATERNOSTER установили в подвальном помещении с размещением зоны выгрузки на первом этаже здания.
+        Машины оснастили новейшими программами PaC100 и TC2000 для управления хранением и перемещением бумаг.
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+      <p>PATERNOSTER (2 ед.):</p>
+      <ul class="list-disc pl-6">
+        <li>Высота: 6,0 м</li>
+        <li>Ширина полки: 4952/3703 мм</li>
+        <li>Глубина всего: 2036 мм</li>
+        <li>Количество ед. хранения папка А4: 34+135 тыс. шт.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

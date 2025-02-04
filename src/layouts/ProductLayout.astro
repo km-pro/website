@@ -1,0 +1,37 @@
+---
+import type { Block } from '../components/InfoSidebar.astro';
+import SideNavigation from '../components/SideNavigation.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import InfoSidebar from '../components/InfoSidebar.astro';
+
+interface Props {
+  description?: string;
+  sidebarItems: { title: string; href: string }[];
+  infoSideBarItems: Block[];
+  breadcrumbItems: { title: string; href?: string }[];
+}
+
+const { sidebarItems, breadcrumbItems, infoSideBarItems } = Astro.props;
+---
+
+<div class="max-w-7xl mx-auto px-4 py-8">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <div class="lg:col-span-3">
+      <SideNavigation items={sidebarItems} />
+    </div>
+
+    <main class="lg:col-span-6">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <slot />
+      </div>
+    </main>
+
+    <div class="lg:col-span-3">
+      <div class="sticky top-4">
+        <InfoSidebar blocks={infoSideBarItems} />
+      </div>
+    </div>
+  </div>
+</div>

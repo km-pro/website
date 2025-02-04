@@ -1,0 +1,73 @@
+---
+import ProjectCard from '../../../../components/ProjectCard.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import Layout from '../../../../layouts/MainLayout.astro';
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+}
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  { title: 'Мобильные полочные стеллажи' },
+];
+
+const projects: Project[] = [
+  {
+    title: 'Беко Бил, Швеция',
+    description:
+      'Решение о приобретении нового оборудования принято компанией в связи с изменением в законодательстве Швеции.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet52.png',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/beko_bil_shvecija/',
+  },
+  {
+    title: 'Клингер, Дания',
+    description:
+      'Для эффективного хранения запасных частей компания Constructor произвела поставку мобильных полочных стеллажей.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/retail72.png',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/klinger_danija/',
+  },
+  {
+    title: 'Металлпресс Донати, Италия',
+    description:
+      'Компания Металлпресс Донати хранит формы для производства алюминиевых опор и роликовых систем, используемых в изготовлении кресел, на мобильных полочных стеллажах компании Constructor.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet_12.png',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/metallpress_donati_italija/',
+  },
+  {
+    title: 'Свенска Бил и Норден АБ, Швеция',
+    description:
+      'Компания инвестировала в новые высокоэффективные машины для обеспечения быстрого доступа к грузам и экономии складской площади на территории нового комплекса.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/ref135.png',
+    href: '/references/storage_of_small_parts/mobil_nie_polochnie_stellazhi/svenska_bil_i_norden_ab_shvecija/',
+  },
+];
+---
+
+<Layout title="Реализованные проекты с применением мобильных полочных стеллажей">
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">
+      Реализованные проекты с применением мобильных полочных стеллажей
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            href={project.href}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

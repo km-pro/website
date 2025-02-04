@@ -1,0 +1,108 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/gr14.png';
+import carouselImage2 from '../../../../assets/images/gr23.png';
+import carouselImage3 from '../../../../assets/images/gr32.png';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Больничная аптека в г. Дрезден, Германия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/bol_nichnaja_apteka_v_g_drezden_germanij/',
+  },
+  {
+    title: 'Грое АГ, Германия',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/groe_ag_germanija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Хранение на полках', href: '/references/storage_of_small_parts/' },
+  {
+    title: 'Проекты с применением горизонтальных каруселей (HOCA)',
+    href: '/references/storage_of_small_parts/proekti_s_primeneniem_gorizontal_nih_kar/',
+  },
+  { title: 'Грое АГ, Германия' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Горизонтальные карусели (HOCA)',
+            href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/gorizontal_nie_karuseli_hoca/',
+          },
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Грое АГ, Германия | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Грое АГ, Германия</h1>
+
+      <p class="font-bold mb-4">Компания Грое АГ – лидер в производстве сантехнического оборудования в мире.</p>
+
+      <p>
+        Компания <strong>Constructor</strong> тщательно изучила и оптимизировала технологические процессы в новом логистическом
+        центре в Порта Вестфалика.
+      </p>
+
+      <p>
+        В дополнение к паллетным стеллажам установили три горизонтальные карусельные системы. Это позволило оператору
+        одновременно отбирать до восьми заказов. Складские машины HOCA оснащены системой Pick-by-Light и конвеерами <strong
+          >Constructor</strong
+        >.
+      </p>
+
+      <p class="mt-6"><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Количество позиций: 3,0 тыс.</li>
+        <li>Площадь хранения: 787 кв.м.</li>
+        <li>Оборудование: 3 горизонтальных системы на 52 секции каждая.</li>
+        <li>Длина: 25 м.</li>
+        <li>Высота: 3,2 м</li>
+        <li>Глубина: 7,0 м</li>
+        <li>Несущая способность: до 25 тыс. кг/машина</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

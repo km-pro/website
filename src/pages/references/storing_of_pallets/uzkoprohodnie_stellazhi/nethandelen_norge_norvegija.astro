@@ -1,0 +1,99 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../../layouts/ProductLayout.astro';
+import ImageCarousel from '../../../../components/ImageCarousel';
+import OrderCTA from '../../../../components/OrderCTA.astro';
+import { getImage } from 'astro:assets';
+import carouselImage1 from '../../../../assets/images/nettehandel_1_large.png';
+import carouselImage2 from '../../../../assets/images/nettehandel_2_large.png';
+import carouselImage3 from '../../../../assets/images/nettehandel_3_large.png';
+import carouselImage4 from '../../../../assets/images/nettehandel_4_large.png';
+import Link from '../../../../components/Link.astro';
+
+const slides = [
+  {
+    image: await getImage({ src: carouselImage1, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage2, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage3, format: 'webp' }),
+  },
+  {
+    image: await getImage({ src: carouselImage4, format: 'webp' }),
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Хартуолл АБ, Финляндия',
+    href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/hartuoll_ab_finljandija/',
+  },
+  {
+    title: 'Нетханделен Норге, Норвегия',
+    href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/nethandelen_norge_norvegija/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Проекты', href: '/references/' },
+  { title: 'Паллетное хранение', href: '/references/storing_of_pallets/' },
+  {
+    title: 'Узкопроходные стеллажи',
+    href: '/references/storing_of_pallets/uzkoprohodnie_stellazhi/',
+  },
+  { title: 'Нетханделен Норге, Норвегия' },
+];
+
+const infoSidebarItems = [
+  {
+    title: 'Используемая продукция',
+    content: [
+      {
+        links: [
+          {
+            title: 'Узкопроходные паллетные стеллажи P90',
+            href: '/products/pallet_handling/uzkoprohodnie_stellazhi/',
+          },
+          {
+            title: 'Фронтальные паллетные стеллажи P90',
+            href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Нетханделен Норге, Норвегия | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <ImageCarousel slides={slides} client:load />
+
+    <div class="prose max-w-none mt-8">
+      <h1 class="text-3xl font-bold mb-6">Нетханделен Норге, Норвегия</h1>
+
+      <p>
+        Компания Нетханделен Норге оборудовала 11,2 тыс кв.м. своего нового логистического центра площадью 13 тыс. кв.м.
+        узкопроходными стеллажными системами <strong>Constructor</strong>.
+      </p>
+
+      <p><strong>Емкость склада:</strong></p>
+      <ul class="list-disc pl-6">
+        <li>Количество: 12 366 п.м.</li>
+        <li>Высота: 11,0 м</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-8 mb-4">Купить металлические стеллажи в Минске</h2>
+
+      <p>
+        Мы изготавливаем металлические стеллажи для склада по индивидуальному заказу. Выгодные цены, гарантия. По всем
+        вопросам заказа стеллажей обращайтесь к нашим менеджерам по телефонам, размещенным на сайте.
+      </p>
+
+      <OrderCTA />
+    </div>
+  </ProductLayout>
+</Layout>

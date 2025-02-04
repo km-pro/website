@@ -1,0 +1,219 @@
+---
+import Layout from '../../../layouts/MainLayout.astro';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import TabbedContent from '../../../components/TabbedContent.astro';
+import ImageCarousel from '../../../components/ImageCarousel';
+import TabPanel from '../../../components/TabPanel.astro';
+import Link from '../../../components/Link.astro';
+import OrderCTA from '../../../components/OrderCTA.astro';
+import List from '../../../components/List.astro';
+import { CONTACTS_BLOCK } from '../../../constants';
+
+const slides = [
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/pallet_flow_1_large1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/palletflow_overview_1_large1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/pallet_flow_2_large.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/palletflow_overview_2_large1.png',
+    },
+  },
+  {
+    image: {
+      src: 'https://stellazhi.by/uploads/content/gallery/size3/pallet_flow_5_large.png',
+    },
+  },
+];
+
+const sidebarItems = [
+  {
+    title: 'Фронтальные стеллажи',
+    href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+  },
+  {
+    title: 'Набивные стеллажи Drive-in',
+    href: '/products/pallet_handling/nabivnie_stellazhi_drive_in/',
+  },
+  {
+    title: 'Гравитационные стеллажи пуш-бэк (Push-back)',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/',
+  },
+  {
+    title: 'Гравитационные стеллажи',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi/',
+  },
+  {
+    title: 'Мобильные стеллажи',
+    href: '/products/pallet_handling/mobil_nie_stellazhi/',
+  },
+  {
+    title: 'Узкопроходные стеллажи',
+    href: '/products/pallet_handling/uzkoprohodnie_stellazhi/',
+  },
+];
+
+const breadcrumbItems = [
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Паллетные стеллажи', href: '/products/pallet_handling/' },
+  { title: 'Гравитационные стеллажи' },
+];
+
+const infoSidebarItems = [
+  CONTACTS_BLOCK,
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Ханса Принт, Финляндия',
+            href: '/references/storing_of_pallets/pallet_flow/hansa_print_finljandija/',
+          },
+          {
+            title: 'Вальсемоллен, Дания',
+            href: '/references/storing_of_pallets/pallet_flow/val_semollen_danija/',
+          },
+          {
+            title: 'Нансо Груп, Финляндия',
+            href: '/references/storing_of_pallets/pallet_flow/nanso_grup_finljandija/',
+          },
+          {
+            title: 'Хутамаки Ой, Финляндия',
+            href: '/references/storing_of_pallets/pallet_flow/hutamaki_oj_finljandija/',
+          },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<Layout title="Гравитационные стеллажи P90 | КМ-про">
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
+      <TabPanel index={0} defaultActive>
+        <ImageCarousel slides={slides} client:load />
+
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Гравитационные стеллажи P90</h1>
+
+          <h2>Купить гравитационные стеллажи для паллет и склада P90 в Минске</h2>
+
+          <p>
+            Такие гравитационные стеллажи для склада P90 обеспечивают автоматическое перемещение грузов под силой их
+            тяжести. Они комплектуются специальными роликовыми дорожками, установленными под определенным углом.
+            Благодаря им товары перемещаются самостоятельно, без участия обслуживающего персонала.
+          </p>
+
+          <p>
+            Данные гравитационные <Link href="/products/pallet_handling/">стеллажи паллетные</Link> отлично подходят для
+            размещения товаров одного и того же типа. Хранение товаров осуществляется в соответствие с принципом «первым
+            поступил – первым ушел». По сравнению со
+            <Link href="/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/"
+              >стеллажами фронтального типа</Link
+            >
+            гравитационные модели позволяют экономить до 60% общей полезной площади склада.
+          </p>
+
+          <h3 class="text-lg font-bold mb-4">Преимущества гравитационных стеллажей:</h3>
+          <List>
+            <li>
+              <span>высокая оборачиваемость хранимых товаров</span>
+            </li>
+            <li>
+              <span>легкость и удобство доступа к ним</span>
+            </li>
+            <li>
+              <span>наличие автоматической тормозной системы</span>
+            </li>
+            <li>
+              <span>плавное перемещение товаров</span>
+            </li>
+            <li>
+              <span>высокая скорость производимых операций</span>
+            </li>
+            <li>
+              <span>безопасность в эксплуатации</span>
+            </li>
+          </List>
+
+          <h2 class="text-2xl font-bold mb-4">Сфера применения гравитацонных стеллажей</h2>
+
+          <p>
+            Современные гравитационные стеллажи для паллет марки P90 оптимально подходят для использования на складах,
+            где хранятся продукты питания с различными сроками годности. Также гравитацонными стеллажами металлическими
+            рекомендуется оснащать буферные склады производственных предприятий.
+          </p>
+
+          <p class="mb-4">
+            При установке гравитационных стеллажей P90 требуется устраивать не более 2-х проходов. Клиент может заказать
+            конструкции нужных типоразмеров, в соответствие с индивидуальными особенностями складского помещения.
+          </p>
+
+          <p>
+            По вопросам заказа гравитационных стеллажей P90 обращайтесь к нашим сотрудникам по контактным телефонам,
+            размещенным на сайте.
+          </p>
+
+          <OrderCTA />
+        </div>
+      </TabPanel>
+
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span
+                >Эффективное использование пространства: До 60 % меньше складской площади, чем при использовании
+                фронтального стеллажа</span
+              >
+            </li>
+            <li>
+              <span>Оптимальный оборот товаров: Принцип FIFO обеспечивает идеальный оборот товаров</span>
+            </li>
+            <li>
+              <span>Удобный доступ: Свободный доступ к зонам загрузки и выгрузки поддонов</span>
+            </li>
+            <li>
+              <span>Высокая эффективность: Высокая скорость операций на складе</span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
+
+      <TabPanel index={2}>
+        <div class="prose max-w-none">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Вес поддона:</span>
+                <span>от 150 до 1200 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Глубина канала:</span>
+                <span>от 3 до 15 поддонов</span>
+              </div>
+              <div>
+                <span class="font-bold block">Ширина канала:</span>
+                <span>1000, 2000, 3600 мм.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
+</Layout>
