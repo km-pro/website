@@ -123,7 +123,7 @@ export const POST: APIRoute = async ({ request }) => {
 
 async function sendEmail(mailOptions: nodemailer.SendMailOptions): Promise<void> {
   return new Promise((resolve, reject) => {
-    transporter.sendMail(mailOptions, (error: Error, info: Record<string, unknown>) => {
+    transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.error('Error sending email:', error);
         reject(error);
