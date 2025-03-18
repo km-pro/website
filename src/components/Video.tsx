@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Minimize, Maximize, Pause, Play } from 'lucide-react';
 import { VideoControlButton } from './Video/VideoControlButton';
 import { AudioControl } from './Video/AudioControl';

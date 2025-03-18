@@ -10,18 +10,18 @@ import {generateSitemap} from "./src/utils/sitemap.ts";
 
 
 export default defineConfig({
-  integrations: [react(), sitemap(), generateSearchIndex(), generateSitemap()],
+    integrations: [generateSearchIndex(), generateSitemap(), react(), sitemap(),],
 
-  redirects: {
-      '/aboutcompany': '/aboutcompany/about/',
-      '/our_services': '/our_services/our_services1/',
-      '/articles': '/aboutcompany/articles/',
-  },
+    redirects: {
+        '/aboutcompany': '/aboutcompany/about/',
+        '/our_services': '/our_services/our_services1/',
+        '/articles': '/aboutcompany/articles/',
+    },
 
-  site: "https://stellazhi.by",
-  adapter: netlify(),
+    site: "https://stellazhi.by",
+    adapter: netlify(),
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+    vite: {
+        plugins: [tailwindcss()],
+    },
 });

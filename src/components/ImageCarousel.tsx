@@ -1,14 +1,12 @@
 import type { EmblaCarouselType } from 'embla-carousel';
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoPlay from 'embla-carousel-autoplay';
 
 type Slide = {
   title?: string;
-  image: {
-    src: string;
-  } | string;
+  image: string;
 };
 
 type ImageCarouselProps = {
@@ -117,7 +115,7 @@ const ImageCarousel = ({ slides }: ImageCarouselProps) => {
             >
               <div className="relative pt-[45%]">
                 <img
-                  src={typeof slide.image === 'string' ? slide.image : slide.image.src}
+                  src={slide.image}
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover"
                   loading={index === 0 ? 'eager' : 'lazy'}
