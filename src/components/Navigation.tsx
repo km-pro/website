@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
-import '@radix-ui/themes/styles.css';
 
 type DebouncedFunction<T extends (...args: any[]) => any> = {
   (...args: Parameters<T>): void;

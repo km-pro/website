@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -40,20 +41,5 @@ const { title } = Astro.props;
     </div>
 
     <Footer />
-
-    <style>
-      @tailwind base;
-      @tailwind components;
-      @tailwind utilities;
-    </style>
-    <script>
-      import '../styles/index.scss';
-      import '@radix-ui/themes/styles.css';
-      import '@radix-ui/colors/black-alpha.css';
-      import '@radix-ui/colors/indigo.css';
-      import '@radix-ui/colors/mauve.css';
-      import '@radix-ui/colors/purple.css';
-      import '@radix-ui/colors/violet.css';
-    </script>
   </body>
 </html>

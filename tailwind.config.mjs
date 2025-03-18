@@ -9,20 +9,6 @@ export default {
 					900: '#1e3a8a',
 				},
 			},
-			keyframes: {
-				'slide-down': {
-					from: { height: 0 },
-					to: { height: 'var(--radix-collapsible-content-height)' },
-				},
-				'fade-in': {
-					from: { opacity: 0 },
-					to: { opacity: 1 },
-				},
-			},
-			animation: {
-				'slide-down': 'slide-down 300ms ease-out',
-				'fade-in': 'fade-in 200ms ease-out',
-			},
 		},
 		screens: {
 			'sm': '640px',
@@ -33,9 +19,9 @@ export default {
 		},
 	},
 	plugins: [
-		require('@tailwindcss/forms'),
+		/*require('@tailwindcss/forms'),
 		require('@tailwindcss/typography'),
-		require('tailwind-scrollbar'),
+		require('tailwind-scrollbar'),*/
 	],
 }
 
