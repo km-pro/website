@@ -3,28 +3,22 @@ import Layout from '../../../../layouts/MainLayout.astro';
 import ProductLayout from '../../../../layouts/ProductLayout.astro';
 import ImageCarousel from '../../../../components/ImageCarousel';
 import OrderCTA from '../../../../components/OrderCTA.astro';
-import { getImage } from 'astro:assets';
-import carouselImage1 from '../../../../assets/images/swegon_p90_large4.gif';
-import carouselImage2 from '../../../../assets/images/swegon02_large4.gif';
-import carouselImage3 from '../../../../assets/images/swegon_hjullist01_large4.gif';
-import carouselImage4 from '../../../../assets/images/swegon_hjullist_large4.gif';
-import carouselImage5 from '../../../../assets/images/swegon_large4.gif';
 
 const slides = [
   {
-    image: await getImage({ src: carouselImage1, format: 'webp' }),
+    image: '/images/swegon_p90_large4.webp',
   },
   {
-    image: await getImage({ src: carouselImage2, format: 'webp' }),
+    image: '/images/swegon02_large4.webp',
   },
   {
-    image: await getImage({ src: carouselImage3, format: 'webp' }),
+    image: '/images/swegon_hjullist01_large4.webp',
   },
   {
-    image: await getImage({ src: carouselImage4, format: 'webp' }),
+    image: '/images/swegon_hjullist_large4.webp',
   },
   {
-    image: await getImage({ src: carouselImage5, format: 'webp' }),
+    image: '/images/swegon_large4.webp',
   },
 ];
 

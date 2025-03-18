@@ -3,25 +3,19 @@ import Layout from '../../../../layouts/MainLayout.astro';
 import ProductLayout from '../../../../layouts/ProductLayout.astro';
 import ImageCarousel from '../../../../components/ImageCarousel';
 import OrderCTA from '../../../../components/OrderCTA.astro';
-import { getImage } from 'astro:assets';
-import carouselImage1 from '../../../../assets/images/hartwall_1_large1.png';
-import carouselImage2 from '../../../../assets/images/hartwall_2_large1.png';
-import carouselImage3 from '../../../../assets/images/hartwall_3_large1.png';
-import carouselImage4 from '../../../../assets/images/hartwall_5_large1.png';
-import Link from '../../../../components/Link.astro';
 
 const slides = [
   {
-    image: await getImage({ src: carouselImage1, format: 'webp' }),
+    image: '/images/hartwall_1_large1.webp',
   },
   {
-    image: await getImage({ src: carouselImage2, format: 'webp' }),
+    image: '/images/hartwall_2_large1.webp',
   },
   {
-    image: await getImage({ src: carouselImage3, format: 'webp' }),
+    image: '/images/hartwall_3_large1.webp',
   },
   {
-    image: await getImage({ src: carouselImage4, format: 'webp' }),
+    image: '/images/hartwall_5_large1.webp',
   },
 ];
 

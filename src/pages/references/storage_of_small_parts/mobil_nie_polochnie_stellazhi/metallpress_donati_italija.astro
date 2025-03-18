@@ -1,16 +1,7 @@
 ---
 import Layout from '../../../../layouts/MainLayout.astro';
 import ProductLayout from '../../../../layouts/ProductLayout.astro';
-import ImageCarousel from '../../../../components/ImageCarousel';
 import OrderCTA from '../../../../components/OrderCTA.astro';
-import { getImage } from 'astro:assets';
-import carouselImage1 from '../../../../assets/images/metalpres_donati_1_large.png';
-
-const slides = [
-  {
-    image: await getImage({ src: carouselImage1, format: 'webp' }),
-  },
-];
 
 const sidebarItems = [
   {
@@ -61,7 +52,7 @@ const infoSidebarItems = [
 
 <Layout title="Металлпресс Донати, Италия | КМ-про">
   <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
-    <ImageCarousel slides={slides} client:load />
+    <img alt="" class="rounded-lg shadow-lg overflow-hidden" src="/images/metalpres_donati_1_large.webp" />
 
     <div class="prose max-w-none mt-8">
       <h1 class="text-3xl font-bold mb-6">Металлпресс Донати, Италия</h1>

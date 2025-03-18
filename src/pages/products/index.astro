@@ -2,12 +2,6 @@
 import Layout from '../../layouts/MainLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import LinksCard from '../../components/LinksCard.astro';
-import pallet1 from '../../assets/images/pallet1.png';
-import pallet2 from '../../assets/images/pallet2.png';
-import pallet3 from '../../assets/images/pallet3.png';
-import pallet4 from '../../assets/images/pallet4.png';
-import pallet5 from '../../assets/images/pallet5.png';
-import pallet6 from '../../assets/images/pallet6.png';
 
 const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'Продукция' }];
 
@@ -15,7 +9,7 @@ const products = [
   {
     title: 'Паллетные стеллажи',
     href: '/products/pallet_handling/',
-    image: pallet1,
+    image: '/images/pallet1.webp',
     links: [
       {
         title: 'Фронтальные стеллажи',
@@ -46,7 +40,7 @@ const products = [
   {
     title: 'Полочные стеллажи',
     href: '/products/small_part_handling/',
-    image: pallet2,
+    image: '/images/pallet2.webp',
     links: [
       {
         title: 'Стандартные полочные стеллажи S90',
@@ -73,7 +67,7 @@ const products = [
   {
     title: 'Автоматизированные складские системы',
     href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
-    image: pallet3,
+    image: '/images/pallet3.webp',
     links: [
       {
         title: 'Складское оборудованиe (вертикальные лифты tornado)',
@@ -92,7 +86,7 @@ const products = [
   {
     title: 'Специальные конструкции',
     href: '/products/special_nie_konstrukcii/',
-    image: pallet4,
+    image: '/images/pallet4.webp',
     links: [
       {
         title: 'Стеллаж для шин и колес',
@@ -107,7 +101,7 @@ const products = [
   {
     title: 'Стеллажный мезонин',
     href: '/products/stellazhnij_mezonin/',
-    image: pallet5,
+    image: '/images/pallet5.webp',
     links: [
       {
         title: 'Стеллаж мезонинный ME250',
@@ -118,7 +112,7 @@ const products = [
   {
     title: 'Консольные стеллажи',
     href: '/products/konsol_nie_stellazhi/',
-    image: pallet6,
+    image: '/images/pallet6.webp',
   },
 ];
 ---

@@ -3,16 +3,13 @@ import Layout from '../../../../layouts/MainLayout.astro';
 import ProductLayout from '../../../../layouts/ProductLayout.astro';
 import ImageCarousel from '../../../../components/ImageCarousel';
 import OrderCTA from '../../../../components/OrderCTA.astro';
-import { getImage } from 'astro:assets';
-import carouselImage1 from '../../../../assets/images/ap14.png';
-import carouselImage2 from '../../../../assets/images/ap24.png';
 
 const slides = [
   {
-    image: await getImage({ src: carouselImage1, format: 'webp' }),
+    image: '/images/ap14.webp',
   },
   {
-    image: await getImage({ src: carouselImage2, format: 'webp' }),
+    image: '/images/ap24.webp',
   },
 ];
 

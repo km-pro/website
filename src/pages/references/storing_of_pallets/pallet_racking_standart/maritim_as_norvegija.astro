@@ -3,24 +3,19 @@ import Layout from '../../../../layouts/MainLayout.astro';
 import ProductLayout from '../../../../layouts/ProductLayout.astro';
 import ImageCarousel from '../../../../components/ImageCarousel';
 import OrderCTA from '../../../../components/OrderCTA.astro';
-import { getImage } from 'astro:assets';
-import carouselImage1 from '../../../../assets/images/maritim_1_large1.png';
-import carouselImage2 from '../../../../assets/images/maritim_2_large1.png';
-import carouselImage3 from '../../../../assets/images/maritim_3_large1.png';
-import carouselImage4 from '../../../../assets/images/maritim_4_large1.png';
 
 const slides = [
   {
-    image: await getImage({ src: carouselImage1, format: 'webp' }),
+    image: '/images/maritim_1_large1.webp',
   },
   {
-    image: await getImage({ src: carouselImage2, format: 'webp' }),
+    image: '/images/maritim_2_large1.webp',
   },
   {
-    image: await getImage({ src: carouselImage3, format: 'webp' }),
+    image: '/images/maritim_3_large1.webp',
   },
   {
-    image: await getImage({ src: carouselImage4, format: 'webp' }),
+    image: '/images/maritim_4_large1.webp',
   },
 ];
 

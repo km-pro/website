@@ -13,7 +13,9 @@ export default defineConfig({
   integrations: [react(), sitemap(), generateSearchIndex(), generateSitemap()],
 
   redirects: {
-      '/aboutcompany': '/aboutcompany/about/'
+      '/aboutcompany': '/aboutcompany/about/',
+      '/our_services': '/our_services/our_services1/',
+      '/articles': '/aboutcompany/articles/',
   },
 
   site: "https://stellazhi.by",

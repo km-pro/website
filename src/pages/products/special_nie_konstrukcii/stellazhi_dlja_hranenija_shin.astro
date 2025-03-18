@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../../../layouts/MainLayout.astro';
 import ProductLayout from '../../../layouts/ProductLayout.astro';
 import TabbedContent from '../../../components/TabbedContent.astro';
@@ -7,7 +6,6 @@ import TabPanel from '../../../components/TabPanel.astro';
 import OrderCTA from '../../../components/OrderCTA.astro';
 import List from '../../../components/List.astro';
 import { CONTACTS_BLOCK } from '../../../constants';
-import tiresImage from '../../../assets/images/rengashylly1_large.png';
 
 const sidebarItems = [
   {
@@ -37,7 +35,7 @@ const infoSidebarItems = [CONTACTS_BLOCK];
   <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
     <TabbedContent defaultActive={0} tabs={['Описание', 'Характеристики']}>
       <TabPanel index={0} defaultActive>
-        <Image src={tiresImage} alt="Стеллаж для шин и колес" class="w-full" />
+        <img src='/images/rengashylly1_large.webp' alt="Стеллаж для шин и колес" class="w-full" />
 
         <div class="prose max-w-none mt-8">
           <h1 class="text-3xl font-bold mb-6">Стеллаж для шин и колес</h1>

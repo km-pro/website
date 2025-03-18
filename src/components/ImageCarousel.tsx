@@ -8,7 +8,7 @@ type Slide = {
   title?: string;
   image: {
     src: string;
-  };
+  } | string;
 };
 
 type ImageCarouselProps = {
@@ -117,7 +117,7 @@ const ImageCarousel = ({ slides }: ImageCarouselProps) => {
             >
               <div className="relative pt-[45%]">
                 <img
-                  src={slide.image.src}
+                  src={typeof slide.image === 'string' ? slide.image : slide.image.src}
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover"
                   loading={index === 0 ? 'eager' : 'lazy'}

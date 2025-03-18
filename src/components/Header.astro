@@ -1,7 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../assets/images/logo.jpg';
-import logo2 from '../assets/images/logo_2.png';
 import { Navigation } from './Navigation';
 
 export const menuItems = [
@@ -280,10 +277,10 @@ export const menuItems = [
     <div class="px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-4">
         <a href="/">
-          <Image src={logo} alt="Логотип ЗАО КМ-про" class="max-h-16 w-auto" />
+          <img src="/images/logo.webp" alt="Логотип ЗАО КМ-про" class="max-h-16 w-auto" />
         </a>
         <a href="/">
-          <Image src={logo2} alt="Логотип ЗАО КМ-про" class="max-h-16 w-auto" />
+          <img src="/images/logo_2.webp" alt="Логотип ЗАО КМ-про" class="max-h-16 w-auto" />
         </a>
       </div>
 

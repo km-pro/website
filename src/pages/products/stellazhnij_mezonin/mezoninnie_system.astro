@@ -7,28 +7,32 @@ import TabPanel from '../../../components/TabPanel.astro';
 import OrderCTA from '../../../components/OrderCTA.astro';
 import List from '../../../components/List.astro';
 import { CONTACTS_BLOCK } from '../../../constants';
-import { getImage } from 'astro:assets';
-import carouselImage1 from '../../../assets/images/messanine_me280_work_floors_1_large.png';
-import carouselImage2 from '../../../assets/images/messanine_me280_work_floors_2_large.png';
-import carouselImage3 from '../../../assets/images/messanine_me280_work_floors_3_large.png';
-import carouselImage4 from '../../../assets/images/messanine_me280_work_floors_4_large2.png';
-import carouselImage5 from '../../../assets/images/messanine_me280_work_floors_5_large.png';
 
 const slides = [
   {
-    image: await getImage({ src: carouselImage1, format: 'webp' }),
+    image: {
+      src: '/images/messanine_me280_work_floors_1_large.webp',
+    }
   },
   {
-    image: await getImage({ src: carouselImage2, format: 'webp' }),
+    image: {
+      src: '/images/messanine_me280_work_floors_2_large.webp',
+    }
   },
   {
-    image: await getImage({ src: carouselImage3, format: 'webp' }),
+    image: {
+      src: '/images/messanine_me280_work_floors_3_large.webp',
+    }
   },
   {
-    image: await getImage({ src: carouselImage4, format: 'webp' }),
+    image: {
+      src: '/images/messanine_me280_work_floors_4_large2.webp',
+    }
   },
   {
-    image: await getImage({ src: carouselImage5, format: 'webp' }),
+    image: {
+      src: '/images/messanine_me280_work_floors_5_large.webp',
+    }
   },
 ];
 

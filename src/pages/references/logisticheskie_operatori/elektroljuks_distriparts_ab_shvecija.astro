@@ -5,20 +5,16 @@ import ImageCarousel from '../../../components/ImageCarousel';
 import OrderCTA from '../../../components/OrderCTA.astro';
 import List from '../../../components/List.astro';
 import Link from '../../../components/Link.astro';
-import { getImage } from 'astro:assets';
-import carouselImage1 from '../../../assets/images/hi280_electrolux_ref_2_large4.png';
-import carouselImage2 from '../../../assets/images/hi280_electrolux_ref_1_large4.png';
-import carouselImage3 from '../../../assets/images/hi280_electrolux_ref_32.png';
 
 const slides = [
   {
-    image: await getImage({ src: carouselImage1, format: 'webp' }),
+    image: '/images/hi280_electrolux_ref_2_large4.webp',
   },
   {
-    image: await getImage({ src: carouselImage2, format: 'webp' }),
+    image: '/images/hi280_electrolux_ref_1_large4.webp',
   },
   {
-    image: await getImage({ src: carouselImage3, format: 'webp' }),
+    image: '/images/hi280_electrolux_ref_32.webp',
   },
 ];
 

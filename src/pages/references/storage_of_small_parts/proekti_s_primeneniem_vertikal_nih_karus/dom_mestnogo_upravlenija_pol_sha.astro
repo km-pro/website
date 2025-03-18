@@ -3,20 +3,22 @@ import Layout from '../../../../layouts/MainLayout.astro';
 import ProductLayout from '../../../../layouts/ProductLayout.astro';
 import ImageCarousel from '../../../../components/ImageCarousel';
 import OrderCTA from '../../../../components/OrderCTA.astro';
-import { getImage } from 'astro:assets';
-import carouselImage1 from '../../../../assets/images/bielany_4_large.png';
-import carouselImage2 from '../../../../assets/images/bielany_5_large.png';
-import carouselImage3 from '../../../../assets/images/bielany_7_large.png';
 
 const slides = [
   {
-    image: await getImage({ src: carouselImage1, format: 'webp' }),
+    image: {
+      src: '/images/bielany_4_large.webp',
+    }
   },
   {
-    image: await getImage({ src: carouselImage2, format: 'webp' }),
+    image: {
+      src: '/images/bielany_5_large.webp',
+    }
   },
   {
-    image: await getImage({ src: carouselImage3, format: 'webp' }),
+    image: {
+      src: '/images/bielany_7_large.webp',
+    }
   },
 ];
 

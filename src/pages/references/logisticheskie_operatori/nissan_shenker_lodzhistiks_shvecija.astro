@@ -5,24 +5,19 @@ import ImageCarousel from '../../../components/ImageCarousel';
 import OrderCTA from '../../../components/OrderCTA.astro';
 import List from '../../../components/List.astro';
 import Link from '../../../components/Link.astro';
-import { getImage } from 'astro:assets';
-import carouselImage1 from '../../../assets/images/mesh_shelf_04_large5.png';
-import carouselImage2 from '../../../assets/images/multitier_shelves_01_large5.png';
-import carouselImage3 from '../../../assets/images/multitier_shelves_03_large5.png';
-import carouselImage4 from '../../../assets/images/pallet_shelves_02_large5.png';
 
 const slides = [
   {
-    image: await getImage({ src: carouselImage1, format: 'webp' }),
+    image: '/images/mesh_shelf_04_large5.webp',
   },
   {
-    image: await getImage({ src: carouselImage2, format: 'webp' }),
+    image: '/images/multitier_shelves_01_large5.webp',
   },
   {
-    image: await getImage({ src: carouselImage3, format: 'webp' }),
+    image: '/images/multitier_shelves_03_large5.webp',
   },
   {
-    image: await getImage({ src: carouselImage4, format: 'webp' }),
+    image: '/images/pallet_shelves_02_large5.webp',
   },
 ];
 
