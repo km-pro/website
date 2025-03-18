@@ -1,0 +1,90 @@
+---
+import Layout from '../../../../layouts/MainLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+    { title: 'Главная', href: '/' },
+    { title: 'Продукция', href: '/products/' },
+    {
+        title: 'Автоматизированные складские системы',
+        href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/',
+    },
+    {
+        title: 'Складское оборудованиe (вертикальные лифты tornado)',
+        href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/'
+    },
+    { title: 'Аксессуары' },
+];
+
+const accessories = [
+    {
+        title: 'Дисплей одновременного отбора заказов',
+        image: 'https://stellazhi.by/uploads/goods/image/size0/batch_picking.png',
+        description: 'Устанавливается на фронтальную панель складского автомата.'
+    },
+    {
+        title: 'Техническое окно',
+        image: 'https://stellazhi.by/uploads/goods/image/size0/cladding_window.png',
+        description: 'Предоставляет возможность визуального контроля за машиной в работе.'
+    },
+    {
+        title: 'Электрическая дверь',
+        image: 'https://stellazhi.by/uploads/goods/image/size0/electrical_door.png',
+        description: 'Предотвращает несанкционированный доступ к грузам, расположенным внутри автомата. Может быть интегрирована с системой пожаротушения.'
+    },
+    {
+        title: 'Выдвижная полка',
+        image: 'https://stellazhi.by/uploads/goods/image/size0/io_feeder.png',
+        description: 'Автоматическое устройство выдвигает носитель с грузом на расстояние, необходимое для обработки его в случае необходимости подъемным механизмом.'
+    },
+    {
+        title: 'Разделитель',
+        image: 'https://stellazhi.by/uploads/goods/image/size0/divider.png',
+        description: 'В случае необходимости полки складских машин комплектуются разделителями.'
+    },
+    {
+        title: 'Дисплей - указатель',
+        image: 'https://stellazhi.by/uploads/goods/image/size0/position_indication_list.png',
+        description: 'Осуществляет пошаговый контроль отбора заказа.'
+    },
+    {
+        title: 'Дополнительные зоны выгрузки',
+        image: 'https://stellazhi.by/uploads/goods/image/size0/openings2.png',
+        description: 'Устанавливаются на одной/противоположной стороне, в одном/разных уровнях.'
+    },
+    {
+        title: 'Беспроводные сканеры штрихкодов',
+        image: 'https://stellazhi.by/uploads/goods/image/size0/bar_code_reader.png',
+        description: 'Используются для оптимизации отбора.'
+    },
+    {
+        title: 'Система WMS TC2000',
+        image: 'https://stellazhi.by/uploads/goods/image/size0/tc20001.png',
+        description: 'TC2000 – система WMS разработанная для атоматизированного хранения. Поставляется для всех складских машин Constructor.'
+    }
+];
+---
+
+<Layout title="Аксессуары для вертикальных лифтов TORNADO | КМ-про">
+    <div class="max-w-6xl mx-auto px-4">
+        <Breadcrumbs items={breadcrumbItems} />
+
+        <div class="bg-white rounded-lg shadow-md p-8 my-8">
+            <h1 class="text-3xl font-bold mb-6">Вертикальные лифты (TORNADO) - Аксессуары</h1>
+
+            <div id="OverviewGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                {accessories.map(accessory => (
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+                            <h2 class="text-xl font-semibold p-4 bg-gray-50">{accessory.title}</h2>
+                            <div class="flex justify-center p-4">
+                                <img src={accessory.image} alt={accessory.title} class="w-full max-h-48 object-contain" />
+                            </div>
+                            <div class="p-4 bg-gray-50">
+                                <p>{accessory.description}</p>
+                            </div>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</Layout>

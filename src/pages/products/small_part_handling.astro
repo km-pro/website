@@ -15,30 +15,35 @@ const products = [
     href: '/products/small_part_handling/small_parts_shelving_s90_standard/',
     description:
       'Основная концепция полочных стеллажей Constructor S90 - максимальная гибкость и превосходная адаптация к вашим потребностям в хранении.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh1.png'
   },
   {
     title: 'Мобильные полочные стеллажи S90',
     href: '/products/small_part_handling/mobile_shelving_s90/',
     description:
       'Мобильные полочные стеллажи S90 предлагают огромные преимущества в условиях ограниченного пространства. Используя лишь один рабочий проход для доступа к индивидуальным полкам этот тип складского оборудования задействует до 70 % больше складской площади по сравнению со стационарным стеллажом.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh2.png'
   },
   {
     title: 'Многоэтажные полочные стеллажи S90',
     href: '/products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/',
     description:
       'Многоэтажные полочные стеллажи S90 представляют собой интеграцию полочного стеллажа Constructor S90 и мезонинных конструкций в сложную многоярусную систему.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh3.png'
   },
   {
     title: 'Узкопроходные полочные стеллажи S90',
     href: '/products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/',
     description:
       'Представляет собой опцию полочного стеллажа Constructor S90, позволяющую значительно увеличить полезную площадь склада по сравнению со стандартным полочным стеллажом.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh4.png'
   },
   {
     title: 'Коробочная гравитация стеллажи S90',
     href: '/products/small_part_handling/korobochnie_gravitacionnie_stellazhi_s90/',
     description:
       'Представляет собой опцию полочного стеллажа Constructor S90, позволяющую эффективно осуществлять подбор заказов.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh5.png'
   },
 ];
 
@@ -92,7 +97,11 @@ const useCases = [
     <div class="bg-white rounded-lg shadow-md p-8 my-8">
       <h1 class="text-3xl font-bold mb-6">Полочные стеллажи</h1>
 
-      <div class="prose max-w-none mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+
+      <div class="prose max-w-none mt-8">
         <p class="text-gray-700 mb-8">
           Это оптимальное решение для эффективной организации помещения и хранения небольших грузов и товаров на складе.
           Благодаря уникальной конструкции, состоящей из стоек и полок, и высокой функциональности, стеллажи стали
@@ -194,10 +203,6 @@ const useCases = [
             систему хранения, экономя время и повышая производительность вашего складского пространства.
           </p>
         </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => <ProductCard {...product} />)}
       </div>
     </div>
   </div>

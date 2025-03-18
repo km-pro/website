@@ -1,4 +1,6 @@
 ---
+import { CONTACTS_BLOCK } from '../constants';
+
 export interface BlockContent {
   label?: string;
   links: { title: string; href: string; rel?: string }[];
@@ -36,6 +38,14 @@ const { blocks } = Astro.props;
               ))}
             </div>
           ))}
+          {block.title === CONTACTS_BLOCK.title && (
+            <a
+              href="/contact_us#formBlock"
+              class="w-full block cursor-pointer text-center px-2 mt-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              Оставить заявку
+            </a>
+          )}
         </div>
       </div>
     ))

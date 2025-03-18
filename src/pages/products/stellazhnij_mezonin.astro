@@ -15,6 +15,7 @@ const products = [
     href: '/products/stellazhnij_mezonin/mezoninnie_system/',
     description:
       'Мезонинные системы ME250 позволяют легко и экономически выгодно создавать дополнительные перекрытия пола в уже существующих помещениях.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh9.png',
   },
 ];
 
@@ -52,7 +53,11 @@ const advantages = [
     <div class="bg-white rounded-lg shadow-md p-8 my-8">
       <h1 class="text-3xl font-bold mb-6">Мезонинные стеллажи</h1>
 
-      <div class="prose max-w-none mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+
+      <div class="prose max-w-none mt-8">
         <p class="text-gray-700 mb-8">
           Мезонинные стеллажи представляют собой идеальное решение для максимизации использования пространства на
           складе. Эта многоуровневая стеллажная система не только оптимизирует складскую площадь, но и обеспечивает
@@ -147,10 +152,6 @@ const advantages = [
               надежного партнера для оптимизации вашего пространства.
             </p>
           </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => <ProductCard {...product} />)}
         </div>
       </div>
     </div>

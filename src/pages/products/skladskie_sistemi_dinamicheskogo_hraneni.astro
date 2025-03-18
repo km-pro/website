@@ -16,18 +16,21 @@ const products = [
     href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/',
     description:
       'Вертикальные лифты TORNADO – это современная, быстрая и бесшумная автоматическая система хранения, основанная на серво-технологии. Складирование грузов осуществляется с минимальными потерями. Уникальный дизайн улучшает хранение и комплектацию заказов внутри оптимального объема.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/pallet41.png',
   },
   {
     title: 'Складское оборудование (вертикальные карусели paternoster)',
     href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/',
     description:
       'Вертикальные карусели (PATERNOSTER) - превосходное решение для снижения затрат времени на комплектацию заказа.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh10.png',
   },
   {
     title: 'Складское оборудование (горизонтальные карусели hoca)',
     href: '/products/skladskie_sistemi_dinamicheskogo_hraneni/gorizontal_nie_karuseli_hoca/',
     description:
       'Горизонтальные карусели (HOCA) представляют собой идеальное решение для хранения и эффективного отбора большого количества единиц товара на больших площадях или в помещениях с небольшими высотами.',
+    image: 'https://stellazhi.by/uploads/content/image/size0/stelazh11.png',
   },
 ];
 ---
@@ -39,7 +42,11 @@ const products = [
     <div class="bg-white rounded-lg shadow-md p-8 my-8">
       <h1 class="text-3xl font-bold mb-6">Автоматизированные складские системы</h1>
 
-      <div class="prose max-w-none mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => <ProductCard {...product} />)}
+      </div>
+
+      <div class="prose max-w-none mt-8">
         <h2 class="text-2xl font-bold mb-4">
           Купить оборудование складское динамического хранения и поиска в Беларуси
         </h2>
@@ -112,10 +119,6 @@ const products = [
             Звоните и делайте заказы на лучшие в мире складские системы прямо сейчас!
           </p>
         </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => <ProductCard {...product} />)}
       </div>
     </div>
   </div>
