@@ -6,7 +6,7 @@ export const prerender = false;
 const EMAIL_CONFIG = {
   from: 'km-pro@mail.ru',
   to: 'km-pro@mail.ru',
-  fromName: 'Форма Обратная связь'
+  fromName: 'Форма Обратная связь',
 };
 
 const transporter = nodemailer.createTransport({
@@ -92,31 +92,31 @@ export const POST: APIRoute = async ({ request }) => {
     await sendEmail(mailOptions);
 
     return new Response(
-        JSON.stringify({
-          success: true,
-          message: 'Форма успешно отправлена',
-        }),
-        {
-          status: 200,
-          headers: {
-            'Content-Type': 'application/json',
-          },
+      JSON.stringify({
+        success: true,
+        message: 'Форма успешно отправлена',
+      }),
+      {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
         },
+      },
     );
   } catch (error) {
     console.error('Error processing feedback form:', error);
 
     return new Response(
-        JSON.stringify({
-          success: false,
-          message: 'Произошла ошибка при обработке формы',
-        }),
-        {
-          status: 500,
-          headers: {
-            'Content-Type': 'application/json',
-          },
+      JSON.stringify({
+        success: false,
+        message: 'Произошла ошибка при обработке формы',
+      }),
+      {
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
         },
+      },
     );
   }
 };
@@ -137,11 +137,11 @@ async function sendEmail(mailOptions: nodemailer.SendMailOptions): Promise<void>
 
 function htmlEscape(text: string): string {
   return text
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
 function nl2br(text: string): string {

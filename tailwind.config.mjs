@@ -18,10 +18,6 @@ export default {
 			'2xl': '1536px',
 		},
 	},
-	plugins: [
-		/*require('@tailwindcss/forms'),
-		require('@tailwindcss/typography'),
-		require('tailwind-scrollbar'),*/
-	],
+	plugins: [],
 }
 

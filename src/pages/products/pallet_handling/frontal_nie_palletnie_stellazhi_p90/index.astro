@@ -10,221 +10,221 @@ import { CONTACTS_BLOCK } from '../../../../constants';
 import List from '../../../../components/List.astro';
 
 const sidebarItems = [
-    {
-        title: 'Фронтальные стеллажи',
-        href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
-    },
-    {
-        title: 'Набивные стеллажи Drive-in',
-        href: '/products/pallet_handling/nabivnie_stellazhi_drive_in/',
-    },
-    {
-        title: 'Гравитационные стеллажи пуш-бэк (Push-back)',
-        href: '/products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/',
-    },
-    {
-        title: 'Гравитационные стеллажи',
-        href: '/products/pallet_handling/gravitacionnie_stellazhi/',
-    },
-    {
-        title: 'Мобильные стеллажи',
-        href: '/products/pallet_handling/mobil_nie_stellazhi/',
-    },
-    {
-        title: 'Узкопроходные стеллажи',
-        href: '/products/pallet_handling/uzkoprohodnie_stellazhi/',
-    },
+  {
+    title: 'Фронтальные стеллажи',
+    href: '/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/',
+  },
+  {
+    title: 'Набивные стеллажи Drive-in',
+    href: '/products/pallet_handling/nabivnie_stellazhi_drive_in/',
+  },
+  {
+    title: 'Гравитационные стеллажи пуш-бэк (Push-back)',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/',
+  },
+  {
+    title: 'Гравитационные стеллажи',
+    href: '/products/pallet_handling/gravitacionnie_stellazhi/',
+  },
+  {
+    title: 'Мобильные стеллажи',
+    href: '/products/pallet_handling/mobil_nie_stellazhi/',
+  },
+  {
+    title: 'Узкопроходные стеллажи',
+    href: '/products/pallet_handling/uzkoprohodnie_stellazhi/',
+  },
 ];
 
 const breadcrumbItems = [
-    { title: 'Главная', href: '/' },
-    { title: 'Продукция', href: '/products/' },
-    { title: 'Паллетные стеллажи', href: '/products/pallet_handling/' },
-    { title: 'Фронтальные стеллажи' },
+  { title: 'Главная', href: '/' },
+  { title: 'Продукция', href: '/products/' },
+  { title: 'Паллетные стеллажи', href: '/products/pallet_handling/' },
+  { title: 'Фронтальные стеллажи' },
 ];
 
 const slides = [
-    {
-        image: '/images/pallet_racking_mainpic.webp',
-    },
-    {
-        image: '/images/p90_painted_ittala.webp',
-    },
-    {
-        image: '/images/pallet_racking_4_large1.webp',
-    },
-    {
-        image: '/images/pallet_racking_5_large1.webp',
-    },
-    {
-        image: '/images/pallet_racking_6_large1.webp',
-    },
+  {
+    image: '/images/pallet_racking_mainpic.webp',
+  },
+  {
+    image: '/images/p90_painted_ittala.webp',
+  },
+  {
+    image: '/images/pallet_racking_4_large1.webp',
+  },
+  {
+    image: '/images/pallet_racking_5_large1.webp',
+  },
+  {
+    image: '/images/pallet_racking_6_large1.webp',
+  },
 ];
 
 const infoSidebarItems = [
-    CONTACTS_BLOCK,
-    {
-        title: 'Буклеты',
-        content: [
-            {
-                links: [
-                    {
-                        title: 'Паллетные стеллажи P90',
-                        href: '/files/P90_constructor_russia_small.pdf',
-                    },
-                ],
-            },
+  CONTACTS_BLOCK,
+  {
+    title: 'Буклеты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Паллетные стеллажи P90',
+            href: '/files/P90_constructor_russia_small.pdf',
+          },
         ],
-    },
-    {
-        title: 'Проекты',
-        content: [
-            {
-                links: [
-                    {
-                        title: 'Сифилд Лоджистикс, Великобритания',
-                        href: '/references/storing_of_pallets/pallet_racking_standart/sifild_lodzhistiks_velikobritanija/',
-                    },
-                ],
-            },
+      },
+    ],
+  },
+  {
+    title: 'Проекты',
+    content: [
+      {
+        links: [
+          {
+            title: 'Сифилд Лоджистикс, Великобритания',
+            href: '/references/storing_of_pallets/pallet_racking_standart/sifild_lodzhistiks_velikobritanija/',
+          },
         ],
-    },
+      },
+    ],
+  },
 ];
 ---
 
 <Layout title="Фронтальные стеллажи | КМ-про">
-    <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
-        <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
-            <TabPanel index={0}>
-                <ImageCarousel slides={slides} client:load />
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+    <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
+      <TabPanel index={0}>
+        <ImageCarousel slides={slides} client:load />
 
-                <div class="prose max-w-none mt-8">
-                    <h1 class="text-3xl font-bold mb-6">Фронтальные стеллажи</h1>
+        <div class="prose max-w-none mt-8">
+          <h1 class="text-3xl font-bold mb-6">Фронтальные стеллажи</h1>
 
-                    <h2>Купить универсальные фронтальные стеллажи для паллет и склада в Минске</h2>
+          <h2>Купить универсальные фронтальные стеллажи для паллет и склада в Минске</h2>
 
-                    <p>
-                        Фронтальные <Link href="/products/pallet_handling/">паллетные стеллажи</Link> P90 – надежные и современные стеллажные
-                        конструкции, позволяющие получать беспрепятственный доступ к поддонам. Такие фронтальные стеллажи могут устанавливаться
-                        в складских помещениях любой площади, с любыми архитектурными особенностями.
-                    </p>
+          <p>
+            Фронтальные <Link href="/products/pallet_handling/">паллетные стеллажи</Link> P90 – надежные и современные стеллажные
+            конструкции, позволяющие получать беспрепятственный доступ к поддонам. Такие фронтальные стеллажи могут устанавливаться
+            в складских помещениях любой площади, с любыми архитектурными особенностями.
+          </p>
 
-                    <p>
-                        Фронтальные стеллажи универсальные данного типа предназначены для хранения бочек и контейнеров,
-                        разнообразных грузов на поддонах, а также для складирования ящиков.
-                    </p>
+          <p>
+            Фронтальные стеллажи универсальные данного типа предназначены для хранения бочек и контейнеров,
+            разнообразных грузов на поддонах, а также для складирования ящиков.
+          </p>
 
-                    <p class="text-center">
-                        <img
-                                src="/images/front_palet_stelazhsm.webp"
-                                alt="паллетные фронтальные стеллажи"
-                                class="inline-block"
-                                width="250"
-                                height="243"
-                        />
-                    </p>
+          <p class="text-center">
+            <img
+              src="/images/front_palet_stelazhsm.webp"
+              alt="паллетные фронтальные стеллажи"
+              class="inline-block"
+              width="250"
+              height="243"
+            />
+          </p>
 
-                    <p>
-                        Такие универсальные стеллажи Constructor P90 предоставляют самые широкие возможности для организации
-                        процесса складирования с соответствие с потребностями каждой конкретной компании. Они позволяют организовать
-                        набивное либо обычное паллетное хранение, современный гравитационный склад и пр.
-                    </p>
+          <p>
+            Такие универсальные стеллажи Constructor P90 предоставляют самые широкие возможности для организации
+            процесса складирования с соответствие с потребностями каждой конкретной компании. Они позволяют организовать
+            набивное либо обычное паллетное хранение, современный гравитационный склад и пр.
+          </p>
 
-                    <p>
-                        Возможность комплектации широким перечнем аксессуаров еще больше расширяет функциональность системы.
-                        Аксессуары являются практичным дополнением к предлагаемым стеллажам. Они позволяют обеспечить на складе
-                        высокий уровень безопасности, предоставляют возможность оперативно решать любые возникающие проблемы и
-                        задачи «под себя», прямо на месте. Кроме того, именно благодаря аксессуарам можно увеличить объемы хранимых
-                        на паллетных фронтальных стеллажах товаров. Их наличие существенно упрощает процесс обработки грузов.
-                    </p>
+          <p>
+            Возможность комплектации широким перечнем аксессуаров еще больше расширяет функциональность системы.
+            Аксессуары являются практичным дополнением к предлагаемым стеллажам. Они позволяют обеспечить на складе
+            высокий уровень безопасности, предоставляют возможность оперативно решать любые возникающие проблемы и
+            задачи «под себя», прямо на месте. Кроме того, именно благодаря аксессуарам можно увеличить объемы хранимых
+            на паллетных фронтальных стеллажах товаров. Их наличие существенно упрощает процесс обработки грузов.
+          </p>
 
-                    <h3>Как заказать фронтальные стеллажи?</h3>
+          <h3>Как заказать фронтальные стеллажи?</h3>
 
-                    <p>
-                        ЗАО «КМ-про» – официальный дилер в Республике Беларусь компании Constructor. Наши сотрудники
-                        квалифицированно ответят на любые имеющиеся у вас вопросы и помогут в выборе стеллажных конструкций.
-                    </p>
+          <p>
+            ЗАО «КМ-про» – официальный дилер в Республике Беларусь компании Constructor. Наши сотрудники
+            квалифицированно ответят на любые имеющиеся у вас вопросы и помогут в выборе стеллажных конструкций.
+          </p>
 
-                    <OrderCTA />
-                </div>
-            </TabPanel>
+          <OrderCTA />
+        </div>
+      </TabPanel>
 
-            <TabPanel index={1}>
-                <div class="prose max-w-none">
-                    <List>
-                        <li>
-                            <span>Гибкость: Возможно хранение любого типа поддонов (евро, фин), контейнеров, ящиков и т.п.</span>
-                        </li>
-                        <li>
+      <TabPanel index={1}>
+        <div class="prose max-w-none">
+          <List>
+            <li>
+              <span>Гибкость: Возможно хранение любого типа поддонов (евро, фин), контейнеров, ящиков и т.п.</span>
+            </li>
+            <li>
               <span
-              >Стабильность: Благодаря стабильной и надежной конструкции стеллажи высотой до 30 м и нагрузкой до 30 тн
+                >Стабильность: Благодаря стабильной и надежной конструкции стеллажи высотой до 30 м и нагрузкой до 30 тн
                 на секцию - реальность для стеллажа Constructor P90.</span
               >
-                        </li>
-                        <li>
+            </li>
+            <li>
               <span
-              >Большой ассортимент аксессуаров: Широкий перечень аксессуаров позволяет легко адаптировать паллетный
+                >Большой ассортимент аксессуаров: Широкий перечень аксессуаров позволяет легко адаптировать паллетный
                 стеллаж под ваши условия в хранении.</span
               >
-                        </li>
-                        <li>
+            </li>
+            <li>
               <span
-              >Актуальность: Благодаря модульной конструкции всегда можно внести корректировку в планировку вашего
+                >Актуальность: Благодаря модульной конструкции всегда можно внести корректировку в планировку вашего
                 склада.</span
               >
-                        </li>
-                        <li>
-                            <span>Надежность: Соответствует FEM, SEMA, DIN, INSTA</span>
-                        </li>
-                    </List>
-                </div>
-            </TabPanel>
+            </li>
+            <li>
+              <span>Надежность: Соответствует FEM, SEMA, DIN, INSTA</span>
+            </li>
+          </List>
+        </div>
+      </TabPanel>
 
-            <TabPanel index={2}>
-                <div class="prose max-w-none">
-                    <p class="mb-6">
-                        Фронтальный паллетный стеллаж P90 разработан в соответствие с размерами паллет для обеспечения оптимального
-                        использования полезной площади:
-                    </p>
+      <TabPanel index={2}>
+        <div class="prose max-w-none">
+          <p class="mb-6">
+            Фронтальный паллетный стеллаж P90 разработан в соответствие с размерами паллет для обеспечения оптимального
+            использования полезной площади:
+          </p>
 
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <div class="space-y-4">
-                            <div>
-                                <span class="font-bold block">Глубина:</span>
-                                <span>1050, 1100 мм</span>
-                            </div>
-                            <div>
-                                <span class="font-bold block">Длина балок:</span>
-                                <span>от 950 до 4400 мм.</span>
-                            </div>
-                            <div>
-                                <span class="font-bold block">Высота рам:</span>
-                                <span>от 1500 до 30000 мм</span>
-                            </div>
-                            <div>
-                                <span class="font-bold block">Нагрузка на уровень:</span>
-                                <span>до 4000 кг</span>
-                            </div>
-                            <div>
-                                <span class="font-bold block">Нагрузка на секцию:</span>
-                                <span>до 30 000 кг</span>
-                            </div>
-                            <div>
-                                <span class="font-bold block">Покрытие рам:</span>
-                                <span>оцинкованное</span>
-                            </div>
-                            <div>
-                                <span class="font-bold block">Покрытие балок:</span>
-                                <span>полимерное покрытие</span>
-                            </div>
-                            <div>
-                                <span class="font-bold block">Покрытие аксессуаров:</span>
-                                <span>оцинкованное или полимерное покрытие</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </TabPanel>
-        </TabbedContent>
-    </ProductLayout>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="space-y-4">
+              <div>
+                <span class="font-bold block">Глубина:</span>
+                <span>1050, 1100 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Длина балок:</span>
+                <span>от 950 до 4400 мм.</span>
+              </div>
+              <div>
+                <span class="font-bold block">Высота рам:</span>
+                <span>от 1500 до 30000 мм</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на уровень:</span>
+                <span>до 4000 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Нагрузка на секцию:</span>
+                <span>до 30 000 кг</span>
+              </div>
+              <div>
+                <span class="font-bold block">Покрытие рам:</span>
+                <span>оцинкованное</span>
+              </div>
+              <div>
+                <span class="font-bold block">Покрытие балок:</span>
+                <span>полимерное покрытие</span>
+              </div>
+              <div>
+                <span class="font-bold block">Покрытие аксессуаров:</span>
+                <span>оцинкованное или полимерное покрытие</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+    </TabbedContent>
+  </ProductLayout>
 </Layout>
