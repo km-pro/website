@@ -1,0 +1,162 @@
+---
+declare global {
+  interface Window {
+    [key: string]: any;
+    dataLayer: any[];
+  }
+}
+
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
+const GA_ID = import.meta.env.PUBLIC_GA_ID;
+const YANDEX_METRIKA_ID = import.meta.env.PUBLIC_YANDEX_METRIKA_ID;
+const GOOGLE_REMARKETING_ID = import.meta.env.PUBLIC_GOOGLE_REMARKETING_ID;
+---
+
+<!-- Google Tag Manager -->
+<script define:vars={{ GTM_ID }}>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    if (f && f.parentNode) {
+      f.parentNode.insertBefore(j, f);
+    } else {
+      d.head.appendChild(j);
+    }
+  })(window, document, 'script', 'dataLayer', GTM_ID);
+</script>
+
+<!-- Google Analytics (Classic) -->
+<script type="text/javascript" define:vars={{ GA_ID }}>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', GA_ID]);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!-- Google Remarketing Tag -->
+<script type="text/javascript" define:vars={{ GOOGLE_REMARKETING_ID }}>
+  var google_conversion_id = GOOGLE_REMARKETING_ID;
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+</script>
+
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+
+<!-- Yandex Metrika counter -->
+<script type="text/javascript" define:vars={{ YANDEX_METRIKA_ID }}>
+  (function (d, w, c) {
+    (w[c] = w[c] || []).push(function () {
+      try {
+        w.yaCounter32876460 = new Ya.Metrika({
+          id: YANDEX_METRIKA_ID,
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true,
+        });
+      } catch (e) {}
+    });
+
+    var n = d.getElementsByTagName('script')[0],
+      s = d.createElement('script'),
+      f = function () {
+        n.parentNode.insertBefore(s, n);
+      };
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'https://mc.yandex.ru/metrika/watch.js';
+
+    if (w.opera == '[object Opera]') {
+      d.addEventListener('DOMContentLoaded', f, false);
+    } else {
+      f();
+    }
+  })(document, window, 'yandex_metrika_callbacks');
+</script>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+  {
+    "@context": "http://www.schema.org",
+    "@type": "Organization",
+    "name": "ЗАО «КМ-про»",
+    "url": "https://stellazhi.by",
+    "logo": "https://stellazhi.by/Global/Kasten/Logos/logo_rus.png",
+    "description": "ЗАО «КМ-про» - официальный дилер компании Constructor на территории Беларуси. ",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Будславская, 23, оф. 204",
+      "addressLocality": "Минск",
+      "addressCountry": "Беларусь"
+    },
+    "openingHours": "Mo, Tu, We, Th, Fr 07:00-",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+375(29)611-21-94"
+    }
+  }
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "ЗАО «КМ-про»",
+    "image": "https://stellazhi.by/Global/Kasten/Logos/Cons.jpg",
+    "description": "Мы ведущий производитель и поставщик высококлассных складских, архивных и логистических решений.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Constructor Group"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "17"
+    }
+  }
+</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe
+  src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<!-- Google Remarketing Tag (noscript) -->
+<noscript>
+  <div style="display:inline;">
+    <img
+      height="1"
+      width="1"
+      style="border-style:none;"
+      alt=""
+      src=`//googleads.g.doubleclick.net/pagead/viewthroughconversion/${GOOGLE_REMARKETING_ID}/?value=0&guid=ON&script=0`
+    />
+  </div>
+</noscript>
+
+<!-- Yandex.Metrika counter (noscript) -->
+<noscript>
+  <div>
+    <img src=`https://mc.yandex.ru/watch/${YANDEX_METRIKA_ID}` style="position:absolute; left:-9999px;" alt="" />
+  </div>
+</noscript>

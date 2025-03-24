@@ -626,7 +626,15 @@
       "path": "/aboutcompany/articles",
       "title": "Полезные статьи",
       "content": "Полезные статьи Виды складских стеллажей и их особенности применения...",
-      "keywords": ["полезные", "статьи", "виды", "складских", "стеллажей", "особенности", "применения"]
+      "keywords": [
+        "полезные",
+        "статьи",
+        "виды",
+        "складских",
+        "стеллажей",
+        "особенности",
+        "применения"
+      ]
     },
     {
       "path": "/aboutcompany/history",
@@ -2423,7 +2431,15 @@
       "path": "/products",
       "title": "Складские стеллажи",
       "content": "Складские стеллажи products.map(({ href, title, image, links }) => ( ))...",
-      "keywords": ["складские", "стеллажи", "productsmap", "href", "title", "image", "links"]
+      "keywords": [
+        "складские",
+        "стеллажи",
+        "productsmap",
+        "href",
+        "title",
+        "image",
+        "links"
+      ]
     },
     {
       "path": "/products/konsol_nie_stellazhi",
@@ -2626,7 +2642,7 @@
     {
       "path": "/products/pallet_handling/frontal_nie_palletnie_stellazhi_p90",
       "title": "Фронтальные стеллажи",
-      "content": "Фронтальные стеллажи Купить универсальные фронтальные стеллажи для паллет и склада в Минске Фронтальные паллетные стеллажи P90 – надежные и современные стеллажные\r\n                        конструкции,...",
+      "content": "Фронтальные стеллажи Купить универсальные фронтальные стеллажи для паллет и склада в Минске Фронтальные паллетные стеллажи P90 – надежные и современные стеллажные\r\n            конструкции, позволяющие...",
       "keywords": [
         "фронтальные",
         "стеллажи",
@@ -3980,7 +3996,7 @@
     {
       "path": "/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/accessories",
       "title": "Вертикальные карусели (PATERNOSTER) - Аксессуары",
-      "content": "Вертикальные карусели (PATERNOSTER) - Аксессуары accessories.map(accessory => ( accessory.title accessory.description ))...",
+      "content": "Вертикальные карусели (PATERNOSTER) - Аксессуары accessories.map((accessory) => ( accessory.title accessory.description ))...",
       "keywords": [
         "вертикальные",
         "карусели",
@@ -4116,7 +4132,7 @@
     {
       "path": "/products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/accessories",
       "title": "Вертикальные лифты (TORNADO) - Аксессуары",
-      "content": "Вертикальные лифты (TORNADO) - Аксессуары accessories.map(accessory => ( accessory.title accessory.description ))...",
+      "content": "Вертикальные лифты (TORNADO) - Аксессуары accessories.map((accessory) => ( accessory.title accessory.description ))...",
       "keywords": [
         "вертикальные",
         "лифты",
@@ -6038,7 +6054,11 @@
       "path": "/products/special_nie_konstrukcii",
       "title": "Специальные конструкции",
       "content": "Специальные конструкции products.map((product) => )...",
-      "keywords": ["специальные", "конструкции", "productsmapproduct"]
+      "keywords": [
+        "специальные",
+        "конструкции",
+        "productsmapproduct"
+      ]
     },
     {
       "path": "/products/stellazhnij_mezonin/mezoninnie_system",
@@ -6544,7 +6564,15 @@
       "path": "/references",
       "title": "Реализованные проекты",
       "content": "Реализованные проекты projectCategories.map(({ title, href, image, links }) => ( ))...",
-      "keywords": ["реализованные", "проекты", "projectcategoriesmap", "title", "href", "image", "links"]
+      "keywords": [
+        "реализованные",
+        "проекты",
+        "projectcategoriesmap",
+        "title",
+        "href",
+        "image",
+        "links"
+      ]
     },
     {
       "path": "/references/logisticheskie_operatori/dki_lodzhistiks_a_s_danija",
@@ -6680,7 +6708,12 @@
       "path": "/references/logisticheskie_operatori",
       "title": "Проекты для логистических операторов",
       "content": "Проекты для логистических операторов projects.map((project) => ( ))...",
-      "keywords": ["проекты", "логистических", "операторов", "projectsmapproject"]
+      "keywords": [
+        "проекты",
+        "логистических",
+        "операторов",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/logisticheskie_operatori/nissan_shenker_lodzhistiks_shvecija",
@@ -7103,7 +7136,13 @@
       "path": "/references/mezoninnie_sistemi",
       "title": "Проекты для хранения негабаритных грузов",
       "content": "Проекты для хранения негабаритных грузов projects.map((project) => ( ))...",
-      "keywords": ["проекты", "хранения", "негабаритных", "грузов", "projectsmapproject"]
+      "keywords": [
+        "проекты",
+        "хранения",
+        "негабаритных",
+        "грузов",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/mezoninnie_sistemi/kodin_terra_finljandija",
@@ -7317,7 +7356,11 @@
       "path": "/references/storage_of_small_parts",
       "title": "Хранение на полках",
       "content": "Хранение на полках projects.map((project) => )...",
-      "keywords": ["хранение", "полках", "projectsmapproject"]
+      "keywords": [
+        "хранение",
+        "полках",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/storage_of_small_parts/mnogoetazhnie_polochnie_stellazhi",
@@ -7825,7 +7868,14 @@
       "path": "/references/storage_of_small_parts/polochnie_stellazhi",
       "title": "Реализованные проекты с применением полочных стеллажей",
       "content": "Реализованные проекты с применением полочных стеллажей projects.map((project) => ( ))...",
-      "keywords": ["реализованные", "проекты", "применением", "полочных", "стеллажей", "projectsmapproject"]
+      "keywords": [
+        "реализованные",
+        "проекты",
+        "применением",
+        "полочных",
+        "стеллажей",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/storage_of_small_parts/polochnie_stellazhi/kosanit_bel_gija",
@@ -8665,7 +8715,15 @@
       "path": "/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto",
       "title": "Реализованные проекты с применением вертикальных лифтов (TORNADO)",
       "content": "Реализованные проекты с применением вертикальных лифтов (TORNADO) projects.map((project) => ( ))...",
-      "keywords": ["реализованные", "проекты", "применением", "вертикальных", "лифтов", "tornado", "projectsmapproject"]
+      "keywords": [
+        "реализованные",
+        "проекты",
+        "применением",
+        "вертикальных",
+        "лифтов",
+        "tornado",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_lifto/koviston_avto_oj_finljandija",
@@ -8987,7 +9045,15 @@
       "path": "/references/storage_of_small_parts/stellazhi_dlja_zoni_otbora",
       "title": "Реализованные проекты с применением стеллажей для зоны отбора",
       "content": "Реализованные проекты с применением стеллажей для зоны отбора projects.map((project) => ( ))...",
-      "keywords": ["реализованные", "проекты", "применением", "стеллажей", "зоны", "отбора", "projectsmapproject"]
+      "keywords": [
+        "реализованные",
+        "проекты",
+        "применением",
+        "стеллажей",
+        "зоны",
+        "отбора",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/storage_of_small_parts/stellazhi_dlja_zoni_otbora/vol_vo_pv_shvecija",
@@ -9055,7 +9121,11 @@
       "path": "/references/storing_of_pallets",
       "title": "Паллетное хранение",
       "content": "Паллетное хранение projects.map((project) => )...",
-      "keywords": ["паллетное", "хранение", "projectsmapproject"]
+      "keywords": [
+        "паллетное",
+        "хранение",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/storing_of_pallets/mobile_pallet_racking/efdzhej_indastriz_danija",
@@ -9350,7 +9420,14 @@
       "path": "/references/storing_of_pallets/mobile_pallet_racking",
       "title": "Реализованные проекты с применением мобильных стеллажей",
       "content": "Реализованные проекты с применением мобильных стеллажей projects.map((project) => ( ))...",
-      "keywords": ["реализованные", "проекты", "применением", "мобильных", "стеллажей", "projectsmapproject"]
+      "keywords": [
+        "реализованные",
+        "проекты",
+        "применением",
+        "мобильных",
+        "стеллажей",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/storing_of_pallets/mobile_pallet_racking/moens_verpakkingen_bel_gija",
@@ -9839,7 +9916,14 @@
       "path": "/references/storing_of_pallets/pallet_flow",
       "title": "Реализованные проекты с применением гравитационных стеллажей",
       "content": "Реализованные проекты с применением гравитационных стеллажей projects.map((project) => ( ))...",
-      "keywords": ["реализованные", "проекты", "применением", "гравитационных", "стеллажей", "projectsmapproject"]
+      "keywords": [
+        "реализованные",
+        "проекты",
+        "применением",
+        "гравитационных",
+        "стеллажей",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/storing_of_pallets/pallet_flow/nanso_grup_finljandija",
@@ -11243,7 +11327,14 @@
       "path": "/references/storing_of_pallets/uzkoprohodnie_stellazhi",
       "title": "Реализованные проекты с применением узкопроходных стеллажей",
       "content": "Реализованные проекты с применением узкопроходных стеллажей projects.map((project) => ( ))...",
-      "keywords": ["реализованные", "проекты", "применением", "узкопроходных", "стеллажей", "projectsmapproject"]
+      "keywords": [
+        "реализованные",
+        "проекты",
+        "применением",
+        "узкопроходных",
+        "стеллажей",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/storing_of_pallets/uzkoprohodnie_stellazhi/nethandelen_norge_norvegija",
@@ -11299,7 +11390,14 @@
       "path": "/references/workplace_storage",
       "title": "Реализованные проекты с применением мезонинных систем",
       "content": "Реализованные проекты с применением мезонинных систем projects.map((project) => ( ))...",
-      "keywords": ["реализованные", "проекты", "применением", "мезонинных", "систем", "projectsmapproject"]
+      "keywords": [
+        "реализованные",
+        "проекты",
+        "применением",
+        "мезонинных",
+        "систем",
+        "projectsmapproject"
+      ]
     },
     {
       "path": "/references/workplace_storage/van_der_gaag_bivi_niderlandi",
@@ -11394,7 +11492,10 @@
       "path": "/sitemap",
       "title": "Карта сайта",
       "content": "Карта сайта...",
-      "keywords": ["карта", "сайта"]
+      "keywords": [
+        "карта",
+        "сайта"
+      ]
     }
   ]
 }
