@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /print/
+Disallow: *?tab=
+Disallow: *?search=
+Disallow: *?wbraid=
+Disallow: *?etext=
+Disallow: *?from=
+Disallow: */accessories/
+Disallow: /o-kompanii/rekvizity-kompanii.html/
+Disallow: *?gad_source=
+Disallow: *?parent-baobab-id=
+Disallow: *?ylcyd=
+Sitemap: https://stellazhi.by/sitemap.xml
