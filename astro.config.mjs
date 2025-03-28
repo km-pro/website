@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
-import node from '@astrojs/node';
+import netlify from '@astrojs/netlify';
 
 import { generateSearchIndex } from './src/utils/search.ts';
 import { generateSitemap } from './src/utils/sitemap.ts';
@@ -371,9 +371,7 @@ export default defineConfig({
     '/o-kompanii/rekvizity-kompanii.html/': '/contact_us/',
   },
   site: 'https://stellazhi.by',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: netlify(),
   vite: {
     plugins: [tailwindcss()],
   },
