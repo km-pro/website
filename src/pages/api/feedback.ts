@@ -4,17 +4,24 @@ import nodemailer from 'nodemailer';
 export const prerender = false;
 
 const EMAIL_CONFIG = {
-  from: 'km-pro@mail.ru',
-  to: 'km-pro@mail.ru',
-  fromName: 'Форма Обратная связь',
+  from: import.meta.env.EMAIL_USER,
+  to: import.meta.env.EMAIL_USER,
+  fromName: 'Форма Обратной Связи',
 };
 
 const transporter = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-    user: 'km-pro@mail.ru',
-    pass: 'Will be added later',
-  },
+    host: import.meta.env.EMAIL_HOST,
+    port: 465,
+    secure: true,
+    auth: {
+      user: import.meta.env.EMAIL_USER,
+      pass: import.meta.env.EMAIL_PASSWORD,
+    }
+});
+
+console.log('Email transporter created:', {
+  host: import.meta.env.EMAIL_HOST,
+  user: import.meta.env.EMAIL_USER,
 });
 
 export const POST: APIRoute = async ({ request }) => {
