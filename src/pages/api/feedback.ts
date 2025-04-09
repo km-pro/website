@@ -19,11 +19,6 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-console.log('Email transporter created:', {
-  host: import.meta.env.EMAIL_HOST,
-  user: import.meta.env.EMAIL_USER,
-});
-
 export const POST: APIRoute = async ({ request }) => {
   try {
     const formData = await request.formData();
