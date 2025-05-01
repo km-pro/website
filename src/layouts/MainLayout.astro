@@ -10,7 +10,8 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const defaultDescription = "Купить складское оборудование в Минске с гарантией и доставкой оптом по выгодным ценам. ✓ Официальный дилер. ✓ Складское оборудование высокого качества.";
+const defaultDescription =
+  'Купить складское оборудование в Минске с гарантией и доставкой оптом по выгодным ценам. ✓ Официальный дилер. ✓ Складское оборудование высокого качества.';
 ---
 
 <!doctype html>
@@ -19,10 +20,7 @@ const defaultDescription = "Купить складское оборудован
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <meta
-      name="description"
-      content={description || defaultDescription}
-    />
+    <meta name="description" content={description || defaultDescription} />
 
     <link rel="canonical" href="https://stellazhi.by/" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

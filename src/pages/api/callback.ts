@@ -6,7 +6,7 @@ export const prerender = false;
 const EMAIL_CONFIG = {
   from: import.meta.env.EMAIL_USER,
   to: import.meta.env.EMAIL_USER,
-  fromName: 'Форма Обратной Связи',
+  fromName: 'Форма Заказа Звонка',
 };
 
 const transporter = nodemailer.createTransport({
@@ -27,12 +27,11 @@ export const POST: APIRoute = async ({ request }) => {
 
     const data = {
       name: formData.get('name') || '',
-      email: formData.get('email') || '',
-      message: formData.get('message') || '',
+      phone: formData.get('phone') || '',
       timestamp: new Date().toISOString(),
     };
 
-    console.log('Received feedback form submission:', data);
+    console.log('Received callback request:', data);
 
     const htmlBody = `
       <!DOCTYPE html>
@@ -40,16 +39,16 @@ export const POST: APIRoute = async ({ request }) => {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Новое сообщение с сайта</title>
+        <title>Заявка на обратный звонок</title>
       </head>
       <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9f9f9;">
         <div style="max-width: 600px; margin: 0 auto; background-color: #fff; border: 1px solid #e0e0e0; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
           <div style="background-color: #004a87; color: white; padding: 20px; text-align: center;">
-            <h1 style="margin: 0; font-size: 24px;">Новое сообщение с сайта</h1>
+            <h1 style="margin: 0; font-size: 24px;">Заявка на обратный звонок</h1>
           </div>
           
           <div style="padding: 20px;">
-            <p style="margin-bottom: 25px; color: #666; font-size: 16px;">Было получено новое сообщение от посетителя сайта.</p>
+            <p style="margin-bottom: 25px; color: #666; font-size: 16px;">Поступила новая заявка на обратный звонок.</p>
             
             <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
               <tr>
@@ -57,14 +56,10 @@ export const POST: APIRoute = async ({ request }) => {
                 <td style="padding: 12px 15px; border-bottom: 1px solid #eee;">${htmlEscape(data.name.toString())}</td>
               </tr>
               <tr>
-                <td style="padding: 12px 15px; border-bottom: 1px solid #eee; font-weight: bold; color: #004a87;">Электронная почта:</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #eee; font-weight: bold; color: #004a87;">Телефон:</td>
                 <td style="padding: 12px 15px; border-bottom: 1px solid #eee;">
-                  <a href="mailto:${htmlEscape(data.email.toString())}" style="color: #004a87; text-decoration: none;">${htmlEscape(data.email.toString())}</a>
+                  <a href="tel:${htmlEscape(data.phone.toString())}" style="color: #004a87; text-decoration: none;">${htmlEscape(data.phone.toString())}</a>
                 </td>
-              </tr>
-              <tr>
-                <td style="padding: 12px 15px; border-bottom: 1px solid #eee; font-weight: bold; color: #004a87; vertical-align: top;">Сообщение:</td>
-                <td style="padding: 12px 15px; border-bottom: 1px solid #eee;">${nl2br(htmlEscape(data.message.toString()))}</td>
               </tr>
             </table>
             
@@ -86,7 +81,7 @@ export const POST: APIRoute = async ({ request }) => {
     const mailOptions = {
       from: `"${EMAIL_CONFIG.fromName}" <${EMAIL_CONFIG.from}>`,
       to: EMAIL_CONFIG.to,
-      subject: `Сообщение с сайта ${host}`,
+      subject: `Заявка на обратный звонок с сайта ${host}`,
       html: htmlBody,
       charset: 'utf-8',
     };
@@ -96,7 +91,7 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(
       JSON.stringify({
         success: true,
-        message: 'Форма успешно отправлена',
+        message: 'Заявка успешно отправлена',
       }),
       {
         status: 200,
@@ -106,12 +101,12 @@ export const POST: APIRoute = async ({ request }) => {
       },
     );
   } catch (error) {
-    console.error('Error processing feedback form:', error);
+    console.error('Error processing callback request:', error);
 
     return new Response(
       JSON.stringify({
         success: false,
-        message: 'Произошла ошибка при обработке формы',
+        message: 'Произошла ошибка при обработке заявки',
       }),
       {
         status: 500,
@@ -144,8 +139,4 @@ function htmlEscape(text: string): string {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
-}
-
-function nl2br(text: string): string {
-  return text.replace(/\n/g, '<br/>');
 }

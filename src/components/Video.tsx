@@ -121,7 +121,7 @@ const VideoPlayer = ({ src, poster, autoplay = false, muted = false, loop = fals
     <div className="relative rounded-lg shadow-lg overflow-hidden bg-black group" ref={containerRef}>
       <video
         ref={videoRef}
-        className="w-full aspect-video"
+        className="w-full aspect-video not-prose"
         poster={poster}
         autoPlay={autoplay}
         muted={muted}

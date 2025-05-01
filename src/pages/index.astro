@@ -5,6 +5,7 @@ import ImageCarousel from '../components/ImageCarousel';
 import Video from '../components/Video';
 import Link from '../components/Link.astro';
 import video from '../assets/videos/2013-Constructor-Group-EN-short.webm';
+import videoPoster from '../assets/images/poster.png';
 
 const sidebarLinks = [
   {
@@ -71,12 +72,12 @@ const slides = [
 ---
 
 <Layout title="Стеллаж металлический купить в Минске для склада | Низкие цены на сборные стеллажи">
+  <div class="w-full mb-8">
+    <ImageCarousel slides={slides} client:load />
+  </div>
+
   <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 py-8">
     <div class="lg:col-span-3">
-      <div class="mb-8">
-        <ImageCarousel slides={slides} client:load />
-      </div>
-
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
         <h1 class="text-3xl font-bold mb-6">Стеллажи металлические от компании КМ-Про</h1>
 
@@ -107,7 +108,7 @@ const slides = [
             выполняет обширный перечень сопутствующих работ.
           </p>
 
-          <Video src={video} autoplay={false} muted={true} loop={false} client:load />
+          <Video src={video} autoplay={false} muted={true} loop={false} poster={videoPoster.src} client:load />
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 ---
 import { Navigation } from './Navigation';
+import CallBackButton from './CallBackButton';
 
 export const menuItems = [
   {
@@ -284,23 +285,50 @@ export const menuItems = [
         </a>
       </div>
 
-      <div class="text-center sm:text-right">
-        <p class="text-lg sm:text-xl font-bold">
-          <a
-            href="tel:+375173730122"
-            class="inline-flex items-center hover:text-blue-900 transition-colors gap-1 text-nowrap"
-          >
-            +375 (17) 373-01-22
-          </a>
-        </p>
-        <p class="text-lg sm:text-xl font-bold">
-          <a
-            href="tel:+375291787018"
-            class="inline-flex items-center hover:text-blue-900 transition-colors gap-1 text-nowrap"
-          >
-            +375 (29) 178-70-18
-          </a>
-        </p>
+      <div class="flex flex-row align-middle gap-4">
+        <div class="text-center sm:text-right mb-2">
+          <p class="text-lg sm:text-xl font-bold">
+            <a
+              href="tel:+375173730122"
+              class="inline-flex items-center hover:text-blue-900 transition-colors gap-1 text-nowrap"
+            >
+              +375 (17) 373-01-22
+            </a>
+          </p>
+          <p class="text-lg sm:text-xl font-bold">
+            <a
+              href="tel:+375291787018"
+              class="inline-flex items-center hover:text-blue-900 transition-colors gap-1 text-nowrap"
+            >
+              +375 (29) 178-70-18
+            </a>
+          </p>
+          <p class="text-sm text-gray-600">
+            <a
+              href="mailto:km-pro@mail.ru"
+              class="inline-flex items-center hover:text-blue-900 transition-colors gap-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              km-pro@mail.ru
+            </a>
+          </p>
+        </div>
+        <div class="grid place-items-center">
+          <CallBackButton client:load />
+        </div>
       </div>
     </div>
 
