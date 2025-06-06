@@ -15,7 +15,7 @@ const CallBackButton: React.FC<CallBackButtonProps> = ({ className = '' }) => {
     <>
       <button
         onClick={openModal}
-        className={`px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${className}`}
+        className={`px-4 py-2 bg-blue-900 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${className}`}
       >
         Заказать звонок
       </button>

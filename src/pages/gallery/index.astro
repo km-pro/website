@@ -1,0 +1,112 @@
+---
+import Layout from '../../layouts/MainLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ImageGallery from '../../components/ImageGallery.tsx';
+import CallBackButton from '@/components/CallBackButton';
+
+const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'Галерея' }];
+
+const galleryImages = [
+  {
+    src: '/images/мезонин Р90 1.webp',
+    alt: 'Мезонинные стеллажи Р90 - вид 1',
+    title: 'Мезонинные стеллажи Р90',
+    category: 'Мезонинные системы',
+  },
+  {
+    src: '/images/мезонин Р90 2.webp',
+    alt: 'Мезонинные стеллажи Р90 - вид 2',
+    title: 'Мезонинные стеллажи Р90',
+    category: 'Мезонинные системы',
+  },
+  {
+    src: '/images/мезонин Р90 3.webp',
+    alt: 'Мезонинные стеллажи Р90 - вид 3',
+    title: 'Мезонинные стеллажи Р90',
+    category: 'Мезонинные системы',
+  },
+  {
+    src: '/images/набивной 2.webp',
+    alt: 'Набивные стеллажи - вид 2',
+    title: 'Набивные стеллажи',
+    category: 'Паллетные стеллажи',
+  },
+  {
+    src: '/images/набивной.webp',
+    alt: 'Набивные стеллажи',
+    title: 'Набивные стеллажи',
+    category: 'Паллетные стеллажи',
+  },
+  {
+    src: '/images/полочный 2.webp',
+    alt: 'Полочные стеллажи - вид 2',
+    title: 'Полочные стеллажи',
+    category: 'Полочные стеллажи',
+  },
+  {
+    src: '/images/полочный 3.webp',
+    alt: 'Полочные стеллажи - вид 3',
+    title: 'Полочные стеллажи',
+    category: 'Полочные стеллажи',
+  },
+  {
+    src: '/images/полоыный 1.webp',
+    alt: 'Полочные стеллажи - вид 1',
+    title: 'Полочные стеллажи',
+    category: 'Полочные стеллажи',
+  },
+  {
+    src: '/images/стеллаж для хранения колес.webp',
+    alt: 'Специальные стеллажи для хранения колес',
+    title: 'Стеллажи для хранения колес',
+    category: 'Специальные конструкции',
+  },
+  {
+    src: '/images/фронтальный 1.webp',
+    alt: 'Фронтальные стеллажи - вид 1',
+    title: 'Фронтальные стеллажи',
+    category: 'Паллетные стеллажи',
+  },
+  {
+    src: '/images/фронтальный 2.webp',
+    alt: 'Фронтальные стеллажи - вид 2',
+    title: 'Фронтальные стеллажи',
+    category: 'Паллетные стеллажи',
+  },
+  {
+    src: '/images/Фронтальный в ангаре.webp',
+    alt: 'Фронтальные стеллажи в ангаре',
+    title: 'Фронтальные стеллажи в ангаре',
+    category: 'Паллетные стеллажи',
+  },
+];
+---
+
+<Layout
+  title="Галерея проектов ЗАО «КМ-про» | Примеры установленных стеллажных систем"
+  description="Посмотрите на наши реализованные проекты стеллажных систем. Фотографии установленного складского оборудования Constructor в Беларуси."
+>
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Галерея наших проектов</h1>
+    </div>
+
+    <ImageGallery images={galleryImages} client:load />
+
+    <div class="mt-16 bg-blue-50 rounded-xl p-8 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Заинтересованы в подобном решении?</h2>
+      <p class="text-gray-600 mb-6 max-w-2xl mx-auto">Свяжитесь с нами для консультации.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <CallBackButton client:load />
+        <a
+          href="/contact_us#formBlock"
+          class="inline-flex items-center px-6 py-3 bg-white text-blue-900 font-medium rounded-lg border-2 border-blue-900 hover:bg-blue-900 hover:text-white transition-colors"
+        >
+          Написать нам
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

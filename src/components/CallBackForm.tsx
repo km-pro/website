@@ -100,7 +100,7 @@ const CallBackForm: React.FC<CallBackFormProps> = ({ onClose }) => {
           )}
 
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="name" className="block text-left text-sm font-medium text-gray-700 mb-1">
               Ваше имя <span className="text-red-500">*</span>
             </label>
             <input
@@ -111,13 +111,13 @@ const CallBackForm: React.FC<CallBackFormProps> = ({ onClose }) => {
               className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                 nameError ? 'border-red-500' : 'border-gray-300'
               }`}
-              placeholder="Иван Иванов"
+              placeholder="Имя Фамилия"
             />
             {nameError && <p className="mt-1 text-sm text-red-500">{nameError}</p>}
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="phone" className="block text-left text-sm font-medium text-gray-700 mb-1">
               Номер телефона <span className="text-red-500">*</span>
             </label>
             <input
