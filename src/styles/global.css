@@ -2,3 +2,43 @@
 
 @plugin "@tailwindcss/typography";
 @plugin "tailwind-scrollbar";
+
+/* TODO This breaks horribly, investigate why later */
+/*body {
+     :before {
+        content: url('/images/sklad_a.webp');
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.1;
+    }
+}*/
+
+body {
+  background-image: url('/images/sklad_a.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.88) 25%,
+    rgba(248, 250, 252, 0.82) 50%,
+    rgba(255, 255, 255, 0.88) 75%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
