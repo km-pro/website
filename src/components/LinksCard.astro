@@ -26,9 +26,9 @@ const { title, href, image, links = [] } = Astro.props;
       image && (
         <a href={href}>
           {typeof image === 'string' ? (
-            <img src={image} alt="" class="object-cover w-full h-full" />
+            <img src={image} alt="{title}" class="object-cover w-full h-full" />
           ) : (
-            <Image src={image} alt="" class="h-full w-full object-cover object-center" role="presentation" />
+            <Image src={image} alt="{title}" class="h-full w-full object-cover object-center" role="presentation" />
           )}
         </a>
       )
