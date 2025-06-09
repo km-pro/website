@@ -128,7 +128,7 @@ const VideoPlayer = ({ src, poster, autoplay = false, muted = false, loop = fals
         loop={loop}
         playsInline
       >
-        <source src={src} type="video/mp4" />
+        <source src={src} type="video/webm" />
         Your browser does not support the video tag.
       </video>
 
