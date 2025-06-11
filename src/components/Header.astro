@@ -277,8 +277,8 @@ export const menuItems = [
 ];
 ---
 
-<header class="bg-white shadow-md mt-2">
-  <div class="max-w-6xl mx-auto">
+<header class="bg-white shadow-md mx-2">
+  <div class="max-w-[2400px] mx-auto">
     <div class="px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-4">
         <a href="/">
@@ -339,7 +339,7 @@ export const menuItems = [
     <Navigation menuItems={menuItems} client:load />
 
     <div class="px-4 py-2 flex justify-end">
-      <form action="/search/" class="flex w-full sm:w-64">
+      <form action="/search/" class="flex w-full sm:w-fit">
         <input
           type="text"
           name="search"

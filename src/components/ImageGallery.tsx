@@ -126,7 +126,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={(e) => e.target === lightboxRef.current && closeLightbox()}
         >
-          <div className="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center">
+          <div className="relative max-h-full w-full h-full flex items-center justify-center">
             <button
               onClick={closeLightbox}
               className="cursor-pointer absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"

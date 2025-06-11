@@ -8,7 +8,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'По�
 <Layout title="Поиск по сайту">
   <Breadcrumbs items={breadcrumbItems} />
 
-  <div class="max-w-4xl mx-auto py-8">
+  <div class="max-w-7xl mx-auto py-8">
     <div class="bg-white rounded-lg shadow-md p-8">
       <h1 class="text-2xl font-bold mb-6">Поиск по сайту</h1>
 
@@ -134,7 +134,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'По�
                   (p) => `
                 <button
                   data-page="${p}"
-                  class="px-3 py-1 rounded-md ${
+                  class="cursor-pointer px-3 py-1 rounded-md ${
                     data.pagination.current_page === p
                       ? 'bg-blue-900 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
