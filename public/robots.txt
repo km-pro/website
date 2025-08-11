@@ -1,4 +1,5 @@
 User-agent: *
+
 Disallow: /print/
 Disallow: *?tab=
 Disallow: *?search=
@@ -10,4 +11,27 @@ Disallow: /o-kompanii/rekvizity-kompanii.html/
 Disallow: *?gad_source=
 Disallow: *?parent-baobab-id=
 Disallow: *?ylcyd=
+
+Disallow: /references/agrimarket_finljandija/
+Disallow: /products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/rss/
+Disallow: /products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/feed/
+Disallow: /solutions/palletnoe_hranenie/
+Disallow: /products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/feed/
+Disallow: /products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/rss/
+Disallow: /products/pallet_handling/uzkoprohodnie_stellazhi/feed/
+Disallow: /references/torgovie_kompanii/k_rauta_finljandija/
+Disallow: /products/stellazhnij_mezonin/mezoninnie_system/feed/
+Disallow: /products/special_nie_konstrukcii/stellazhi_dlja_magazinov/rss/
+Disallow: /products/small_part_handling/small_parts_shelving_s90_standard/rss/
+Disallow: /references/reshenija_dlja_proizvodstva/
+Disallow: /products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/rss/
+Disallow: /references/vertikal_nie_lifti_tornado/
+Disallow: /products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/rss/
+Disallow: /products/pallet_handling/uzkoprohodnie_stellazhi/
+Disallow: /products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/
+Disallow: /references/storing_of_pallets/pallet_flow/nanso_grup_finljandija/
+Disallow: */rss/
+Disallow: */feed/
+
+Host: stellazhi.by
 Sitemap: https://stellazhi.by/sitemap.xml
