@@ -2,16 +2,37 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
+import SEO, { CustomMeta } from '../components/SEO.astro';
 import '../styles/global.css';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: string;
+  ogSiteName?: string;
+  ogUrl?: string;
+  ogLocality?: string;
+  canonicalUrl?: string;
+  customMetas?: CustomMeta[];
 }
 
-const { title, description } = Astro.props;
-const defaultDescription =
-  'Купить складское оборудование в Минске с гарантией и доставкой оптом по выгодным ценам. ✓ Официальный дилер. ✓ Складское оборудование высокого качества.';
+const {
+  title,
+  description,
+  url,
+  image,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogType,
+  ogSiteName,
+  ogUrl,
+  ogLocality,
+  customMetas,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -20,9 +41,20 @@ const defaultDescription =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
-    <meta name="description" content={description || defaultDescription} />
 
-    <link rel="canonical" href="https://stellazhi.by/" />
+    <SEO
+      title={title}
+      description={description}
+      ogTitle={ogTitle}
+      ogDescription={ogDescription}
+      ogImage={ogImage}
+      ogType={ogType}
+      ogSiteName={ogSiteName}
+      ogUrl={ogUrl}
+      ogLocality={ogLocality}
+      customMetas={customMetas}
+    />
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -31,8 +63,6 @@ const defaultDescription =
     <link rel="manifest" href="/site.webmanifest" />
 
     <Analytics />
-
-    <title>{title}</title>
   </head>
   <body>
     <div class="mx-auto max-w-7xl">

@@ -1,0 +1,53 @@
+---
+export interface CustomMeta {
+  content: string;
+  name?: string;
+  property?: string;
+  httpEquiv?: string;
+  [key: string]: any;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: string;
+  ogSiteName?: string;
+  ogUrl?: string;
+  ogLocality?: string;
+  canonicalUrl?: string;
+  customMetas?: CustomMeta[];
+}
+
+const {
+  title,
+  description = 'Купить складское оборудование в Минске с гарантией и доставкой оптом по выгодным ценам. ✓ Официальный дилер. ✓ Складское оборудование высокого качества ⭐⭐⭐⭐⭐ Звоните 📞 +375 (29) 178-70-18',
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogType,
+  ogSiteName = 'Сайт компании ЗАО «КМ-про»',
+  ogUrl,
+  ogLocality = 'ru_BY',
+  canonicalUrl = 'https://stellazhi.by/',
+  customMetas,
+} = Astro.props;
+---
+
+{title && <title>{title}</title>}
+
+{description && <meta name="description" content={description} />}
+
+{ogTitle && <meta property="og:title" content={ogTitle} />}
+{ogSiteName && <meta property="og:site_name" content={ogSiteName} />}
+{ogUrl && <meta property="og:url" content={ogUrl} />}
+{ogDescription && <meta property="og:description" content={ogDescription} />}
+{ogImage && <meta property="og:image" content={ogImage} />}
+{ogLocality && <meta property="og:locality" content={ogLocality} />}
+{ogType && <meta property="og:type" content={ogType} />}
+
+{customMetas && customMetas.map((meta: any) => <meta {...meta} />)}
+
+{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
