@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
-import SEO, { CustomMeta } from '../components/SEO.astro';
+import SEO, { type CustomMeta } from '../components/SEO.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -22,8 +22,6 @@ interface Props {
 const {
   title,
   description,
-  url,
-  image,
   ogTitle,
   ogDescription,
   ogImage,
