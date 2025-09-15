@@ -12,6 +12,10 @@ Disallow: *?gad_source=
 Disallow: *?parent-baobab-id=
 Disallow: *?ylcyd=
 
+Disallow: /references/workplace_storage/mezoninnie_sistemi/
+Disallow: /?ctime=*$
+Disallow: /?ctime=1743768454515
+Disallow: /aboutcompany/news/novost_1/
 Disallow: /references/agrimarket_finljandija/
 Disallow: /products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/rss/
 Disallow: /products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/feed/
