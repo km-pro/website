@@ -35,3 +35,12 @@ body::before {
   z-index: -1;
   pointer-events: none;
 }
+
+.tll3 {
+    color: #000000;
+    margin-top: 1.6em;
+    margin-bottom: .6em;
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: 1.6;
+}
