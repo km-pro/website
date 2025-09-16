@@ -54,6 +54,16 @@ body::before {
     line-height: 1.6;
 }
 
+.ttl3-footer {
+    color: #000000;
+    margin-top: 0em;
+    margin-bottom: 0.25em;
+    font-size: 1.125em;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+
 .bld {
     font-weight:600;
 }
