@@ -36,6 +36,15 @@ body::before {
   pointer-events: none;
 }
 
+.ttl2 {
+    color: #000000;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.33333;
+}
+
 .ttl3 {
     color: #000000;
     margin-top: 1.6em;
@@ -44,3 +53,8 @@ body::before {
     font-weight: 600;
     line-height: 1.6;
 }
+
+.bld {
+    font-weight:600;
+}
+
