@@ -46,6 +46,9 @@ jobs:
           SOURCE: "dist/"
           TARGET: ${{ secrets.CPANEL_APP_DIR }}
           EXCLUDE: "/.git/"
+          SCRIPT_BEFORE: |
+            rm -rf ${{ secrets.CPANEL_APP_DIR }}/server/* || true
+            rm -rf ${{ secrets.CPANEL_APP_DIR }}/client/* || true
           SCRIPT_AFTER: |
             echo "Deployment completed"
             touch ${{ secrets.CPANEL_APP_DIR }}/tmp/restart.txt || true
