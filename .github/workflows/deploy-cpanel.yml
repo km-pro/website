@@ -34,7 +34,7 @@ jobs:
       - name: Create deployment package
         run: |
           mkdir -p deploy_package
-          cp -r server client package.json deploy_package/
+          cp -r dist/server dist/client package.json deploy_package/
           cd deploy_package && npm install --omit=dev
 
       - name: Deploy to cPanel via SSH
