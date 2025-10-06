@@ -373,6 +373,6 @@ export default defineConfig({
   site: 'https://stellazhi.by',
   adapter: netlify(),
   vite: {
-    plugins: [tailwindcss() as any],
+    plugins: [tailwindcss()],
   },
 });
