@@ -31,12 +31,6 @@ jobs:
       - name: Build project
         run: pnpm run build
 
-      - name: Create deployment package
-        run: |
-          mkdir -p deploy_package
-          cp -r dist/server dist/client package.json deploy_package/
-          cd deploy_package && npm install --omit=dev
-
       - name: Deploy to cPanel via SSH
         uses: easingthemes/ssh-deploy@v5.1.0
         with:
@@ -44,7 +38,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.CPANEL_HOST }}
           REMOTE_USER: ${{ secrets.CPANEL_USER }}
           REMOTE_PORT: ${{ secrets.CPANEL_PORT }}
-          SOURCE: "deploy_package/"
+          SOURCE: "dist/"
           TARGET: ${{ secrets.CPANEL_APP_DIR }}
           EXCLUDE: "/.git/"
           SCRIPT_AFTER: |
