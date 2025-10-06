@@ -39,11 +39,8 @@ jobs:
           REMOTE_USER: ${{ secrets.CPANEL_USER }}
           REMOTE_PORT: ${{ secrets.CPANEL_PORT }}
           SOURCE: "dist/"
-          TARGET: ${{ secrets.CPANEL_TARGET_DIR }}
+          TARGET: ${{ secrets.CPANEL_APP_DIR }}
           EXCLUDE: "/node_modules/, /.git/"
-          SCRIPT_BEFORE: |
-            whoami
-            ls -la
           SCRIPT_AFTER: |
-            echo "Deployment completed"
-            ls -la ${{ secrets.CPANEL_TARGET_DIR }}
+            echo "Restarting Node.js application..."
+            touch ${{ secrets.CPANEL_APP_DIR }}/tmp/restart.txt
