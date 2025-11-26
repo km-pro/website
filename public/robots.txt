@@ -12,6 +12,13 @@ Disallow: *?gad_source=
 Disallow: *?parent-baobab-id=
 Disallow: *?ylcyd=
 
+Disallow: /solutions/hranenie_negabaritnih_gruzov/
+Disallow: /references/storage_of_small_parts/gorizontal_nie_karuseli_hoca/
+Disallow: /references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_karus/svenska_bil_i_norden_ab_shvecija1/
+Disallow: /uploads/userfiles/files/small_parts_shelving_s90_constructor_russia_small.pdf
+Disallow: /products/mezoninnie_sistemi/
+Disallow: y/solutions/hranenie_na_polkah/
+
 Disallow: /references/workplace_storage/mezoninnie_sistemi/
 Disallow: /?ctime=*$
 Disallow: /?ctime=1743768454515
