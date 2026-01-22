@@ -9,9 +9,6 @@
   <loc>https://stellazhi.by/</loc>
 </url>
 <url>
-  <loc>https://stellazhi.by/shattlovye-stellazhi/</loc>
-</url>
-<url>
   <loc>https://stellazhi.by/aboutcompany/about/</loc>
 </url>
 <url>
@@ -567,6 +564,9 @@
   <loc>https://stellazhi.by/aboutcompany/articles/vidi_skladskih_stellazhej_i_ih_osobennos</loc>
 </url>
 <url>
+  <loc>https://stellazhi.by/shattlovye-stellazhi</loc>
+</url>
+<url>
   <loc>https://stellazhi.by/our_services/rascheti</loc>
 </url>
 <url>
@@ -607,6 +607,9 @@
 </url>
 <url>
   <loc>https://stellazhi.by/stellazh-sbornyj-s-polkami-metallicheskij/</loc>
+</url>
+<url>
+  <loc>https://stellazhi.by/shattlovye-stellazhi/</loc>
 </url>
 <url>
   <loc>https://stellazhi.by/files/P90_constructor_russia_small.pdf</loc>
@@ -776,4 +779,3 @@
 
 
 </urlset>
-
