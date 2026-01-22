@@ -12,6 +12,7 @@ Disallow: *?gad_source=
 Disallow: *?parent-baobab-id=
 Disallow: *?ylcyd=
 
+Disallow: /references/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/$
 Disallow: /references/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/kongsberg_mortime_norvegija/
 Disallow: /solutions/hranenie_negabaritnih_gruzov/
 Disallow: /references/storage_of_small_parts/gorizontal_nie_karuseli_hoca/
