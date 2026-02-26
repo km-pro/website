@@ -8,6 +8,8 @@ import node from '@astrojs/node';
 import { generateSearchIndex } from './src/utils/search.ts';
 import { generateSitemap } from './src/utils/sitemap.ts';
 
+const isDev = process.argv[2] === 'dev';
+
 export default defineConfig({
   integrations: [generateSearchIndex(), generateSitemap(), react(), sitemap()],
   redirects: {
@@ -377,8 +379,6 @@ export default defineConfig({
   }),
   vite: {
     plugins: [tailwindcss()],
-    ssr: {
-      noExternal: true,
-    },
+    ssr: isDev ? undefined : { noExternal: true },
   },
 });
