@@ -25,8 +25,6 @@ Disallow: /?ctime=*$
 Disallow: /?ctime=1743768454515
 Disallow: /aboutcompany/news/novost_1/
 Disallow: /references/agrimarket_finljandija/
-Disallow: /products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/rss/
-Disallow: /products/pallet_handling/frontal_nie_palletnie_stellazhi_p90/feed/
 Disallow: /solutions/palletnoe_hranenie/
 Disallow: /products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/feed/
 Disallow: /products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/rss/
