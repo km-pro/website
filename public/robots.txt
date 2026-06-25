@@ -26,9 +26,6 @@ Disallow: /?ctime=1743768454515
 Disallow: /aboutcompany/news/novost_1/
 Disallow: /references/agrimarket_finljandija/
 Disallow: /solutions/palletnoe_hranenie/
-Disallow: /products/pallet_handling/gravitacionnie_stellazhi_push_bek_push_b/feed/
-Disallow: /products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_karuseli_paternoster/rss/
-Disallow: /products/pallet_handling/uzkoprohodnie_stellazhi/feed/
 Disallow: /references/torgovie_kompanii/k_rauta_finljandija/
 Disallow: /products/stellazhnij_mezonin/mezoninnie_system/feed/
 Disallow: /products/special_nie_konstrukcii/stellazhi_dlja_magazinov/rss/
