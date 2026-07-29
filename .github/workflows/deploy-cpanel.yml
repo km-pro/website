@@ -12,17 +12,17 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           version: 9
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -36,8 +36,8 @@ jobs:
           PUBLIC_YANDEX_METRIKA_ID: ${{ secrets.PUBLIC_YANDEX_METRIKA_ID }}
         run: pnpm run build
 
-      - name: Deploy to cPanel via SSH
-        uses: easingthemes/ssh-deploy@v5.1.0
+      - name: Deploy via SSH
+        uses: easingthemes/ssh-deploy@v6.0.1
         with:
           SSH_PRIVATE_KEY: ${{ secrets.CPANEL_SSH_KEY }}
           REMOTE_HOST: ${{ secrets.CPANEL_HOST }}
@@ -48,4 +48,4 @@ jobs:
           EXCLUDE: "/.git/"
           SCRIPT_AFTER: |
             echo "Deployment completed"
-            touch ${{ secrets.CPANEL_APP_DIR }}/tmp/restart.txt || true
+            PM2_HOME=/var/www/h10137/data/.pm2 /usr/lib/ispnodejs/bin/node /usr/lib/ispnodejs/bin/pm2 restart stellazhi.by

@@ -34,3 +34,6 @@ dist
 
 # local env
 .env
+
+# deploy keys
+deploy_key_*
