@@ -40,5 +40,4 @@ Disallow: /references/storing_of_pallets/pallet_flow/nanso_grup_finljandija/
 Disallow: */rss/
 Disallow: */feed/ 
 
-Host: stellazhi.by
 Sitemap: https://stellazhi.by/sitemap.xml
