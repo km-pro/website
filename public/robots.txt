@@ -38,6 +38,6 @@ Disallow: /products/pallet_handling/uzkoprohodnie_stellazhi/
 Disallow: /products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/
 Disallow: /references/storing_of_pallets/pallet_flow/nanso_grup_finljandija/
 Disallow: */rss/
-Disallow: */feed/ 
+Disallow: */feed/
 
 Sitemap: https://stellazhi.by/sitemap.xml
