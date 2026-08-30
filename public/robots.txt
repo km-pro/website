@@ -24,8 +24,6 @@ Disallow: /references/workplace_storage/mezoninnie_sistemi/
 Disallow: /?ctime=*$
 Disallow: /?ctime=1743768454515
 Disallow: /aboutcompany/news/novost_1/
-Disallow: /references/agrimarket_finljandija/
-Disallow: /solutions/palletnoe_hranenie/
 Disallow: /references/torgovie_kompanii/k_rauta_finljandija/
 Disallow: /products/stellazhnij_mezonin/mezoninnie_system/feed/
 Disallow: /products/special_nie_konstrukcii/stellazhi_dlja_magazinov/rss/
