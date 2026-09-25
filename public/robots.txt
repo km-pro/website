@@ -26,12 +26,8 @@ Disallow: /?ctime=1743768454515
 Disallow: /aboutcompany/news/novost_1/
 Disallow: /references/torgovie_kompanii/k_rauta_finljandija/
 Disallow: /products/stellazhnij_mezonin/mezoninnie_system/feed/
-Disallow: /products/special_nie_konstrukcii/stellazhi_dlja_magazinov/rss/
-Disallow: /products/small_part_handling/small_parts_shelving_s90_standard/rss/
 Disallow: /references/reshenija_dlja_proizvodstva/
-Disallow: /products/small_part_handling/mnogoetazhnie_polochnie_stellazhi_s90/rss/
 Disallow: /references/vertikal_nie_lifti_tornado/
-Disallow: /products/skladskie_sistemi_dinamicheskogo_hraneni/vertikal_nie_lifti_tornado/rss/
 Disallow: /products/pallet_handling/uzkoprohodnie_stellazhi/
 Disallow: /products/small_part_handling/uzkoprohodnie_polochnie_stellazhi_s90/
 Disallow: /references/storing_of_pallets/pallet_flow/nanso_grup_finljandija/
