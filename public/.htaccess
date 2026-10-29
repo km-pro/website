@@ -3,4 +3,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*[^/])$ $1/ [L,R=301]
 
-Redirect 301 /products/small_part_handling https://stellazhi.by/products/small_part_handling
+Redirect 301 /products/small_part_handling https://stellazhi.by/products/small_part_handling/
