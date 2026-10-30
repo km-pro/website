@@ -23,7 +23,7 @@ function createSitemapTree(entries: PathEntry[]): TreeNode {
   };
 
   for (const entry of sortedEntries) {
-    if (entry.path === '') {
+    if (entry.path === '/') {
       root.title = entry.title;
       continue;
     }
@@ -39,7 +39,7 @@ function createSitemapTree(entries: PathEntry[]): TreeNode {
 
       if (!currentNode.children[segment]) {
         currentNode.children[segment] = {
-          path: currentPath,
+          path: currentPath + '/',
           title: i === segments.length - 1 ? entry.title : segment,
           children: {},
         };

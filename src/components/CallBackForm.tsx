@@ -46,7 +46,7 @@ const CallBackForm: React.FC<CallBackFormProps> = ({ onClose }) => {
       formData.append('name', name);
       formData.append('phone', phone);
 
-      const response = await fetch('/api/callback', {
+      const response = await fetch('/api/callback/', {
         method: 'POST',
         body: formData,
       });

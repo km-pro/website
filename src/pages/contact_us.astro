@@ -284,7 +284,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'Ко�
     submitButton.textContent = 'Отправка...';
 
     try {
-      const response = await fetch('/api/feedback', {
+      const response = await fetch('/api/feedback/', {
         method: 'POST',
         body: formData,
       });

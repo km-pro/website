@@ -373,6 +373,7 @@ export default defineConfig({
     '/o-kompanii/rekvizity-kompanii.html/': '/contact_us/',
   },
   site: 'https://stellazhi.by',
+  trailingSlash: 'always',
   output: 'server',
   adapter: node({
     mode: 'standalone',

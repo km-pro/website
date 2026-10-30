@@ -125,6 +125,10 @@ const createSearchIndex = (files: { path: string; title: string; content: string
       filePath = filePath.slice(0, -6);
     }
 
+    if (!filePath.endsWith('/')) {
+      filePath += '/';
+    }
+
     const entry: IndexEntry = {
       path: filePath,
       title: file.title || path.basename(file.path, '.astro'),

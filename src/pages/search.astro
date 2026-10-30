@@ -78,7 +78,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'По�
         pagination.classList.add('hidden');
         noResults.classList.add('hidden');
 
-        const response = await fetch(`/api/search?search=${encodeURIComponent(query)}&page=${page}`);
+        const response = await fetch(`/api/search/?search=${encodeURIComponent(query)}&page=${page}`);
 
         const data: {
           success: boolean;
