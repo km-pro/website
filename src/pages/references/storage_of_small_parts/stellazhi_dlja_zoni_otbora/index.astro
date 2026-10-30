@@ -44,8 +44,7 @@ const projects: Project[] = [
       content: 'Реализованные проекты с применением стеллажей для зоны отбора',
     },
   ]}
-> 
-
+>
   <Breadcrumbs items={breadcrumbItems} />
 
   <div class="max-w-7xl mx-auto px-4 py-8">
@@ -54,16 +53,14 @@ const projects: Project[] = [
     </h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {
-        projects.map((project) => (
-          <ProjectCard
-            href={project.href}
-            title={project.title}
-            description={project.description}
-            image={project.image}
-          />
-        ))
-      }
+      {projects.map((project) => (
+        <ProjectCard
+          href={project.href}
+          title={project.title}
+          description={project.description}
+          image={project.image}
+        />
+      ))}
     </div>
   </div>
 </Layout>

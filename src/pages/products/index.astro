@@ -117,7 +117,8 @@ const products = [
 ];
 ---
 
-<Layout title="Складские стеллажи и оборудование — купить системы хранения в Минске"
+<Layout
+  title="Складские стеллажи и оборудование — купить системы хранения в Минске"
   description="Купить складское оборудование в Минске с гарантией и доставкой оптом по выгодным ценам. ✓ Официальный дилер. ✓ Складское оборудование высокого качества ⭐⭐⭐⭐⭐ Звоните 📞 +375 (29) 178-70-18"
   ogSiteName="Сайт компании ЗАО «КМ-про»"
   ogUrl="https://stellazhi.by/products"
@@ -133,18 +134,15 @@ const products = [
     },
   ]}
 >
-
   <Breadcrumbs items={breadcrumbItems} />
 
   <div class="max-w-7xl mx-auto px-4 py-8">
     <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">Складские стеллажи</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {
-        products.map(({ href, title, image, links }) => (
-          <LinksCard href={href} title={title} image={image} links={links} />
-        ))
-      }
+      {products.map(({ href, title, image, links }) => (
+        <LinksCard href={href} title={title} image={image} links={links} />
+      ))}
     </div>
   </div>
 </Layout>

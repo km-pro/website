@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin "@tailwindcss/typography";
 @plugin "tailwind-scrollbar";
@@ -19,7 +19,7 @@
 }*/
 
 body {
-  background-image: url('/images/sklad_a.webp');
+  background-image: url("/images/sklad_a.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -28,7 +28,7 @@ body {
 }
 
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background: #ffffffaa;
@@ -37,34 +37,32 @@ body::before {
 }
 
 .ttl2 {
-    color: #000000;
-    margin-top: 2em;
-    margin-bottom: 1em;
-    font-size: 1.5em;
-    font-weight: 700;
-    line-height: 1.33333;
+  color: #000000;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.33333;
 }
 
 .ttl3 {
-    color: #000000;
-    margin-top: 1.6em;
-    margin-bottom: .6em;
-    font-size: 1.25em;
-    font-weight: 600;
-    line-height: 1.6;
+  color: #000000;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 .ttl3-footer {
-    color: #000000;
-    margin-top: 0em;
-    margin-bottom: 0.5em;
-    font-size: 1.125em;
-    font-weight: 600;
-    line-height: 1.6;
+  color: #000000;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1.6;
 }
-
 
 .bld {
-    font-weight:600;
+  font-weight: 600;
 }
-

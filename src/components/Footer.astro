@@ -37,9 +37,7 @@ const footerLinks = {
             <a href="tel:+375173660321" class="w-fit hover:text-blue-800">+375 (17) 366-03-21</a>
             <a href="tel:+375291787018" class="w-fit hover:text-blue-800">+375 (29) 178-70-18</a>
           </div>
-          <p class="mt-2">
-            email: <a href="mailto:km-pro@mail.ru" class="hover:text-blue-800">km-pro@mail.ru</a>
-          </p>
+          <p class="mt-2">email: <a href="mailto:km-pro@mail.ru" class="hover:text-blue-800">km-pro@mail.ru</a></p>
         </address>
         <p class="mt-4 text-sm text-gray-600">© 2025 Constructor Group</p>
       </div>
@@ -47,63 +45,106 @@ const footerLinks = {
       <div>
         <div class="ttl3-footer">О компании</div>
         <ul class="space-y-2">
-          {
-            footerLinks.company.map((link) => (
-              <li>
-                <a href={link.href} class="hover:text-blue-800 transition-colors">
-                  {link.title}
-                </a>
-              </li>
-            ))
-          }
+          {footerLinks.company.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-blue-800 transition-colors">
+                {link.title}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div>
         <div class="ttl3-footer">Категории</div>
         <ul class="space-y-2">
-          {
-            footerLinks.categories.map((link) => (
-              <li>
-                <a href={link.href} class="hover:text-blue-800 transition-colors">
-                  {link.title}
-                </a>
-              </li>
-            ))
-          }
+          {footerLinks.categories.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-blue-800 transition-colors">
+                {link.title}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
 
-    <div class="mt-8 pt-4 border-t border-gray-200 text-center text-sm text-gray-600">
-         </div>
+    <div class="mt-8 pt-4 border-t border-gray-200 text-center text-sm text-gray-600"></div>
   </div>
 </footer>
 
 <!-- Yandex.Metrika counter My -->
 <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103665165', 'ym');
+  (function (m, e, t, r, i, k, a) {
+    m[i] =
+      m[i] ||
+      function () {
+        (m[i].a = m[i].a || []).push(arguments);
+      };
+    m[i].l = 1 * new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) {
+        return;
+      }
+    }
+    (k = e.createElement(t)),
+      (a = e.getElementsByTagName(t)[0]),
+      (k.async = 1),
+      (k.src = r),
+      a.parentNode.insertBefore(k, a);
+  })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=103665165', 'ym');
 
-    ym(103665165, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+  ym(103665165, 'init', {
+    ssr: true,
+    webvisor: true,
+    clickmap: true,
+    ecommerce: 'dataLayer',
+    accurateTrackBounce: true,
+    trackLinks: true,
+  });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/103665165" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript
+  ><div>
+    <img src="https://mc.yandex.ru/watch/103665165" style="position:absolute; left:-9999px;" alt="" />
+  </div></noscript
+>
 <!-- /Yandex.Metrika counter -->
 
 <!-- Yandex.Metrika counter KMPro -->
 <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109323386', 'ym');
+  (function (m, e, t, r, i, k, a) {
+    m[i] =
+      m[i] ||
+      function () {
+        (m[i].a = m[i].a || []).push(arguments);
+      };
+    m[i].l = 1 * new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) {
+        return;
+      }
+    }
+    (k = e.createElement(t)),
+      (a = e.getElementsByTagName(t)[0]),
+      (k.async = 1),
+      (k.src = r),
+      a.parentNode.insertBefore(k, a);
+  })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=109323386', 'ym');
 
-    ym(109323386, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  ym(109323386, 'init', {
+    ssr: true,
+    webvisor: true,
+    clickmap: true,
+    ecommerce: 'dataLayer',
+    referrer: document.referrer,
+    url: location.href,
+    accurateTrackBounce: true,
+    trackLinks: true,
+  });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/109323386" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript
+  ><div>
+    <img src="https://mc.yandex.ru/watch/109323386" style="position:absolute; left:-9999px;" alt="" />
+  </div></noscript
+>
 <!-- /Yandex.Metrika counter -->

@@ -13,29 +13,27 @@ const { items } = Astro.props;
 
 <nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-4 py-2 text-sm text-gray-700">
   <ol class="flex items-center flex-wrap">
-    {
-      items.map((item, index) => (
-        <li class="flex items-center">
-          {index > 0 && (
-            <span class="mx-2 text-gray-700" aria-hidden="true">
-              /
-            </span>
-          )}
-          {item.href ? (
-            <a
-              href={item.href}
-              class="hover:text-gray-900 transition-colors"
-              {...(index === items.length - 1 ? { 'aria-current': 'page' } : {})}
-            >
-              {item.title}
-            </a>
-          ) : (
-            <span class="text-gray-900" aria-current="page">
-              {item.title}
-            </span>
-          )}
-        </li>
-      ))
-    }
+    {items.map((item, index) => (
+      <li class="flex items-center">
+        {index > 0 && (
+          <span class="mx-2 text-gray-700" aria-hidden="true">
+            /
+          </span>
+        )}
+        {item.href ? (
+          <a
+            href={item.href}
+            class="hover:text-gray-900 transition-colors"
+            {...(index === items.length - 1 ? { 'aria-current': 'page' } : {})}
+          >
+            {item.title}
+          </a>
+        ) : (
+          <span class="text-gray-900" aria-current="page">
+            {item.title}
+          </span>
+        )}
+      </li>
+    ))}
   </ol>
 </nav>

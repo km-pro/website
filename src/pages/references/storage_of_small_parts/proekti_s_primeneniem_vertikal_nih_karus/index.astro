@@ -29,7 +29,7 @@ const projects: Project[] = [
 
 <Layout
   title="Реализованные проекты с применением вертикальных каруселей (PATERNOSTER)"
-  description="Реализованные проекты с применением вертикальных каруселей (PATERNOSTER) компанией ЗАО «КМ-про» ⭐⭐⭐⭐⭐ Звоните 📞 +375 (29) 178-70-18" 
+  description="Реализованные проекты с применением вертикальных каруселей (PATERNOSTER) компанией ЗАО «КМ-про» ⭐⭐⭐⭐⭐ Звоните 📞 +375 (29) 178-70-18"
   ogSiteName="Сайт компании ЗАО «КМ-про»"
   ogUrl="https://stellazhi.by/references/storage_of_small_parts/proekti_s_primeneniem_vertikal_nih_karus/"
   ogTitle="Реализованные проекты с применением вертикальных каруселей (PATERNOSTER)"
@@ -44,7 +44,6 @@ const projects: Project[] = [
     },
   ]}
 >
-
   <Breadcrumbs items={breadcrumbItems} />
 
   <div class="max-w-7xl mx-auto px-4 py-8">
@@ -53,16 +52,14 @@ const projects: Project[] = [
     </h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {
-        projects.map((project) => (
-          <ProjectCard
-            href={project.href}
-            title={project.title}
-            description={project.description}
-            image={project.image}
-          />
-        ))
-      }
+      {projects.map((project) => (
+        <ProjectCard
+          href={project.href}
+          title={project.title}
+          description={project.description}
+          image={project.image}
+        />
+      ))}
     </div>
   </div>
 </Layout>

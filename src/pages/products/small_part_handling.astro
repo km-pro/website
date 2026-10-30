@@ -89,6 +89,7 @@ const useCases = [
   },
 ];
 ---
+
 <Layout
   title="Стеллаж металлический полочный сборный для склада"
   description="Купить полочные стеллажи металлические по доступной цене в Минске и других регионах Беларуси. Низкая цена, в наличии и под заказ ⭐⭐⭐⭐⭐ Звоните 📞 +375 (29) 178-70-18"
@@ -106,7 +107,6 @@ const useCases = [
     },
   ]}
 >
-
   <div class="max-w-7xl mx-auto px-4">
     <Breadcrumbs items={breadcrumbItems} />
 
@@ -119,35 +119,32 @@ const useCases = [
 
       <div class="prose max-w-none mt-8">
         <p class="text-gray-700 mb-8">
-          Стеллаж металлический полочный - это оптимальное решение для эффективной организации помещения и хранения небольших грузов и товаров на складе.
-          Благодаря уникальной конструкции, состоящей из стоек и полок, и высокой функциональности, такие стеллажи стали неотъемлемой частью современного складского пространства.
+          Стеллаж металлический полочный - это оптимальное решение для эффективной организации помещения и хранения
+          небольших грузов и товаров на складе. Благодаря уникальной конструкции, состоящей из стоек и полок, и высокой
+          функциональности, такие стеллажи стали неотъемлемой частью современного складского пространства.
         </p>
 
         <div class="mb-12">
-         <div class="ttl2">Преимущества полочных стеллажей от "КМ-про":</div>
+          <div class="ttl2">Преимущества полочных стеллажей от "КМ-про":</div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {
-              advantages.map(({ title, description }) => (
-                <div class="bg-gray-50 p-6 rounded-lg">
-                  <h3 class="text-lg font-bold text-blue-900 mb-2">{title}</h3>
-                  <p class="text-gray-700">{description}</p>
-                </div>
-              ))
-            }
+            {advantages.map(({ title, description }) => (
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-bold text-blue-900 mb-2">{title}</h3>
+                <p class="text-gray-700">{description}</p>
+              </div>
+            ))}
           </div>
         </div>
 
         <div class="mb-12">
           <h2 class="text-2xl font-bold mb-6">Варианты использования стеллажных полочных систем:</h2>
           <div class="space-y-6">
-            {
-              useCases.map(({ title, description }) => (
-                <div class="bg-gray-50 p-6 rounded-lg">
-                  <h3 class="text-lg font-bold text-blue-900 mb-2">{title}</h3>
-                  <p class="text-gray-700">{description}</p>
-                </div>
-              ))
-            }
+            {useCases.map(({ title, description }) => (
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-bold text-blue-900 mb-2">{title}</h3>
+                <p class="text-gray-700">{description}</p>
+              </div>
+            ))}
           </div>
         </div>
 

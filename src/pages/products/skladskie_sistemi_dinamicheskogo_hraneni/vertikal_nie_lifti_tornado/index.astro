@@ -119,6 +119,7 @@ const infoSidebarItems = [
   },
 ];
 ---
+
 <Layout
   title="Вертикальные лифты (TORNADO)"
   description="Вертикальные лифты (TORNADO) купить в Минске с гарантией и доставкой оптом по выгодным ценам ⭐⭐⭐⭐⭐ Звоните 📞 +375 (29) 178-70-18"
@@ -136,8 +137,7 @@ const infoSidebarItems = [
     },
   ]}
 >
-
- <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
+  <ProductLayout infoSideBarItems={infoSidebarItems} sidebarItems={sidebarItems} breadcrumbItems={breadcrumbItems}>
     <TabbedContent defaultActive={0} tabs={['Описание', 'Преимущества', 'Характеристики']}>
       <TabPanel index={0} defaultActive>
         <ImageCarousel slides={slides} client:load />

@@ -149,18 +149,15 @@ const projectCategories = [
     },
   ]}
 >
-
   <Breadcrumbs items={breadcrumbItems} />
 
   <div class="max-w-7xl mx-auto px-4 py-8">
     <h1 class="text-white bg-gray-600 px-6 py-3 text-lg rounded-lg shadow mb-8">Реализованные проекты</h1>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      {
-        projectCategories.map(({ title, href, image, links }) => (
-          <LinksCard title={title} href={href} image={image} links={links} />
-        ))
-      }
+      {projectCategories.map(({ title, href, image, links }) => (
+        <LinksCard title={title} href={href} image={image} links={links} />
+      ))}
     </div>
   </div>
 </Layout>

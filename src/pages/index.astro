@@ -115,14 +115,15 @@ const slides = [
 
           <p class="mb-4">
             Производимые данными компаниями <Link href="/products/">стеллажи</Link> и
-            <Link href="/products/skladskie_sistemi_dinamicheskogo_hraneni/">автоматизированные системы хранения</Link> устанавливаются
-            на производственных предприятиях, в офисах и бизнес-центрах, в помещениях торгового назначения.
+            <Link href="/products/skladskie_sistemi_dinamicheskogo_hraneni/">автоматизированные системы хранения</Link>
+            устанавливаются на производственных предприятиях, в офисах и бизнес-центрах, в помещениях торгового
+            назначения.
           </p>
 
           <p class="mb-8">
-            Наибольший акцент мы делаем на поставки оборудования «Constructor» - стеллажные системы купить которые предлагается по очень выгодным
-            ценам и в широком ассортименте. При этом наша компания осуществляет не только продажу стеллажей (стеллаж металлический сборный), но и
-            выполняет обширный перечень сопутствующих работ.
+            Наибольший акцент мы делаем на поставки оборудования «Constructor» - стеллажные системы купить которые
+            предлагается по очень выгодным ценам и в широком ассортименте. При этом наша компания осуществляет не только
+            продажу стеллажей (стеллаж металлический сборный), но и выполняет обширный перечень сопутствующих работ.
           </p>
 
           <Video src={video} autoplay={false} muted={true} loop={false} poster={videoPoster.src} client:load />
@@ -132,16 +133,14 @@ const slides = [
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
         <h2 class="text-2xl font-bold mb-6">В сжатые сроки специалисты ЗАО «КМ-Про»:</h2>
         <div class="grid gap-4">
-          {
-            services.map((service, index) => (
-              <div class="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-                <div class="flex-shrink-0 w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">
-                  {index + 1}
-                </div>
-                <p class="text-gray-700">{service}</p>
+          {services.map((service, index) => (
+            <div class="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+              <div class="flex-shrink-0 w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold">
+                {index + 1}
               </div>
-            ))
-          }
+              <p class="text-gray-700">{service}</p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -154,8 +153,8 @@ const slides = [
           </p>
 
           <p class="mb-4">
-            Чтобы оставить заявку на стеллажные системы или другое складское оборудование, стеллажи металлические разборные купить в Минске, звоните нашим специалистам по
-            телефонам:
+            Чтобы оставить заявку на стеллажные системы или другое складское оборудование, стеллажи металлические
+            разборные купить в Минске, звоните нашим специалистам по телефонам:
             <Link href="tel:+375173730122">+375 (17) 373-01-22</Link>,
             <Link href="tel:+375173660321">+375 (17) 366-03-21</Link>. Они примут Ваш заказ и подробно проконсультируют
             по любым имеющимся вопросам.
@@ -182,29 +181,26 @@ const slides = [
 
     <div class="lg:col-span-1">
       <div class="bg-white rounded-lg shadow-md p-6 sticky top-4">
-        {
-          sidebarLinks.map((section) => (
-            <div class="mb-6 last:mb-0">
-              <h3 class="font-bold text-lg mb-3">{section.title}</h3>
-              <ul class="space-y-2">
-                {section.links.map((link) => (
-                  <li>
-                    <a
-                      href={link.href}
-                      class="text-blue-900 hover:text-blue-700 transition-colors block"
-                      target={link.href.startsWith('http') ? '_blank' : undefined}
-                      rel={link.href.startsWith('http') ? 'nofollow' : undefined}
-                    >
-                      {link.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
+        {sidebarLinks.map((section) => (
+          <div class="mb-6 last:mb-0">
+            <h3 class="font-bold text-lg mb-3">{section.title}</h3>
+            <ul class="space-y-2">
+              {section.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="text-blue-900 hover:text-blue-700 transition-colors block"
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'nofollow' : undefined}
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   </div>
 </Layout>
-

@@ -75,23 +75,21 @@ const accessories = [
       <h1 class="text-3xl font-bold mb-6">Вертикальные карусели (PATERNOSTER) - Аксессуары</h1>
 
       <div id="OverviewGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        {
-          accessories.map((accessory) => (
-            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
-              <h2 class="text-xl font-semibold p-4 bg-gray-50">{accessory.title}</h2>
-              <div class="flex justify-center p-4">
-                <img
-                  src={accessory.image}
-                  alt={accessory.title}
-                  class="rounded-lg overflow-hidden w-full max-h-48 object-contain"
-                />
-              </div>
-              <div class="p-4 bg-gray-50">
-                <p>{accessory.description}</p>
-              </div>
+        {accessories.map((accessory) => (
+          <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+            <h2 class="text-xl font-semibold p-4 bg-gray-50">{accessory.title}</h2>
+            <div class="flex justify-center p-4">
+              <img
+                src={accessory.image}
+                alt={accessory.title}
+                class="rounded-lg overflow-hidden w-full max-h-48 object-contain"
+              />
             </div>
-          ))
-        }
+            <div class="p-4 bg-gray-50">
+              <p>{accessory.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </div>
