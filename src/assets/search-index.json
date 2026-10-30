@@ -12249,8 +12249,17 @@
     {
       "path": "/test/",
       "title": "test",
-      "content": "...",
-      "keywords": []
+      "content": "/* biome-ignore lint/a11y/useHeadingContent: blank page template, heading is filled in per page */...",
+      "keywords": [
+        "biomeignore",
+        "linta11yuseheadingcontent",
+        "blank",
+        "page",
+        "template",
+        "heading",
+        "filled",
+        "per"
+      ]
     }
   ]
 }

@@ -6,6 +6,7 @@ interface Props {
 const { href } = Astro.props;
 ---
 
+{/* biome-ignore lint/a11y/useAnchorContent: link text is passed in through the slot */}
 <a href={href} class="text-blue-600 hover:text-blue-800">
   <slot />
 </a>

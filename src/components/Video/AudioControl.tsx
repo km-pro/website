@@ -43,11 +43,16 @@ export const AudioControl = ({ volume, isMuted, onVolumeChange, onMuteToggle, cl
   };
 
   return (
+    // biome-ignore lint/a11y/noStaticElementInteractions: expands the volume slider on hover or keyboard focus, the controls inside are interactive
     <div
       ref={controlRef}
       className={`relative ${className}`}
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
+      onFocus={() => setIsExpanded(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) setIsExpanded(false);
+      }}
     >
       <div
         className={`
@@ -57,10 +62,11 @@ export const AudioControl = ({ volume, isMuted, onVolumeChange, onMuteToggle, cl
         `}
       >
         <button
+          type="button"
           onClick={handleVolumeIconClick}
           className="flex-shrink-0 p-2 hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:ring-white/40"
-          aria-label={isMuted ? 'Unmute' : 'Mute'}
-          title={isMuted ? 'Unmute' : 'Mute'}
+          aria-label={isMuted ? 'Включить звук' : 'Выключить звук'}
+          title={isMuted ? 'Включить звук' : 'Выключить звук'}
         >
           {getVolumeIcon()}
         </button>
@@ -103,7 +109,7 @@ export const AudioControl = ({ volume, isMuted, onVolumeChange, onMuteToggle, cl
               [&::-moz-range-thumb]:hover:scale-110
               [&::-moz-range-thumb]:transition-transform
             "
-            aria-label="Volume"
+            aria-label="Громкость"
           />
         </div>
       </div>

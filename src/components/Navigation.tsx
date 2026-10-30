@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import type React from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 
-type DebouncedFunction<T extends (...args: any[]) => any> = {
+type DebouncedFunction<T extends (...args: unknown[]) => unknown> = {
   (...args: Parameters<T>): void;
   cancel: () => void;
 };
@@ -69,9 +70,10 @@ const DesktopMenuSubItem = ({ item, parentPath, activePath, onHover }: DesktopMe
   };
 
   return (
+    // biome-ignore lint/a11y/noStaticElementInteractions: hover container, keyboard users open the submenu by focusing the link
     <div className="relative" onMouseEnter={handleMouseEnter}>
       <div className="flex items-center justify-between gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer max-w-[250px]">
-        <a href={item.href} className="text-gray-700">
+        <a href={item.href} className="text-gray-700" onFocus={handleMouseEnter}>
           {item.title}
         </a>
         {hasSubItems && <ChevronRight className="w-4 h-4 flex-shrink-0 mt-[3px]" />}
@@ -79,9 +81,9 @@ const DesktopMenuSubItem = ({ item, parentPath, activePath, onHover }: DesktopMe
 
       {hasSubItems && isActive && item.items && (
         <div className="absolute left-[calc(100%+3px)] top-0 bg-white rounded shadow-lg border border-gray-200 min-w-48">
-          {item.items.map((subItem, index) => (
+          {item.items.map((subItem) => (
             <DesktopMenuSubItem
-              key={index}
+              key={subItem.title}
               item={subItem}
               parentPath={currentPath}
               activePath={activePath}
@@ -112,17 +114,20 @@ const DesktopMenuItem = ({ item, activePath, onHover }: DesktopMenuItemProps) =>
   };
 
   return (
+    // biome-ignore lint/a11y/noStaticElementInteractions: hover container, keyboard users open the submenu by focusing the link
     <div className="relative z-10 hover:bg-blue-800" onMouseEnter={handleMouseEnter}>
       <div className="flex items-center gap-2 px-4 py-2 cursor-pointer text-white">
-        <a href={item.href}>{item.title}</a>
+        <a href={item.href} onFocus={handleMouseEnter}>
+          {item.title}
+        </a>
         {hasSubItems && <ChevronDown className="w-4 h-4 mt-[3px]" />}
       </div>
 
       {hasSubItems && isActive && item.items && (
         <div className="absolute left-0 top-full bg-white rounded shadow-lg border border-gray-200 min-w-48">
-          {item.items.map((subItem, index) => (
+          {item.items.map((subItem) => (
             <DesktopMenuSubItem
-              key={index}
+              key={subItem.title}
               item={subItem}
               parentPath={currentPath}
               activePath={activePath}
@@ -152,10 +157,17 @@ const DesktopNavigation = ({ menuItems }: { menuItems: MenuItem[] }) => {
     debouncedClose();
   };
 
+  const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      debouncedClose();
+    }
+  };
+
   return (
-    <div onMouseLeave={handleMouseLeave} className="flex space-x-4 flex-row justify-between">
-      {menuItems.map((item, index) => (
-        <DesktopMenuItem key={index} item={item} activePath={activePath} onHover={handleHover} />
+    // biome-ignore lint/a11y/noStaticElementInteractions: closes submenus when the pointer or focus leaves the menu bar
+    <div onMouseLeave={handleMouseLeave} onBlur={handleBlur} className="flex space-x-4 flex-row justify-between">
+      {menuItems.map((item) => (
+        <DesktopMenuItem key={item.title} item={item} activePath={activePath} onHover={handleHover} />
       ))}
     </div>
   );
@@ -176,7 +188,7 @@ const MobileNavigation = ({ menuItems }: { menuItems: MenuItem[] }) => {
     <>
       <div className="flex h-14 items-center justify-between px-6 md:hidden">
         <span className="text-white font-medium">Mеню</span>
-        <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+        <button type="button" onClick={() => setIsOpen(!isOpen)} className="text-white">
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
@@ -186,14 +198,14 @@ const MobileNavigation = ({ menuItems }: { menuItems: MenuItem[] }) => {
           <div>
             <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
               <span className="text-gray-700 font-medium">Меню</span>
-              <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
+              <button type="button" onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
                 <X className="h-6 w-6" />
               </button>
             </div>
           </div>
           <div className="py-2">
-            {menuItems.map((item, index) => (
-              <MobileMenuItem key={index} item={item} />
+            {menuItems.map((item) => (
+              <MobileMenuItem key={item.title} item={item} />
             ))}
           </div>
         </div>
@@ -211,28 +223,23 @@ const MobileMenuItem = ({ item, level = 0 }: MobileMenuItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const hasItems = item.items && item.items.length > 0;
 
-  const toggleOpen = (event: React.MouseEvent) => {
-    if (hasItems) {
-      event.preventDefault();
-      setIsOpen(!isOpen);
-    }
-  };
-
   return (
     <div className="w-full overflow-x-hidden">
-      <div
-        className={`flex items-center w-full py-2 pl-${level * 4} pr-4 hover:bg-gray-50 cursor-pointer`}
-        onClick={toggleOpen}
-      >
+      <div className={`flex items-center w-full py-2 pl-${level * 4} pr-4 hover:bg-gray-50 cursor-pointer`}>
         {hasItems ? (
-          <div className="flex items-center justify-between w-full">
+          <button
+            type="button"
+            className="flex items-center justify-between w-full cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+          >
             <span className="text-gray-700">{item.title}</span>
             {isOpen ? (
               <ChevronDown className="w-5 h-5 text-gray-500" />
             ) : (
               <ChevronRight className="w-5 h-5 text-gray-500" />
             )}
-          </div>
+          </button>
         ) : (
           <a href={item.href} className="text-gray-700 hover:text-gray-900">
             {item.title}
@@ -242,8 +249,8 @@ const MobileMenuItem = ({ item, level = 0 }: MobileMenuItemProps) => {
 
       {hasItems && isOpen && item.items && (
         <div className="w-full border-l-2 border-gray-200 ml-2 pl-2">
-          {item.items.map((subItem, index) => (
-            <MobileMenuItem key={index} item={subItem} level={level + 1} />
+          {item.items.map((subItem) => (
+            <MobileMenuItem key={subItem.title} item={subItem} level={level + 1} />
           ))}
         </div>
       )}

@@ -15,7 +15,7 @@ const isCurrentPage = (href: string) => {
   const normalizedCurrent = currentPath.replace(/\/$/, '');
   const normalizedHref = href.replace(/\/$/, '');
 
-  return normalizedCurrent === normalizedHref || normalizedCurrent.startsWith(normalizedHref + '/');
+  return normalizedCurrent === normalizedHref || normalizedCurrent.startsWith(`${normalizedHref}/`);
 };
 ---
 
@@ -31,6 +31,7 @@ const isCurrentPage = (href: string) => {
                 <div class="bg-blue-900 text-white px-6 py-3 flex items-center justify-between gap-1">
                   <span class="text-sm">{item.title}</span>
                   <svg
+                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"

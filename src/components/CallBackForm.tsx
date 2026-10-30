@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 
 interface CallBackFormProps {
   onClose?: () => void;
@@ -79,6 +80,7 @@ const CallBackForm: React.FC<CallBackFormProps> = ({ onClose }) => {
         <div className="text-center py-6">
           <div className="text-green-600 mb-4">
             <svg
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               className="h-16 w-16 mx-auto"
               fill="none"

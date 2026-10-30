@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 import CallBackModal from './CallBackModal';
 
 interface CallBackButtonProps {
@@ -14,6 +15,7 @@ const CallBackButton: React.FC<CallBackButtonProps> = ({ className = '' }) => {
   return (
     <>
       <button
+        type="button"
         onClick={openModal}
         className={`px-4 py-2 bg-blue-900 text-white rounded-md cursor-pointer hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${className}`}
       >

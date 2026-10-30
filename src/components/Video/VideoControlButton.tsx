@@ -19,6 +19,7 @@ export const VideoControlButton = ({
 }: VideoControlButtonProps) => {
   return (
     <button
+      type="button"
       onClick={onClick}
       className={`
         p-2 rounded-full bg-white/20 

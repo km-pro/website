@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import type React from 'react';
+import { useEffect, useId, useState } from 'react';
 import { X } from 'lucide-react';
 
 interface ModalProps {
@@ -10,6 +11,18 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const titleId = useId();
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   useEffect(() => {
     if (isOpen) {
@@ -35,15 +48,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
         isOpen ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/50" onClick={onClose} aria-hidden="true" />
       <div
         className={`relative bg-white rounded-lg shadow-lg w-full max-w-md p-6 mx-4 transition-transform duration-300 ${
           isOpen ? 'scale-100' : 'scale-95'
         }`}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
       >
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-bold">{title}</h2>
+          <h2 id={titleId} className="text-xl font-bold">
+            {title}
+          </h2>
           <button
+            type="button"
             className="text-gray-500 hover:text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-full"
             onClick={onClose}
             aria-label="Закрыть"

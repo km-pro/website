@@ -1,5 +1,5 @@
 import type { AstroIntegration } from 'astro';
-import fs from 'fs';
+import fs from 'node:fs';
 import type { IndexEntry } from '@/utils/search.ts';
 
 type PathEntry = {
@@ -35,11 +35,11 @@ function createSitemapTree(entries: PathEntry[]): TreeNode {
 
     for (let i = 0; i < segments.length; i++) {
       const segment = segments[i];
-      currentPath += '/' + segment;
+      currentPath += `/${segment}`;
 
       if (!currentNode.children[segment]) {
         currentNode.children[segment] = {
-          path: currentPath + '/',
+          path: `${currentPath}/`,
           title: i === segments.length - 1 ? entry.title : segment,
           children: {},
         };

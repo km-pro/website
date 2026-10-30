@@ -1,6 +1,7 @@
 import { parse } from '@astrojs/compiler';
-import fs from 'fs';
-import path from 'path';
+import type { Node, TextNode } from '@astrojs/compiler/types';
+import fs from 'node:fs';
+import path from 'node:path';
 import type { AstroIntegration } from 'astro';
 
 export type IndexEntry = {
@@ -42,18 +43,18 @@ type ExtractedContent = {
   textContent: string[];
 };
 
-const extractTextContent = (node: Record<string, any>): ExtractedContent => {
+const extractTextContent = (node: Node): ExtractedContent => {
   const textContent: string[] = [];
   let title = '';
 
-  if (node.name === 'script' || node.name === 'head') {
+  if ('name' in node && (node.name === 'script' || node.name === 'head')) {
     return { title, textContent };
   }
 
-  if (node.name === 'h1') {
+  if ('name' in node && node.name === 'h1') {
     const h1Content = node.children
-      ?.filter((child: any) => child.type === 'text')
-      .map((child: any) => child.value.trim())
+      .filter((child): child is TextNode => child.type === 'text')
+      .map((child) => child.value.trim())
       .join(' ');
 
     if (h1Content) {
@@ -68,8 +69,8 @@ const extractTextContent = (node: Record<string, any>): ExtractedContent => {
     }
   }
 
-  if (node.children) {
-    node.children.forEach((child: any) => {
+  if ('children' in node) {
+    node.children.forEach((child) => {
       const childContent = extractTextContent(child);
       if (childContent.title) {
         title = childContent.title;
@@ -132,7 +133,7 @@ const createSearchIndex = (files: { path: string; title: string; content: string
     const entry: IndexEntry = {
       path: filePath,
       title: file.title || path.basename(file.path, '.astro'),
-      content: content.slice(0, 200) + '...',
+      content: `${content.slice(0, 200)}...`,
       keywords: tokenize(content),
     };
 

@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import type React from 'react';
+import { useCallback, useState, useEffect, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
 type GalleryImage = {
@@ -22,10 +23,25 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   const filteredImages =
     selectedCategory === 'Все' ? images : images.filter((img) => img.category === selectedCategory);
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (lightboxIndex === null) return;
+  const isLightboxOpen = lightboxIndex !== null;
+  const imageCount = filteredImages.length;
 
+  const navigateImage = useCallback(
+    (direction: number) => {
+      setLightboxIndex((current) => {
+        if (current === null) return current;
+
+        const newIndex = current + direction;
+        return newIndex >= 0 && newIndex < imageCount ? newIndex : current;
+      });
+    },
+    [imageCount],
+  );
+
+  useEffect(() => {
+    if (!isLightboxOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setLightboxIndex(null);
       } else if (event.key === 'ArrowLeft') {
@@ -37,7 +53,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxIndex]);
+  }, [isLightboxOpen, navigateImage]);
 
   useEffect(() => {
     if (lightboxIndex !== null) {
@@ -50,15 +66,6 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
       document.body.style.overflow = 'auto';
     };
   }, [lightboxIndex]);
-
-  const navigateImage = (direction: number) => {
-    if (lightboxIndex === null) return;
-
-    const newIndex = lightboxIndex + direction;
-    if (newIndex >= 0 && newIndex < filteredImages.length) {
-      setLightboxIndex(newIndex);
-    }
-  };
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -74,6 +81,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
         <div className="flex flex-wrap justify-center gap-3">
           {categories.map((category) => (
             <button
+              type="button"
               key={category}
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-full font-medium transition-all duration-300 cursor-pointer ${
@@ -91,9 +99,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
       <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-3 space-y-3">
         {filteredImages.map((image, index) => (
           <div
-            key={`${image.src}-${index}`}
+            key={image.src}
             className="break-inside-avoid relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform"
-            onClick={() => openLightbox(index)}
           >
             <div className="relative">
               <img
@@ -116,18 +123,30 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
                 </div>
               </div>
             </div>
+
+            <button
+              type="button"
+              onClick={() => openLightbox(index)}
+              className="absolute inset-0 cursor-pointer rounded-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500"
+              aria-label={`Открыть изображение: ${image.title}`}
+            />
           </div>
         ))}
       </div>
 
       {lightboxIndex !== null && (
+        // biome-ignore lint/a11y/useKeyWithClickEvents: backdrop click is a mouse shortcut, Escape and the close button cover the keyboard
         <div
           ref={lightboxRef}
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label={filteredImages[lightboxIndex].title}
           onClick={(e) => e.target === lightboxRef.current && closeLightbox()}
         >
           <div className="relative max-h-full w-full h-full flex items-center justify-center">
             <button
+              type="button"
               onClick={closeLightbox}
               className="cursor-pointer absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
               aria-label="Закрыть"
@@ -137,6 +156,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
 
             {lightboxIndex > 0 && (
               <button
+                type="button"
                 onClick={() => navigateImage(-1)}
                 className="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-colors"
                 aria-label="Предыдущее изображение"
@@ -147,6 +167,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
 
             {lightboxIndex < filteredImages.length - 1 && (
               <button
+                type="button"
                 onClick={() => navigateImage(1)}
                 className="cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-colors"
                 aria-label="Следующее изображение"

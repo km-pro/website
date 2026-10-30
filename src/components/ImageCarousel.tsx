@@ -1,5 +1,5 @@
 import type { EmblaCarouselType } from 'embla-carousel';
-import { useCallback, useEffect, useState } from 'react';
+import { type KeyboardEvent, useCallback, useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoPlay from 'embla-carousel-autoplay';
@@ -33,7 +33,7 @@ const ImageCarousel = ({ slides }: ImageCarouselProps) => {
     [AutoPlay(autoplayOptions)],
   );
 
-  const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
+  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi]);
 
   const onInit = useCallback((emblaApi: EmblaCarouselType) => {
     setScrollSnaps(emblaApi.scrollSnapList());
@@ -79,34 +79,29 @@ const ImageCarousel = ({ slides }: ImageCarouselProps) => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowLeft') {
-        scrollPrev();
-      } else if (event.key === 'ArrowRight') {
-        scrollNext();
-      } else if (event.key === ' ') {
-        event.preventDefault();
-        togglePlay();
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [scrollPrev, scrollNext, togglePlay]);
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      scrollPrev();
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      scrollNext();
+    }
+  };
 
   return (
-    <div
+    <section
       className="relative rounded-lg shadow-lg overflow-hidden bg-gray-100"
-      role="region"
       aria-roledescription="carousel"
       aria-label="Галерея изображений"
+      onKeyDown={handleKeyDown}
     >
-      <div className="overflow-hidden" ref={emblaRef} tabIndex={0} aria-live="polite" aria-atomic="true">
+      <div className="overflow-hidden" ref={emblaRef} aria-live="polite" aria-atomic="true">
         <div className="flex touch-pan-y" role="presentation">
           {slides.map((slide, index) => (
+            // biome-ignore lint/a11y/useSemanticElements: WAI-ARIA carousel pattern marks slides as role="group"
             <div
-              key={index}
+              key={slide.image}
               className="relative flex-[0_0_100%] min-w-0"
               aria-label={`Слайд ${index + 1} из ${slides.length}`}
               aria-hidden={index !== selectedIndex}
@@ -132,6 +127,7 @@ const ImageCarousel = ({ slides }: ImageCarouselProps) => {
 
       <div className="absolute inset-0 flex items-center justify-between p-4 pointer-events-none">
         <button
+          type="button"
           onClick={scrollPrev}
           className="p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transform transition-all pointer-events-auto hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500"
           aria-label="Предыдущий слайд"
@@ -140,6 +136,7 @@ const ImageCarousel = ({ slides }: ImageCarouselProps) => {
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
+          type="button"
           onClick={scrollNext}
           className="p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transform transition-all pointer-events-auto hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500"
           aria-label="Следующий слайд"
@@ -155,6 +152,8 @@ const ImageCarousel = ({ slides }: ImageCarouselProps) => {
       >
         {scrollSnaps.map((_, index) => (
           <button
+            type="button"
+            // biome-ignore lint/suspicious/noArrayIndexKey: one dot per slide position, the list is never reordered
             key={index}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === selectedIndex ? 'bg-white w-6' : 'bg-white/60 hover:bg-white'
@@ -170,6 +169,7 @@ const ImageCarousel = ({ slides }: ImageCarouselProps) => {
       </div>
 
       <button
+        type="button"
         onClick={togglePlay}
         className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg transform transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500"
         aria-label={isPlaying ? 'Остановить слайдшоу' : 'Запустить слайдшоу'}
@@ -178,7 +178,7 @@ const ImageCarousel = ({ slides }: ImageCarouselProps) => {
       >
         {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
       </button>
-    </div>
+    </section>
   );
 };
 

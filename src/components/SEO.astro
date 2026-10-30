@@ -4,7 +4,7 @@ export interface CustomMeta {
   name?: string;
   property?: string;
   httpEquiv?: string;
-  [key: string]: any;
+  [key: string]: string | undefined;
 }
 
 interface Props {
@@ -48,6 +48,6 @@ const {
 {ogLocality && <meta property="og:locality" content={ogLocality} />}
 {ogType && <meta property="og:type" content={ogType} />}
 
-{customMetas && customMetas.map((meta: any) => <meta {...meta} />)}
+{customMetas?.map((meta) => <meta {...meta} />)}
 
 {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}

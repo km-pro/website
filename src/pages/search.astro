@@ -58,7 +58,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'По�
 
     const urlParams = new URLSearchParams(window.location.search);
     const initialQuery = urlParams.get('search') || '';
-    const initialPage = parseInt(urlParams.get('page') || '1');
+    const initialPage = parseInt(urlParams.get('page') || '1', 10);
 
     if (initialQuery) {
       searchInput.value = initialQuery;
@@ -172,7 +172,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'По�
       const pageButton = target.closest('button[data-page]');
 
       if (pageButton) {
-        const page = parseInt(pageButton.getAttribute('data-page') || '1');
+        const page = parseInt(pageButton.getAttribute('data-page') || '1', 10);
         performSearch(searchInput.value.trim(), page);
 
         searchResults.scrollIntoView({ behavior: 'smooth' });
@@ -182,7 +182,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'По�
     window.addEventListener('popstate', () => {
       const urlParams = new URLSearchParams(window.location.search);
       const query = urlParams.get('search') || '';
-      const page = parseInt(urlParams.get('page') || '1');
+      const page = parseInt(urlParams.get('page') || '1', 10);
 
       searchInput.value = query;
       if (query) {

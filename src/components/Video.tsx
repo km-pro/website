@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useCallback, useRef, useState, useEffect } from 'react';
 import { Minimize, Maximize, Pause, Play } from 'lucide-react';
 import { VideoControlButton } from './Video/VideoControlButton';
 import { AudioControl } from './Video/AudioControl';
@@ -41,17 +41,53 @@ const VideoPlayer = ({ src, poster, autoplay = false, muted = false, loop = fals
       setDuration(video.duration);
     };
 
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
     video.addEventListener('timeupdate', updateProgress);
     video.addEventListener('loadedmetadata', handleLoadedMetadata);
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
 
     return () => {
       video.removeEventListener('timeupdate', updateProgress);
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
     };
   }, []);
 
   useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
+  const togglePlay = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }, []);
+
+  const toggleMute = useCallback(() => {
+    setIsMuted((muted) => !muted);
+  }, []);
+
+  useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey || event.metaKey || event.altKey) return;
+      if (
+        event.target instanceof HTMLElement &&
+        event.target.closest('input, textarea, select, button, a, [contenteditable]')
+      ) {
+        return;
+      }
+
       if (event.key === ' ') {
         event.preventDefault();
         togglePlay();
@@ -62,7 +98,7 @@ const VideoPlayer = ({ src, poster, autoplay = false, muted = false, loop = fals
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [togglePlay, toggleMute]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -77,24 +113,6 @@ const VideoPlayer = ({ src, poster, autoplay = false, muted = false, loop = fals
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
   }, []);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
@@ -150,7 +168,7 @@ const VideoPlayer = ({ src, poster, autoplay = false, muted = false, loop = fals
               activeIcon={Pause}
               isActive={isPlaying}
               onClick={togglePlay}
-              label={isPlaying ? 'Pause' : 'Play'}
+              label={isPlaying ? 'Пауза' : 'Воспроизвести'}
             />
 
             <AudioControl
@@ -176,7 +194,7 @@ const VideoPlayer = ({ src, poster, autoplay = false, muted = false, loop = fals
               activeIcon={Minimize}
               isActive={isFullscreen}
               onClick={toggleFullscreen}
-              label="Toggle fullscreen"
+              label={isFullscreen ? 'Выйти из полноэкранного режима' : 'Во весь экран'}
             />
           </div>
         </div>

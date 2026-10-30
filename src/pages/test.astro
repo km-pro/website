@@ -2,7 +2,6 @@
 import Layout from '../layouts/MainLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AboutCompanyLayout from '../layouts/AboutCompanyLayout.astro';
-import Link from '@/components/Link.astro';
 
 const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: '' }];
 ---
@@ -27,6 +26,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: '' }];
   <Breadcrumbs items={breadcrumbItems} />
 
   <AboutCompanyLayout>
+    {/* biome-ignore lint/a11y/useHeadingContent: blank page template, heading is filled in per page */}
     <h1 class="text-2xl font-bold mb-6"></h1>
 
     <p></p>

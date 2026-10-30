@@ -65,6 +65,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'Ко�
         <div class="relative w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden mb-6">
           <div class="absolute inset-0 flex items-center justify-center">
             <iframe
+              title="Карта проезда (Google Карты)"
               allowfullscreen="allowfullscreen"
               width="100%"
               height="100%"
@@ -79,6 +80,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'Ко�
           <div class="relative w-full h-[400px] bg-gray-100 rounded-lg overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center">
               <iframe
+                title="Карта проезда (Яндекс Карты)"
                 allowfullscreen="allowfullscreen"
                 height="100%"
                 width="100%"
@@ -240,7 +242,9 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'Ко�
   function resetFormMessages() {
     successMessage?.classList.add('hidden');
     errorMessage?.classList.add('hidden');
-    form.querySelectorAll('[data-error]').forEach((el) => el.classList.add('hidden'));
+    form.querySelectorAll('[data-error]').forEach((el) => {
+      el.classList.add('hidden');
+    });
   }
 
   function isValidEmail(email: string): boolean {

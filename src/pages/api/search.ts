@@ -8,7 +8,7 @@ export const GET: APIRoute = async ({ request }) => {
   try {
     const url = new URL(request.url);
     const query = url.searchParams.get('search') || '';
-    const page = parseInt(url.searchParams.get('page') || '1');
+    const page = parseInt(url.searchParams.get('page') || '1', 10);
     const perPage = 10;
 
     if (!query) {

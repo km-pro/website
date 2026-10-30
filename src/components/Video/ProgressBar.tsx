@@ -1,4 +1,5 @@
-import React, { useRef, useState, useCallback, useEffect } from 'react';
+import type React from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 
 interface ProgressBarProps {
   progress: number;
@@ -69,14 +70,40 @@ export const ProgressBar = ({ progress, duration, onSeek }: ProgressBarProps) =>
     setHoverPosition(null);
   };
 
+  const currentTime = (progress / 100) * duration;
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    const step = 5;
+    const targets: Record<string, number> = {
+      ArrowRight: currentTime + step,
+      ArrowUp: currentTime + step,
+      ArrowLeft: currentTime - step,
+      ArrowDown: currentTime - step,
+      Home: 0,
+      End: duration,
+    };
+    if (!(e.key in targets)) return;
+
+    e.preventDefault();
+    onSeek(Math.max(0, Math.min(duration, targets[e.key])));
+  };
+
   return (
     <div className="relative group mb-2">
       <div
         ref={progressBarRef}
-        className="h-2 hover:h-2 bg-white/30 cursor-pointer transition-all duration-200"
+        className="h-2 hover:h-2 bg-white/30 cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+        role="slider"
+        tabIndex={0}
+        aria-label="Перемотка видео"
+        aria-valuemin={0}
+        aria-valuemax={Math.round(duration)}
+        aria-valuenow={Math.round(currentTime)}
+        aria-valuetext={`${formatTime(currentTime)} из ${formatTime(duration)}`}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseHover}
         onMouseLeave={handleMouseLeave}
+        onKeyDown={handleKeyDown}
       >
         <div
           className="absolute top-0 left-0 h-full bg-blue-600 transition-all duration-100 rounded-r-full"
