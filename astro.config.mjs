@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
@@ -374,10 +374,18 @@ export default defineConfig({
   },
   site: 'https://stellazhi.by',
   trailingSlash: 'always',
+  compressHTML: true,
   output: 'server',
   adapter: node({
     mode: 'standalone',
   }),
+  env: {
+    schema: {
+      EMAIL_HOST: envField.string({ context: 'server', access: 'secret' }),
+      EMAIL_USER: envField.string({ context: 'server', access: 'secret' }),
+      EMAIL_PASSWORD: envField.string({ context: 'server', access: 'secret' }),
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
     ssr: isDev ? undefined : { noExternal: true },

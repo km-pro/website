@@ -68,9 +68,9 @@ const GOOGLE_REMARKETING_ID = import.meta.env.PUBLIC_GOOGLE_REMARKETING_ID;
 
 <!-- Google Remarketing Tag -->
 <script type="text/javascript" define:vars={{ GOOGLE_REMARKETING_ID }}>
-  var google_conversion_id = GOOGLE_REMARKETING_ID;
-  var google_custom_params = window.google_tag_params;
-  var google_remarketing_only = true;
+  window.google_conversion_id = GOOGLE_REMARKETING_ID;
+  window.google_custom_params = window.google_tag_params;
+  window.google_remarketing_only = true;
 </script>
 
 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>

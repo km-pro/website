@@ -1,21 +1,22 @@
 import type { APIRoute } from 'astro';
-import nodemailer from 'nodemailer';
+import nodemailer, { type SendMailOptions } from 'nodemailer';
+import { EMAIL_HOST, EMAIL_USER, EMAIL_PASSWORD } from 'astro:env/server';
 
 export const prerender = false;
 
 const EMAIL_CONFIG = {
-  from: import.meta.env.EMAIL_USER,
-  to: import.meta.env.EMAIL_USER,
+  from: EMAIL_USER,
+  to: EMAIL_USER,
   fromName: 'Форма Заказа Звонка',
 };
 
 const transporter = nodemailer.createTransport({
-  host: import.meta.env.EMAIL_HOST,
+  host: EMAIL_HOST,
   port: 465,
   secure: true,
   auth: {
-    user: import.meta.env.EMAIL_USER,
-    pass: import.meta.env.EMAIL_PASSWORD,
+    user: EMAIL_USER,
+    pass: EMAIL_PASSWORD,
   },
 });
 
@@ -118,7 +119,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 };
 
-async function sendEmail(mailOptions: nodemailer.SendMailOptions): Promise<void> {
+async function sendEmail(mailOptions: SendMailOptions): Promise<void> {
   return new Promise((resolve, reject) => {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {

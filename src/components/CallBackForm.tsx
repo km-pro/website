@@ -33,7 +33,7 @@ const CallBackForm: React.FC<CallBackFormProps> = ({ onClose }) => {
     return isValid;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validateForm()) return;
