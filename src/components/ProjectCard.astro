@@ -16,7 +16,7 @@ const { href, title, description, image } = Astro.props;
   >
     <div class="relative">
       {image && <img src={image} alt={title} class="h-full w-full object-cover object-center" />}
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+      <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
     </div>
 
     <div class="bg-white p-2">

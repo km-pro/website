@@ -150,7 +150,7 @@ const VideoPlayer = ({ src, poster, autoplay = false, muted = false, loop = fals
         Your browser does not support the video tag.
       </video>
 
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
         <ProgressBar
           progress={progress}
           duration={duration}

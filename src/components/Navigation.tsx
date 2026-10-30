@@ -39,7 +39,7 @@ type MenuItem = {
 
 export const Navigation = ({ menuItems }: { menuItems: MenuItem[] }) => {
   return (
-    <nav className="bg-gradient-to-b from-blue-900 to-blue-800">
+    <nav className="bg-linear-to-b from-blue-900 to-blue-800">
       <div className="hidden md:block">
         <DesktopNavigation menuItems={menuItems} />
       </div>
@@ -72,11 +72,11 @@ const DesktopMenuSubItem = ({ item, parentPath, activePath, onHover }: DesktopMe
   return (
     // biome-ignore lint/a11y/noStaticElementInteractions: hover container, keyboard users open the submenu by focusing the link
     <div className="relative" onMouseEnter={handleMouseEnter}>
-      <div className="flex items-center justify-between gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer max-w-[250px]">
+      <div className="flex items-center justify-between gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer max-w-62.5">
         <a href={item.href} className="text-gray-700" onFocus={handleMouseEnter}>
           {item.title}
         </a>
-        {hasSubItems && <ChevronRight className="w-4 h-4 flex-shrink-0 mt-[3px]" />}
+        {hasSubItems && <ChevronRight className="w-4 h-4 shrink-0 mt-0.75" />}
       </div>
 
       {hasSubItems && isActive && item.items && (
@@ -120,7 +120,7 @@ const DesktopMenuItem = ({ item, activePath, onHover }: DesktopMenuItemProps) =>
         <a href={item.href} onFocus={handleMouseEnter}>
           {item.title}
         </a>
-        {hasSubItems && <ChevronDown className="w-4 h-4 mt-[3px]" />}
+        {hasSubItems && <ChevronDown className="w-4 h-4 mt-0.75" />}
       </div>
 
       {hasSubItems && isActive && item.items && (

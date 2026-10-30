@@ -110,7 +110,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
                 loading="lazy"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                   <h3 className="font-semibold text-sm mb-1">{image.title}</h3>
                   <span className="text-xs bg-blue-600 px-2 py-1 rounded-full">{image.category}</span>

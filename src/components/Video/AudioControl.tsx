@@ -64,7 +64,7 @@ export const AudioControl = ({ volume, isMuted, onVolumeChange, onMuteToggle, cl
         <button
           type="button"
           onClick={handleVolumeIconClick}
-          className="flex-shrink-0 p-2 hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:ring-white/40"
+          className="shrink-0 p-2 hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:ring-white/40"
           aria-label={isMuted ? 'Включить звук' : 'Выключить звук'}
           title={isMuted ? 'Включить звук' : 'Выключить звук'}
         >
@@ -73,7 +73,7 @@ export const AudioControl = ({ volume, isMuted, onVolumeChange, onMuteToggle, cl
 
         <div
           className={`
-            flex flex-grow px-3 transition-all duration-300 h-full align-middle
+            flex grow px-3 transition-all duration-300 h-full align-middle
             ${isExpanded ? 'opacity-100 w-24' : 'opacity-0 w-0'}
           `}
         >

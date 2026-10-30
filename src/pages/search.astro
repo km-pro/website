@@ -33,7 +33,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'По�
 
       <div id="searchResults" class="space-y-8"></div>
 
-      <div id="pagination" class="mt-8 flex items-center justify-center gap-2 hidden"></div>
+      <div id="pagination" class="mt-8 flex items-center justify-center gap-2" hidden></div>
 
       <div id="noResults" class="text-center py-8 hidden">
         <p class="text-gray-600">По вашему запросу ничего не найдено. Попробуйте изменить параметры поиска.</p>
@@ -73,7 +73,7 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'По�
       try {
         searchResults.innerHTML = '<div class="text-center py-4">Загрузка...</div>';
         resultsCount.classList.add('hidden');
-        pagination.classList.add('hidden');
+        pagination.hidden = true;
         noResults.classList.add('hidden');
 
         const response = await fetch(`/api/search/?search=${encodeURIComponent(query)}&page=${page}`);
@@ -145,9 +145,9 @@ const breadcrumbItems = [{ title: 'Главная', href: '/' }, { title: 'По�
                 .join('')}
             </div>
           `;
-          pagination.classList.remove('hidden');
+          pagination.hidden = false;
         } else {
-          pagination.classList.add('hidden');
+          pagination.hidden = true;
         }
       } catch (error) {
         console.error('Search error:', error);

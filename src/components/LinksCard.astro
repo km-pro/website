@@ -31,7 +31,7 @@ const { title, href, image, links = [] } = Astro.props;
         )}
       </a>
     )}
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+    <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
   </div>
 
   <div class="bg-white p-2 pb-4">
@@ -41,7 +41,7 @@ const { title, href, image, links = [] } = Astro.props;
       </h2>
     </a>
     {links.length > 0 && (
-      <ul class="space-y-1.5 max-h-[150px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
+      <ul class="space-y-1.5 max-h-37.5 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
         {links.map((link) => (
           <li>
             <a href={link.href} class="block text-sm hover:text-blue-600 transition-colors">

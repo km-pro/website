@@ -116,7 +116,7 @@ const ImageCarousel = ({ slides }: ImageCarouselProps) => {
                   loading={index === 0 ? 'eager' : 'lazy'}
                   decoding="async"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent pt-12 pb-8 px-6">
+                <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 via-black/60 to-transparent pt-12 pb-8 px-6">
                   {slide.title && <h3 className="text-white text-lg md:text-xl font-medium">{slide.title}</h3>}
                 </div>
               </div>
